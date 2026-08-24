@@ -1,0 +1,182 @@
+@use '../../styles/variables' as vars;
+@use '../../styles/mixins' as mix;
+
+.countdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    &__items {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.6rem;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    &__box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.25s ease;
+    }
+
+    &__number {
+        font-family: vars.$font-serif;
+        font-weight: 700;
+        line-height: 1;
+        color: vars.$color-primary-900;
+    }
+
+    &__concept {
+        font-family: vars.$font-sans;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: vars.$color-primary-700;
+        margin-top: 0.4rem;
+    }
+
+    &__separator {
+        font-family: vars.$font-serif;
+        font-size: 2.4rem;
+        font-weight: 700;
+        color: vars.$color-primary-400;
+        line-height: 1;
+        margin: 0 -0.4rem;
+    }
+
+
+    /* 1. Variante Boxes (Cajas Rectangulares Clásicas) */
+    &--boxes {
+        .countdown__box {
+            min-width: 6.8rem;
+            padding: 1.4rem 1rem;
+            border-radius: 1.4rem;
+            background-color: vars.$color-primary-100;
+            border: 1px solid vars.$color-primary-200;
+        }
+
+        .countdown__number {
+            font-size: 2.8rem;
+        }
+
+        .countdown__concept {
+            font-size: 1.1rem;
+        }
+    }
+
+    /* 2. Variante Circles (Círculos Elegantes) */
+    &--circles {
+        .countdown__box {
+            width: 7.6rem;
+            height: 7.6rem;
+            border-radius: 50%;
+            background-color: #ffffff;
+            border: 2px solid vars.$color-primary-300;
+            box-shadow: 0 4px 16px rgba(vars.$color-primary-900, 0.06);
+        }
+
+        .countdown__number {
+            font-size: 2.4rem;
+        }
+
+        .countdown__concept {
+            font-size: 1rem;
+            margin-top: 0.2rem;
+        }
+    }
+
+    /* 3. Variante Inline (Una Sola Línea Horizontal) */
+    &--inline {
+        .countdown__items {
+            gap: 1.2rem;
+        }
+
+        .countdown__box {
+            flex-direction: row;
+            align-items: baseline;
+            gap: 0.4rem;
+        }
+
+        .countdown__number {
+            font-size: 2.2rem;
+        }
+
+        .countdown__concept {
+            font-size: 1.2rem;
+            text-transform: none;
+            margin-top: 0;
+        }
+    }
+
+    /* 4. Variante Grid 2x2 (Cuadrícula Compacta) */
+    &--grid-2x2 {
+        .countdown__items {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(10rem, 1fr));
+            gap: 1.4rem;
+            max-width: 28rem;
+        }
+
+        .countdown__box {
+            padding: 1.6rem 1rem;
+            border-radius: 1.6rem;
+            background-color: vars.$color-primary-100;
+            border: 1px solid vars.$color-primary-200;
+        }
+
+        .countdown__number {
+            font-size: 3rem;
+        }
+
+        .countdown__concept {
+            font-size: 1.2rem;
+        }
+    }
+
+    /* 5. Variante Minimal (Números Limpios con Separadores) */
+    &--minimal {
+        .countdown__items {
+            gap: 1.6rem;
+        }
+
+        .countdown__box {
+            background: transparent;
+            padding: 0;
+        }
+
+        .countdown__number {
+            font-size: 3.4rem;
+        }
+
+        .countdown__concept {
+            font-size: 1.1rem;
+        }
+    }
+
+    /* 6. Variante Cards (Tarjetas con Elevación y Sombras) */
+    &--cards {
+        .countdown__box {
+            min-width: 7.2rem;
+            padding: 1.6rem 1.2rem;
+            border-radius: 1.8rem;
+            background-color: #ffffff;
+            box-shadow: 0 10px 28px rgba(vars.$color-primary-900, 0.08);
+            border: 1px solid vars.$color-primary-100;
+        }
+
+        .countdown__number {
+            font-size: 3rem;
+            color: vars.$color-primary;
+        }
+
+        .countdown__concept {
+            font-size: 1.1rem;
+        }
+    }
+}

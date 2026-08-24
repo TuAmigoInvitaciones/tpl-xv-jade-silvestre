@@ -1,0 +1,136 @@
+@use '../../styles/variables' as vars;
+@use '../../styles/mixins' as mix;
+
+/* ==========================================================================
+   Accordion Component Styles (.accordion BEM)
+   ========================================================================== */
+
+.accordion {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    /* --- Variaciones de Estilo --- */
+    &--bordered {
+        border: 1px solid vars.$color-primary-200;
+        border-radius: 1.6rem;
+        overflow: hidden;
+        background-color: #ffffff;
+
+        .accordion__item:not(:last-child) {
+            border-bottom: 1px solid vars.$color-primary-100;
+        }
+    }
+
+    &--separated {
+        gap: 1.6rem;
+
+        .accordion__item {
+            border: 1px solid vars.$color-primary-200;
+            border-radius: 1.6rem;
+            background-color: #ffffff;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(vars.$color-primary-900, 0.04);
+            transition: border-color 0.25s ease, box-shadow 0.25s ease;
+
+            &--expanded {
+                border-color: vars.$color-primary;
+                box-shadow: 0 6px 20px rgba(vars.$color-primary-900, 0.08);
+            }
+        }
+    }
+
+    &--glass {
+        gap: 1.6rem;
+
+        .accordion__item {
+            border-radius: 1.6rem;
+            @include mix.glassmorphism(0.65, 12px, rgba(vars.$color-primary-200, 0.6), #ffffff);
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(vars.$color-primary-900, 0.06);
+
+            &--expanded {
+                border-color: vars.$color-primary;
+            }
+        }
+    }
+
+    /* --- Elementos BEM --- */
+    &__item {
+        width: 100%;
+
+        &--disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+    }
+
+    &__header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.8rem 2.4rem;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        text-align: left;
+        font-family: vars.$font-serif;
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: vars.$color-primary-900;
+        transition: background-color 0.2s ease, color 0.2s ease;
+
+        &:hover {
+            background-color: rgba(vars.$color-primary-100, 0.5);
+        }
+    }
+
+    &__title-container {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+    }
+
+    &__icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: vars.$color-primary;
+    }
+
+    &__chevron {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: vars.$color-primary-700;
+        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+        &--rotated {
+            transform: rotate(180deg);
+            color: vars.$color-primary;
+        }
+    }
+
+    &__content-wrapper {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+        &--expanded {
+            grid-template-rows: 1fr;
+        }
+    }
+
+    &__content-inner {
+        overflow: hidden;
+    }
+
+    &__body {
+        padding: 0 2.4rem 2.2rem 2.4rem;
+        font-family: vars.$font-sans;
+        font-size: 1.5rem;
+        line-height: 1.6;
+        color: vars.$color-text-700;
+    }
+}

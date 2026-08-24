@@ -1,0 +1,124 @@
+@use '../../styles/variables' as vars;
+@use '../../styles/mixins' as mix;
+
+.music-player {
+
+    &--floating {
+        position: fixed;
+        bottom: 2.4rem;
+        right: 2.4rem;
+        z-index: 950;
+
+        &.music-player--playing .btn {
+            animation: pulseGlow 2.5s ease-in-out infinite;
+        }
+    }
+
+    &--card {
+        width: 100%;
+        max-width: 44rem;
+        margin: 2rem auto;
+
+        .music-player__card {
+            display: flex;
+            align-items: center;
+            gap: 1.6rem;
+            padding: 1.6rem 2.2rem;
+            background-color: #ffffff;
+            border: 1px solid vars.$color-primary-100;
+            border-radius: 1.6rem;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+
+            &:hover {
+                box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+            }
+        }
+
+        .music-player__card-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 4.8rem;
+            height: 4.8rem;
+            border-radius: 50%;
+            background-color: vars.$color-primary-100;
+            color: vars.$color-primary-900;
+            flex-shrink: 0;
+        }
+
+        .music-player__card-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+            flex: 1;
+            min-width: 0;
+            text-align: left;
+        }
+
+        .music-player__card-title {
+            font-family: vars.$font-serif;
+            font-size: 1.7rem;
+            font-weight: 600;
+            color: vars.$color-primary-900;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .music-player__card-status {
+            font-family: vars.$font-sans;
+            font-size: 1.3rem;
+            color: vars.$color-text-600;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        &.music-player--playing {
+            .music-player__disc {
+                animation: spinSlow 8s linear infinite;
+            }
+        }
+    }
+
+    // ----------------------------------------------------------------------
+    // Ecualizador Animado
+    // ----------------------------------------------------------------------
+    &__equalizer {
+        display: flex;
+        align-items: flex-end;
+        gap: 3px;
+        height: 12px;
+
+        span {
+            width: 3px;
+            background-color: vars.$color-primary;
+            border-radius: 2px;
+            height: 100%;
+            animation: eqBar 0.8s ease-in-out infinite alternate;
+
+            &:nth-child(1) {
+                animation-delay: 0.1s;
+            }
+
+            &:nth-child(2) {
+                animation-delay: 0.35s;
+            }
+
+            &:nth-child(3) {
+                animation-delay: 0.6s;
+            }
+        }
+    }
+}
+
+@keyframes eqBar {
+    0% {
+        height: 3px;
+    }
+
+    100% {
+        height: 12px;
+    }
+}

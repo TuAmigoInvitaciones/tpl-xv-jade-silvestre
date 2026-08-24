@@ -1,0 +1,161 @@
+@use 'sass:color';
+
+/* ==========================================================================
+   Functions - Dynamic Color Tints & Shades
+   ========================================================================== */
+
+/// Genera un tono más claro (tint) mezclando con blanco
+@function tint($color, $percentage) {
+    @return color.mix(#ffffff, $color, $percentage);
+}
+
+/// Genera un tono más oscuro (shade) mezclando con negro
+@function shade($color, $percentage) {
+    @return color.mix(#000000, $color, $percentage);
+}
+
+/* ==========================================================================
+   Mixins - Shared Component & Layout Utilities
+   ========================================================================== */
+
+/// 1. Gradient Fade Overlay (Top, Bottom, or Double)
+@mixin difuminatedGradient($color: #ffffff,
+    $height: 25%,
+    $positionY: 0,
+    $double: false,
+    $zIndex: 2) {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: $positionY;
+        left: 0;
+        width: 100%;
+        height: $height;
+        background: linear-gradient(to top, $color 0%, transparent 100%);
+        z-index: $zIndex;
+        pointer-events: none;
+    }
+
+    @if ($double) {
+        &::before {
+            content: '';
+            position: absolute;
+            top: $positionY;
+            left: 0;
+            width: 100%;
+            height: $height;
+            background: linear-gradient(to bottom, $color 0%, transparent 100%);
+            z-index: $zIndex;
+            pointer-events: none;
+        }
+    }
+}
+
+/// 2. Background Image Container Overlay
+@mixin backgroundImage($opacity: 0.1,
+    $url: null,
+    $size: cover,
+    $position: center,
+    $repeat: no-repeat) {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: $opacity;
+    background-size: $size;
+    background-position: $position;
+    background-repeat: $repeat;
+
+    @if $url {
+        background-image: url('#{$url}');
+    }
+}
+
+/// Flexbox Alignment Shortcut
+@mixin flexCenter($direction: row, $justify: center, $align: center, $gap: null) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+
+    @if $gap {
+        gap: $gap;
+    }
+}
+
+/// Absolute Center Positioning
+@mixin absoluteCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/// Glassmorphism Effect
+@mixin glassmorphism($bgOpacity: 0.15,
+    $blur: 10px,
+    $borderColor: rgba(255, 255, 255, 0.2),
+    $bgColor: rgba(255, 255, 255, $bgOpacity)) {
+    background: $bgColor;
+    backdrop-filter: blur($blur);
+    -webkit-backdrop-filter: blur($blur);
+    border: 1px solid $borderColor;
+}
+
+/// Responsive Media Query Helper
+@mixin respondToMin($breakpoint) {
+    @if $breakpoint =='sm' or $breakpoint ==576px {
+        @media (min-width: 576px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint =='md' or $breakpoint ==768px {
+        @media (min-width: 768px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint =='lg' or $breakpoint ==992px {
+        @media (min-width: 992px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint =='xl' or $breakpoint ==1200px {
+        @media (min-width: 1200px) {
+            @content;
+        }
+    }
+
+    @else {
+        @media (max-width: $breakpoint) {
+            @content;
+        }
+    }
+}
+
+@mixin respond-to($breakpoint) {
+    @include respondTo($breakpoint) {
+        @content;
+    }
+}
+
+/// Text Truncation (Single or Multi-line)
+@mixin textTruncate($lines: 1) {
+    @if $lines ==1 {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    @else {
+        display: -webkit-box;
+        -webkit-line-clamp: $lines;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}

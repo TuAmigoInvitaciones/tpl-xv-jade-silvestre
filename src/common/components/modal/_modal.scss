@@ -1,0 +1,88 @@
+@use '../../styles/variables' as vars;
+@use '../../styles/mixins' as mix;
+
+.modal {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+
+    background-color: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    will-change: opacity;
+    animation: modalFadeIn 0.15s ease-out forwards;
+
+    &__card {
+        background-color: #ffffff;
+        color: vars.$color-text-900;
+        width: 100%;
+        max-width: 54rem;
+        max-height: 90vh;
+        max-height: 90dvh;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        position: relative;
+        z-index: 1001;
+        will-change: transform, opacity;
+        animation: modalZoomIn 0.18s cubic-bezier(0, 0, 0.2, 1) forwards;
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2rem 2.4rem;
+        border-bottom: 1px solid vars.$color-primary-100;
+        gap: 1.6rem;
+    }
+
+    &__title {
+        font-family: vars.$font-serif;
+        font-size: 2.2rem;
+        font-weight: 600;
+        color: vars.$color-primary-900;
+        line-height: 1.2;
+        margin: 0;
+    }
+
+    &__container {
+        padding: 2.4rem;
+        overflow-y: auto;
+        flex: 1;
+        font-family: vars.$font-sans;
+        font-size: 1.5rem;
+        line-height: 1.6;
+        color: vars.$color-text-700;
+
+        &::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: vars.$color-primary-200;
+            border-radius: 3px;
+        }
+    }
+
+    &--sm &__card {
+        max-width: 40rem;
+    }
+
+    &--lg &__card {
+        max-width: 72rem;
+    }
+
+    &--glass &__card {
+        @include mix.glassmorphism(0.85, 20px, rgba(255, 255, 255, 0.5));
+        background-color: rgba(255, 255, 255, 0.88);
+    }
+}

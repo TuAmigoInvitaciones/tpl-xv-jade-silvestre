@@ -1,0 +1,50 @@
+{
+  "name": "invitation-template",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "predev": "npm run theme:sync",
+    "prebuild": "npm run theme:sync",
+    "create:invitation": "node scripts/create-invitation.js",
+    "theme:sync": "node scripts/sync-theme.js",
+    "theme:set": "node scripts/set-theme.js",
+    "optimize-images": "node scripts/optimize-images.js",
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@phosphor-icons/react": "^2.1.10",
+    "@reduxjs/toolkit": "^2.12.0",
+    "axios": "^1.18.1",
+    "canvas-confetti": "^1.9.4",
+    "framer-motion": "^12.42.2",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-hook-form": "^7.82.0",
+    "react-redux": "^9.3.0",
+    "react-router-dom": "^7.18.1",
+    "sonner": "^2.0.7",
+    "swiper": "^14.0.6",
+    "picocolors": "^1.1.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/canvas-confetti": "^1.9.0",
+    "@types/node": "^24.13.2",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.3",
+    "eslint": "^10.6.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.3",
+    "globals": "^17.7.0",
+    "sass": "^1.101.0",
+    "sharp": "^0.35.3",
+    "typescript": "~6.0.2",
+    "typescript-eslint": "^8.62.0",
+    "vite": "^8.1.1"
+  }
+}

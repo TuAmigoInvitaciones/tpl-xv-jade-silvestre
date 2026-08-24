@@ -1,0 +1,38 @@
+@use '../../../common/styles/variables' as vars;
+@use '../../../common/styles/mixins' as mix;
+
+.farewell {
+    padding: 4rem 1.5rem;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__container {
+        position: relative;
+        width: 100%;
+        max-width: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+        box-sizing: border-box;
+    }
+
+    &__title {
+        font-family: vars.$font-serif;
+        font-size: 2.2rem;
+        color: vars.$color-primary-900;
+        margin: 0;
+    }
+
+    &__date {
+        font-family: vars.$font-sans;
+        font-size: 1rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: vars.$color-4;
+    }
+}

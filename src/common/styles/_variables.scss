@@ -1,0 +1,165 @@
+@use './palettes' as pal;
+@use './fonts' as font;
+@use './mixins' as *;
+@use './active_theme' as theme;
+
+/* ==========================================================================
+   Variables - Active Configuration & Theme Registry
+   ========================================================================== */
+
+// --------------------------------------------------------------------------
+// 1. Active Font Configuration (Selected via theme.config.json)
+// --------------------------------------------------------------------------
+$font-cursive: theme.$font-cursive !default;
+$font-serif: theme.$font-serif !default;
+$font-sans: theme.$font-sans !default;
+
+// Font Pack Aliases (For explicit pack selection)
+$font-p1-cursive: font.$font-p1-cursive !default;
+$font-p1-serif: font.$font-p1-serif !default;
+$font-p1-sans: font.$font-p1-sans !default;
+
+$font-p2-cursive: font.$font-p2-cursive !default;
+$font-p2-serif: font.$font-p2-serif !default;
+$font-p2-sans: font.$font-p2-sans !default;
+
+$font-p3-cursive: font.$font-p3-cursive !default;
+$font-p3-serif: font.$font-p3-serif !default;
+$font-p3-sans: font.$font-p3-sans !default;
+
+$font-p4-cursive: font.$font-p4-cursive !default;
+$font-p4-serif: font.$font-p4-serif !default;
+$font-p4-sans: font.$font-p4-sans !default;
+
+$font-p5-cursive: font.$font-p5-cursive !default;
+$font-p5-serif: font.$font-p5-serif !default;
+$font-p5-sans: font.$font-p5-sans !default;
+
+// --------------------------------------------------------------------------
+// 2. Active Palette Selection (Selected via theme.config.json)
+// --------------------------------------------------------------------------
+$color-1: theme.$color-1 !default;
+$color-2: theme.$color-2 !default;
+$color-3: theme.$color-3 !default;
+$color-4: theme.$color-4 !default;
+$color-5: theme.$color-5 !default;
+
+$color-text: #2c2626 !default; // Base text color
+
+// --------------------------------------------------------------------------
+// 3. Dynamic Color Scale Generation (100 to 900 for $color-1 .. $color-5)
+// --------------------------------------------------------------------------
+
+// Color 1 Scale
+$color-1-100: tint($color-1, 80%) !default;
+$color-1-200: tint($color-1, 60%) !default;
+$color-1-300: tint($color-1, 40%) !default;
+$color-1-400: tint($color-1, 20%) !default;
+$color-1-500: $color-1 !default;
+$color-1-600: shade($color-1, 15%) !default;
+$color-1-700: shade($color-1, 30%) !default;
+$color-1-800: shade($color-1, 45%) !default;
+$color-1-900: shade($color-1, 60%) !default;
+
+// Color 2 Scale
+$color-2-100: tint($color-2, 80%) !default;
+$color-2-200: tint($color-2, 60%) !default;
+$color-2-300: tint($color-2, 40%) !default;
+$color-2-400: tint($color-2, 20%) !default;
+$color-2-500: $color-2 !default;
+$color-2-600: shade($color-2, 15%) !default;
+$color-2-700: shade($color-2, 30%) !default;
+$color-2-800: shade($color-2, 45%) !default;
+$color-2-900: shade($color-2, 60%) !default;
+
+// Color 3 Scale
+$color-3-100: tint($color-3, 80%) !default;
+$color-3-200: tint($color-3, 60%) !default;
+$color-3-300: tint($color-3, 40%) !default;
+$color-3-400: tint($color-3, 20%) !default;
+$color-3-500: $color-3 !default;
+$color-3-600: shade($color-3, 15%) !default;
+$color-3-700: shade($color-3, 30%) !default;
+$color-3-800: shade($color-3, 45%) !default;
+$color-3-900: shade($color-3, 60%) !default;
+
+// Color 4 Scale
+$color-4-100: tint($color-4, 80%) !default;
+$color-4-200: tint($color-4, 60%) !default;
+$color-4-300: tint($color-4, 40%) !default;
+$color-4-400: tint($color-4, 20%) !default;
+$color-4-500: $color-4 !default;
+$color-4-600: shade($color-4, 15%) !default;
+$color-4-700: shade($color-4, 30%) !default;
+$color-4-800: shade($color-4, 45%) !default;
+$color-4-900: shade($color-4, 60%) !default;
+
+// Color 5 Scale
+$color-5-100: tint($color-5, 80%) !default;
+$color-5-200: tint($color-5, 60%) !default;
+$color-5-300: tint($color-5, 40%) !default;
+$color-5-400: tint($color-5, 20%) !default;
+$color-5-500: $color-5 !default;
+$color-5-600: shade($color-5, 15%) !default;
+$color-5-700: shade($color-5, 30%) !default;
+$color-5-800: shade($color-5, 45%) !default;
+$color-5-900: shade($color-5, 60%) !default;
+
+// Text Scale
+$color-text-100: tint($color-text, 80%) !default;
+$color-text-200: tint($color-text, 60%) !default;
+$color-text-300: tint($color-text, 40%) !default;
+$color-text-400: tint($color-text, 20%) !default;
+$color-text-500: $color-text !default;
+$color-text-600: shade($color-text, 15%) !default;
+$color-text-700: shade($color-text, 30%) !default;
+$color-text-800: shade($color-text, 45%) !default;
+$color-text-900: shade($color-text, 60%) !default;
+
+// Semantic Role Aliases
+$color-primary: $color-1 !default;
+$color-secondary: $color-2 !default;
+$color-tertiary: $color-5 !default;
+$color-bg: #ffffff !default;
+
+// Primary/Secondary/Tertiary 100-900 Scale Aliases for Compatibility
+$color-primary-100: $color-1-100 !default;
+$color-primary-200: $color-1-200 !default;
+$color-primary-300: $color-1-300 !default;
+$color-primary-400: $color-1-400 !default;
+$color-primary-500: $color-1-500 !default;
+$color-primary-600: $color-1-600 !default;
+$color-primary-700: $color-1-700 !default;
+$color-primary-800: $color-1-800 !default;
+$color-primary-900: $color-1-900 !default;
+
+$color-secondary-100: $color-2-100 !default;
+$color-secondary-200: $color-2-200 !default;
+$color-secondary-300: $color-2-300 !default;
+$color-secondary-400: $color-2-400 !default;
+$color-secondary-500: $color-2-500 !default;
+$color-secondary-600: $color-2-600 !default;
+$color-secondary-700: $color-2-700 !default;
+$color-secondary-800: $color-2-800 !default;
+$color-secondary-900: $color-2-900 !default;
+
+$color-tertiary-100: $color-5-100 !default;
+$color-tertiary-200: $color-5-200 !default;
+$color-tertiary-300: $color-5-300 !default;
+$color-tertiary-400: $color-5-400 !default;
+$color-tertiary-500: $color-5-500 !default;
+$color-tertiary-600: $color-5-600 !default;
+$color-tertiary-700: $color-5-700 !default;
+$color-tertiary-800: $color-5-800 !default;
+$color-tertiary-900: $color-5-900 !default;
+
+// --------------------------------------------------------------------------
+// 4. Layout & Responsive Breakpoints
+// --------------------------------------------------------------------------
+$menu-bar-height: 6rem !default;
+
+$breakpoint-xs: 375px !default;
+$breakpoint-sm: 576px !default;
+$breakpoint-md: 768px !default;
+$breakpoint-lg: 992px !default;
+$breakpoint-xl: 1200px !default;

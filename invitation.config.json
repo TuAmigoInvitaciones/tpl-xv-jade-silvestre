@@ -1,0 +1,209 @@
+{
+  "eventType": "xv",
+  "packageTier": "oro",
+  "commercial": {
+    "packageName": "Oro VIP Premium (Con Fotos)",
+    "basePrice": 1099.99,
+    "ticketPrice": 0,
+    "addonsPrice": 0,
+    "totalPrice": 1099.99
+  },
+  "theme": {
+    "fontPack": 5,
+    "palette": 4
+  },
+  "ui": {
+    "menu": {
+      "show": true,
+      "variant": "bar",
+      "title": "Grethel Stefania",
+      "buttonVariant": "icon"
+    },
+    "music": {
+      "show": true,
+      "variant": "floating",
+      "title": "Música de fondo",
+      "buttonVariant": "primary"
+    }
+  },
+  "config": {
+    "hasTicketingSystem": false,
+    "hasRSVP": true,
+    "hasMusic": true,
+    "hasMenu": true
+  },
+  "sections": {
+    "envelop": {
+      "showEnvelop": true,
+      "type": "video-apertura"
+    },
+    "hero": {
+      "showHero": true,
+      "names": "Grethel Stefania",
+      "subtitle": "Mis XV Años",
+      "date": "18 DE DICIEMBRE DE 2026",
+      "city": "Aguascalientes, México"
+    },
+    "scratchReveal": {
+      "showScratchReveal": true
+    },
+    "message": {
+      "showMessage": true,
+      "message": "Hay momentos inolvidables que se atesoran en el corazón para siempre. Por esa razón quiero que compartas conmigo esta noche tan especial.",
+      "quote": "“Pues mandará a sus ángeles acerca de tí, para que te guarden en todos tus caminos.” -Salmo 91:11-"
+    },
+    "family": {
+      "showFamily": true,
+      "title": "Mis Padres y Padrinos",
+      "parents": [
+        "Francisco Javier Nava Trinidad",
+        "Yesenia Ortega Ortíz"
+      ],
+      "godparents": [
+        "Rosa Trinidad Carmona",
+        "Rosa Ma.Ortíz Saucedo"
+      ]
+    },
+    "places": {
+      "showPlaces": true,
+      "locations": [
+        {
+          "title": "Ceremonia Religiosa",
+          "venue": "Parroquia del Sagrado Corazón de Jesús",
+          "location": "5 de Mayo 602, Zona Centro, 20000 Aguascalientes, Ags.",
+          "time": "19:00 HRS",
+          "date": "18-12-2026",
+          "url": "https://maps.app.goo.gl/oKMjmVM277UA1JtQ8"
+        },
+        {
+          "title": "Recepción & Fiesta",
+          "venue": "Casa de Piedra",
+          "location": "Av. Guadalupe Gonzalez 1116, 20329 Pocitos, Ags.",
+          "time": "21:00 HRS",
+          "date": "18-12-2026",
+          "url": "https://maps.app.goo.gl/qiKzrazppDADxFeu5"
+        }
+      ]
+    },
+    "itinerary": {
+      "showItinerary": true,
+      "itinerary": [
+        {
+          "time": "19:00 HRS",
+          "event": "Ceremonia Religiosa"
+        },
+        {
+          "time": "21:00 HRS",
+          "event": "Recepción & Fiesta"
+        },
+        {
+          "time": "21:00 - 22:00 HRS",
+          "event": "Coctél de Bienvenida"
+        },
+        {
+          "time": "22:30 HRS",
+          "event": "Cena (3 tiempos)"
+        },
+        {
+          "time": "23:00 HRS",
+          "event": "Vals y Brindis"
+        },
+        {
+          "time": "23:30 HRS",
+          "event": "Apertura de Pista"
+        },
+        {
+          "time": "01:00 HRS",
+          "event": "Música Banda"
+        },
+        {
+          "time": "02:00 HRS",
+          "event": "Fin del evento"
+        }
+      ]
+    },
+    "dressCode": {
+      "showDressCode": true,
+      "title": "Etiqueta el Evento",
+      "description": "Te sugerimos vestir de etiqueta formal",
+      "attire": {
+        "men": "Traje o Smoking con corbata o moño",
+        "women": "Vestido Glam, Brillante & Perlas"
+      },
+      "colors": {
+        "suggested": [
+          "negro",
+          "dorado"
+        ],
+        "avoid": [
+          "blanco"
+        ]
+      },
+      "noKids": true
+    },
+    "presents": {
+      "showPresents": true,
+      "title": "Mesa de Regalos",
+      "url": "https://mesaderegalos.liverpool.com.mx",
+      "bankDetails": {
+        "bank": "BBVA",
+        "holder": "Francisco Nava",
+        "clabe": "012180012345678901",
+        "account": "1234567890"
+      },
+      "envelopeRain": true
+    },
+    "confirmation": {
+      "showConfirmation": true,
+      "type": "abrasa",
+      "isQuantityFree": true,
+      "whatsappPhone": "",
+      "whatsappMessage": ""
+    },
+    "graduates": {
+      "showGraduates": false
+    },
+    "gallery": {
+      "showGallery": true,
+      "title": "Galería de Fotos",
+      "variant": "mosaic",
+      "maxPhotos": 6
+    },
+    "ticket": {
+      "showTicket": true
+    },
+    "addons": {
+      "lodgingAndWeather": {
+        "showLodging": false,
+        "title": "Hospedaje & Clima",
+        "hotels": [],
+        "weatherCity": "Aguascalientes"
+      },
+      "ourStory": {
+        "showOurStory": false,
+        "title": "Nuestra Historia",
+        "quoteOrPoem": "Por encima de todo, vístanse de amor.",
+        "timeline": []
+      },
+      "faqAndMenu": {
+        "showFaqAndMenu": false,
+        "title": "Preguntas Frecuentes & Menú",
+        "faqs": [],
+        "menuCourses": []
+      },
+      "playlistAndPhotos": {
+        "showPlaylistAndPhotos": false,
+        "title": "Música & Fotos de Invitados"
+      },
+      "monogram": {
+        "showMonogram": true,
+        "title": "Monograma del Evento"
+      }
+    },
+    "farewell": {
+      "showFarewell": true,
+      "hashtag": "#GrethelStefaniaXV",
+      "thankYouMessage": "Gracias por ser parte fundamental en mi vida y acompañarme en este día tan especial."
+    }
+  }
+}

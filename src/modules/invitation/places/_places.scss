@@ -1,0 +1,104 @@
+@use '../../../common/styles/variables' as vars;
+@use '../../../common/styles/mixins' as mix;
+
+.places-section {
+    padding: 6rem 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+
+    &__container {
+        width: 100%;
+        max-width: 960px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+}
+
+.places-section__grid {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.places-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 440px;
+    margin: 0 auto;
+    gap: 1rem;
+    padding: 1.5rem 0;
+    margin-bottom: 3.2rem;
+
+    &__date {
+        font-family: vars.$font-serif;
+        font-size: clamp(1.15rem, 3.5vw, 1.35rem);
+        font-weight: 500;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: vars.$color-primary;
+        margin: 0;
+    }
+
+    &__time {
+        font-family: vars.$font-serif;
+        font-size: clamp(1.2rem, 3vw, 1.4rem);
+        font-weight: 400;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: vars.$color-primary;
+        margin: 0;
+    }
+
+    &__title {
+        font-family: vars.$font-serif;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: vars.$color-primary-900;
+        margin: 0;
+        letter-spacing: 0.02em;
+    }
+
+    &__address {
+        font-family: vars.$font-serif;
+        font-size: clamp(1.15rem, 3.8vw, 1.25rem);
+        font-weight: 300;
+        line-height: 1.7;
+        color: vars.$color-text-700;
+        letter-spacing: 0.5px;
+        margin: 0;
+        width: 90%;
+    }
+
+    &__button {
+        font-family: vars.$font-sans;
+        font-size: clamp(0.75rem, 2.2vw, 0.85rem);
+        font-weight: 600;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        padding: 0.9rem 2.5rem;
+        background-color: transparent;
+        border: 1px solid vars.$color-primary-400;
+        color: vars.$color-primary;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 1.2rem;
+
+        &:hover {
+            background-color: vars.$color-primary;
+            border-color: vars.$color-primary;
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(vars.$color-primary, 0.2);
+        }
+    }
+}

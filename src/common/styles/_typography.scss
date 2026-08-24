@@ -1,0 +1,288 @@
+@use './variables' as *;
+
+/* ==========================================================================
+   Font Imports (@font-face)
+   ========================================================================== */
+
+/* Pack 1 */
+@font-face {
+    font-family: 'Alex Brush';
+    src: url('../../assets/fonts/pack-1/AlexBrushFont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cormorant Garamond';
+    src: url('../../assets/fonts/pack-1/CormorantGaramondFont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../../assets/fonts/pack-1/MontserratFont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Pack 2 */
+@font-face {
+    font-family: 'Pinyon Script';
+    src: url('../../assets/fonts/pack-2/PinyonScriptFont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bodoni Moda';
+    src: url('../../assets/fonts/pack-2/BodoniModaFont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Plus Jakarta Sans';
+    src: url('../../assets/fonts/pack-2/PlusJakartaSansFont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Pack 3 */
+@font-face {
+    font-family: 'Greating';
+    src: url('../../assets/fonts/pack-3/GreatingFont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'EB Garamond';
+    src: url('../../assets/fonts/pack-3/EBGaramondFont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../../assets/fonts/pack-3/OpenSansFont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Pack 4 */
+@font-face {
+    font-family: 'Amsterdam Signature';
+    src: url('../../assets/fonts/pack-4/AmsterdamSignatureFont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('../../assets/fonts/pack-4/PlayfairDisplayFont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../../assets/fonts/pack-4/RalewayFont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Pack 5 */
+@font-face {
+    font-family: 'Halimunde Signature';
+    src: url('../../assets/fonts/pack-5/HalimundeSignatureFont.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cinzel';
+    src: url('../../assets/fonts/pack-5/CinzelFont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('../../assets/fonts/pack-5/OutfitFont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ==========================================================================
+   Typography Base Styles
+   ========================================================================== */
+
+html {
+    font-size: 62.5%;
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    font-family: $font-sans;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: 1.2;
+    overflow-wrap: break-word;
+}
+
+p {
+    line-height: 1.6;
+    overflow-wrap: break-word;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+b,
+strong {
+    font-weight: bold;
+}
+
+small {
+    font-size: 80%;
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+sup {
+    top: -0.5em;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    color: inherit;
+    letter-spacing: inherit;
+}
+
+/* ==========================================================================
+   Typography Helpers
+   ========================================================================== */
+
+.text-center {
+    text-align: center;
+}
+
+/* Active Theme Font Helpers */
+.font-cursive {
+    font-family: $font-cursive;
+}
+
+.font-serif {
+    font-family: $font-serif;
+}
+
+.font-sans {
+    font-family: $font-sans;
+}
+
+.font-cursive-1 {
+    font-family: $font-p1-cursive;
+}
+
+.font-serif-1 {
+    font-family: $font-p1-serif;
+}
+
+.font-sans-1 {
+    font-family: $font-p1-sans;
+}
+
+.font-cursive-2 {
+    font-family: $font-p2-cursive;
+}
+
+.font-serif-2 {
+    font-family: $font-p2-serif;
+}
+
+.font-sans-2 {
+    font-family: $font-p2-sans;
+}
+
+.font-cursive-3 {
+    font-family: $font-p3-cursive;
+}
+
+.font-serif-3 {
+    font-family: $font-p3-serif;
+}
+
+.font-sans-3 {
+    font-family: $font-p3-sans;
+}
+
+.font-cursive-4 {
+    font-family: $font-p4-cursive;
+}
+
+.font-serif-4 {
+    font-family: $font-p4-serif;
+}
+
+.font-sans-4 {
+    font-family: $font-p4-sans;
+}
+
+.font-cursive-5 {
+    font-family: $font-p5-cursive;
+}
+
+.font-serif-5 {
+    font-family: $font-p5-serif;
+}
+
+.font-sans-5 {
+    font-family: $font-p5-sans;
+}

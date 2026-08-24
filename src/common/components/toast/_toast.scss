@@ -1,0 +1,46 @@
+@use '../../styles/variables' as vars;
+@use '../../styles/mixins' as mix;
+
+[data-sonner-toaster] {
+    font-family: vars.$font-sans !important;
+}
+
+.toast-custom {
+    font-family: vars.$font-sans !important;
+    border-radius: 0 !important;
+    padding: 1.4rem 1.8rem !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12) !important;
+    border: 1px solid vars.$color-primary-100 !important;
+    background-color: #ffffff !important;
+    color: vars.$color-text-900 !important;
+
+    [data-title] {
+        font-family: vars.$font-serif !important;
+        font-size: 1.5rem !important;
+        font-weight: 600 !important;
+        color: vars.$color-primary-900 !important;
+    }
+
+    [data-description] {
+        font-family: vars.$font-sans !important;
+        font-size: 1.3rem !important;
+        color: vars.$color-text-600 !important;
+        margin-top: 0.2rem !important;
+    }
+}
+
+.toast-success {
+    border-left: 4px solid #10b981 !important;
+}
+
+.toast-error {
+    border-left: 4px solid #ef4444 !important;
+}
+
+.toast-info {
+    border-left: 4px solid vars.$color-primary !important;
+}
+
+.toast-warning {
+    border-left: 4px solid #f59e0b !important;
+}

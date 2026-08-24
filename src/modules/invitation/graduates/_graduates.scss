@@ -1,0 +1,120 @@
+@use '../../../common/styles/variables' as vars;
+@use '../../../common/styles/mixins' as mix;
+
+.graduates {
+    padding: 6rem 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: vars.$color-secondary-100;
+
+    &__container {
+        width: 100%;
+        max-width: 960px;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__card {
+        width: 95%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+        overflow: hidden;
+        padding: 1rem;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+    &__content {
+        background: radial-gradient(circle, #ffffff 60%, #fbf9f4 100%);
+        border: 1px solid vars.$color-secondary;
+        padding: 3.5rem 3rem 4.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        box-sizing: border-box;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            right: 6px;
+            bottom: 6px;
+            border: 0.5px solid rgba(vars.$color-secondary, 0.6);
+            pointer-events: none;
+            z-index: 10;
+        }
+    }
+
+    &__sub-message {
+        font-family: vars.$font-sans;
+        font-size: clamp(0.8rem, 2.4vw, 0.9rem);
+        color: vars.$color-text-500;
+        text-transform: uppercase;
+        margin: 1rem 0 2rem;
+        letter-spacing: 1px;
+    }
+
+    &__careers-list {
+        display: flex;
+        flex-direction: column;
+        gap: 2.2rem;
+        width: 100%;
+        max-width: 380px;
+        margin-top: 1rem;
+    }
+
+    &__career-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    &__career-name {
+        width: 80%;
+        font-family: vars.$font-serif;
+        font-size: clamp(1.05rem, 3vw, 1.25rem);
+        color: vars.$color-primary;
+        text-transform: uppercase;
+        margin: 0 0 1rem;
+        line-height: 1.4;
+    }
+
+    &__career-divider {
+        width: 50%;
+        height: 1px;
+        background: linear-gradient(to right, transparent, rgba(vars.$color-secondary, 0.4), transparent);
+        margin: 0.5rem auto 2.2rem;
+    }
+
+    &__button {
+        font-family: vars.$font-sans;
+        font-size: clamp(0.75rem, 2.2vw, 0.85rem);
+        font-weight: 600;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        padding: 0.9rem 2.5rem;
+        background-color: transparent;
+        border: 1px solid vars.$color-primary-400;
+        color: vars.$color-primary;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 1.2rem;
+
+        &:hover {
+            background-color: vars.$color-primary;
+            border-color: vars.$color-primary;
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(vars.$color-primary, 0.2);
+        }
+    }
+}
