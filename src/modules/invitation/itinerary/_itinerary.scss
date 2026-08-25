@@ -1,1 +1,209 @@
-.itinerary {}
+@use '../../../common/styles/variables' as vars;
+@use '../../../common/styles/mixins' as mix;
+
+.itinerary {
+    position: relative;
+    background-color: #ffffff;
+    overflow: hidden;
+
+    &__img {
+        width: 100%;
+        height: auto;
+        display: block;
+
+        &--top {
+            margin-top: -2rem;
+        }
+
+        &--bottom {
+            margin-top: 3rem;
+        }
+    }
+
+
+    &__container {
+        width: 95%;
+        margin: 0 auto;
+        padding: 0 3rem;
+    }
+
+    &__header {
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    &__subtitle-text {
+        font-family: vars.$font-serif;
+    }
+
+    &__grid {
+        width: 100%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3.5rem 0;
+        position: relative;
+        margin-top: 4rem;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 2rem;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1px;
+            background-color: rgba(vars.$color-secondary-600, 0.25);
+            z-index: 1;
+        }
+
+        @include mix.respondToMin('xs') {
+            gap: 3rem 0;
+        }
+    }
+
+    &__active-node {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 4.4rem;
+        height: 4.4rem;
+        border-radius: 50%;
+        background-color: vars.$color-secondary-400;
+        color: vars.$color-3-200;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 6px 20px rgba(vars.$color-secondary-900, 0.28);
+        z-index: 10;
+        transition: top 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+
+        @include mix.respondToMin('xs') {
+            width: 3.8rem;
+            height: 3.8rem;
+        }
+    }
+
+    &__node-outline {
+        position: absolute;
+        top: 50%;
+        width: 3.8rem;
+        height: 3.8rem;
+        border-radius: 50%;
+        background-color: #ffffff;
+        border: 1px solid rgba(vars.$color-secondary-600, 0.4);
+        color: rgba(vars.$color-secondary-600, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+        transition: opacity 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+
+        @include mix.respondToMin('xs') {
+            width: 3.2rem;
+            height: 3.2rem;
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 3;
+        min-height: 5rem;
+        margin-top: -2rem;
+        opacity: 0.55;
+        transition: opacity 0.35s ease, transform 0.35s ease;
+
+        &--active {
+            opacity: 1;
+            transform: scale(1.03);
+
+            .itinerary__node-outline {
+                opacity: 0;
+            }
+        }
+
+        &--left {
+            grid-column: 1 / 2;
+            text-align: center;
+            align-items: center;
+            padding-right: 3.8rem;
+
+            .itinerary__node-outline {
+                right: 0;
+                transform: translate(50%, -50%);
+            }
+        }
+
+        &--right {
+            grid-column: 2 / 3;
+            text-align: center;
+            align-items: center;
+            padding-left: 3.8rem;
+
+            .itinerary__node-outline {
+                left: 0;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+
+    &__item-icon {
+        width: 4rem;
+        height: 4rem;
+        object-fit: contain;
+        margin-bottom: 0.3rem;
+    }
+
+    &__time {
+        font-family: vars.$font-serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        color: vars.$color-secondary-600;
+        text-transform: uppercase;
+        margin-bottom: 0.3rem;
+        line-height: 1.2;
+    }
+
+
+
+    &__event {
+        font-family: vars.$font-serif;
+        font-size: 1rem;
+        font-weight: 300;
+        color: #333333;
+        line-height: 1.4;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+    }
+
+    /* Maceteros en la parte inferior */
+    &__maceteros {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        width: 100%;
+        margin-top: 2rem;
+        padding: 0 1.5rem;
+        pointer-events: none;
+    }
+
+    &__macetero {
+        width: 9rem;
+        max-width: 32vw;
+        height: auto;
+        display: block;
+
+        &--left {
+            transform: scaleX(1);
+        }
+
+        &--right {
+            transform: scaleX(-1);
+        }
+    }
+}

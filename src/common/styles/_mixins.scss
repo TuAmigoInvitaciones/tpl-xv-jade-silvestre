@@ -177,3 +177,17 @@
         box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
     }
 }
+
+/// Standardized Uppercase Serif Subtext
+@mixin textSerifUppercase($font: null) {
+    @if $font {
+        font-family: $font;
+    }
+    font-size: 1.1rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.20rem;
+    color: #4a4a4a;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}

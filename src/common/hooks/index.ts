@@ -14,6 +14,8 @@ export { useConfetti } from './useConfetti'
 export { useScratchCard } from './useScratchCard'
 export { useCalendar } from './useCalendar'
 export * from './useConfirmation'
+export { useScrollTimeline } from './useScrollTimeline'
 export type { ConfettiOptions } from './useConfetti'
 export type { UseScratchCardOptions } from './useScratchCard'
 export type { CalendarDayItem, UseCalendarOptions } from './useCalendar'
+

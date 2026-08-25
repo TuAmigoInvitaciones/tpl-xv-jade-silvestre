@@ -4,7 +4,7 @@ import { SectionHeader } from '@/common/components/section-header/SectionHeader'
 
 import dressCode from '@/assets/images/icons/dress-code.svg'
 import florCentral from '@/assets/images/icons/flor-central.svg'
-import photo from '@/assets/images/photos/3.jpeg'
+import photo from '@/assets/images/photos/2.jpeg'
 
 export const DressCodeSection: React.FC = () => {
     const { sections } = useInvitationConfig()
@@ -70,15 +70,16 @@ export const DressCodeSection: React.FC = () => {
                 </div>
             </div>
 
-            {/* Mosaico tríptico de 1 sola foto dividida en 3 paneles */}
-            <div className="dress-code-section__mosaic">
-                <div className="dress-code-section__mosaic-slice" style={{ backgroundImage: `url(${photo})` }} />
-                <div className="dress-code-section__mosaic-slice" style={{ backgroundImage: `url(${photo})` }} />
-                <div className="dress-code-section__mosaic-slice" style={{ backgroundImage: `url(${photo})` }} />
+            <div className="dress-code-section__photo-frame">
+                <div className="dress-code-section__photo-inner">
+                    <img src={photo} alt="Foto Dress Code" />
+                </div>
             </div>
         </section>
     )
 }
+
+
 
 
 
