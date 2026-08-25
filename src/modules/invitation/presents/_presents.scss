@@ -1,1 +1,112 @@
-.presents {}
+@use '../../../common/styles/variables' as vars;
+@use '../../../common/styles/mixins' as mix;
+
+.presents-section {
+    padding: 8rem 0;
+
+    &__container {
+        max-width: 780px;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    &__accordion-wrapper {
+        margin-top: 3.5rem;
+
+        .accordion__item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0;
+        }
+
+        .accordion__icon {
+            color: vars.$color-secondary-600;
+        }
+    }
+
+
+    &__accordion-content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1.5rem 0 0.5rem;
+
+        .btn {
+            position: relative;
+            z-index: 2;
+        }
+    }
+
+    &__card-flor {
+        position: absolute;
+        width: 8rem;
+        height: auto;
+        pointer-events: none;
+        opacity: 0.75;
+        z-index: 1;
+
+        &--bottom-right {
+            bottom: -5rem;
+            right: -3.5rem;
+        }
+
+        &--bottom-left {
+            bottom: -4rem;
+            left: -4rem;
+            transform: scaleX(-1);
+        }
+    }
+
+
+
+
+    &__card-text {
+        font-family: vars.$font-serif;
+        font-size: 1.05rem;
+        color: #4a4a4a;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+        position: relative;
+        z-index: 2;
+    }
+
+    &__bank-info {
+        width: 100%;
+        background-color: vars.$color-2-100;
+        padding: 1.2rem 1.4rem;
+        margin-bottom: 1.5rem;
+        text-align: left;
+        border: 1px dashed rgba(vars.$color-primary-700, 0.2);
+        position: relative;
+        z-index: 2;
+    }
+
+
+    &__bank-line {
+        font-family: vars.$font-serif;
+        font-size: 0.95rem;
+        color: #4a4a4a;
+        margin-bottom: 0.4rem;
+        line-height: 1.4;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        span {
+            color: vars.$color-primary-700;
+            margin-right: 0.3rem;
+        }
+
+        strong {
+            color: vars.$color-primary-900;
+            font-weight: 600;
+        }
+
+        &--clabe {
+            word-break: break-all;
+        }
+    }
+}

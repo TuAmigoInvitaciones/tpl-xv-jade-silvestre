@@ -163,7 +163,19 @@ export interface SectionsConfig {
     }
     details?: SectionItemConfig & { showDetails?: boolean }
     gallery?: SectionItemConfig & { showGallery?: boolean }
-    presents?: SectionItemConfig & { showPresents?: boolean; title?: string; url?: string }
+    presents?: SectionItemConfig & {
+        showPresents?: boolean
+        title?: string
+        url?: string
+        bankDetails?: {
+            bank?: string
+            holder?: string
+            clabe?: string
+            account?: string
+        }
+        envelopeRain?: boolean
+    }
+
     confirmation?: ConfirmationSectionConfig
     rsvp?: SectionItemConfig & { showRsvp?: boolean }
     farewell?: SectionItemConfig & { showFarewell?: boolean }

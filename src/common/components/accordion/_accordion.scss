@@ -10,15 +10,13 @@
     display: flex;
     flex-direction: column;
 
-    /* --- Variaciones de Estilo --- */
     &--bordered {
-        border: 1px solid vars.$color-primary-200;
-        border-radius: 1.6rem;
+        border: 1px solid vars.$color-secondary-200;
         overflow: hidden;
         background-color: #ffffff;
 
         .accordion__item:not(:last-child) {
-            border-bottom: 1px solid vars.$color-primary-100;
+            border-bottom: 1px solid vars.$color-secondary-200;
         }
     }
 
@@ -34,7 +32,7 @@
             transition: border-color 0.25s ease, box-shadow 0.25s ease;
 
             &--expanded {
-                border-color: vars.$color-primary;
+                border-color: vars.$color-primary-100;
                 box-shadow: 0 6px 20px rgba(vars.$color-primary-900, 0.08);
             }
         }
@@ -76,8 +74,7 @@
         cursor: pointer;
         text-align: left;
         font-family: vars.$font-serif;
-        font-size: 1.8rem;
-        font-weight: 600;
+        font-size: 1.2rem;
         color: vars.$color-primary-900;
         transition: background-color 0.2s ease, color 0.2s ease;
 
@@ -127,10 +124,11 @@
     }
 
     &__body {
-        padding: 0 2.4rem 2.2rem 2.4rem;
+        padding: 0 2.4rem 3rem;
         font-family: vars.$font-sans;
         font-size: 1.5rem;
         line-height: 1.6;
         color: vars.$color-text-700;
     }
+
 }
