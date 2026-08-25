@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux"
-import { useCallback } from "react";
+import { useCallback, useRef } from "react";
 
 import type { AppDispatch, RootState } from "@/store/store";
 import { setIsChecking, setTicket } from "@/store/ticket/ticket.slice";
@@ -11,6 +11,7 @@ export const useTicket = () => {
 
     const dispatch = useDispatch<AppDispatch>();
     const { error, isLoading, isChecking, ticket } = useSelector((state: RootState) => state.ticket)
+    const initialTicketRef = useRef(ticket)
 
     const onGetTicket = useCallback(async (keyPass: string) => {
         return await dispatch(startGettingTicket(keyPass))
@@ -27,11 +28,14 @@ export const useTicket = () => {
         const ticketStr = localStorage.getItem('abrasa-ticket')
         if (ticketStr) {
             try {
-                const ticket = JSON.parse(ticketStr)
-                dispatch(setTicket(ticket))
+                const parsedTicket = JSON.parse(ticketStr)
+                dispatch(setTicket(parsedTicket))
             } catch {
                 dispatch(setTicket(null))
             }
+        } else if (initialTicketRef.current && (initialTicketRef.current.id || initialTicketRef.current.keyPass || initialTicketRef.current.name)) {
+            localStorage.setItem('abrasa-ticket', JSON.stringify(initialTicketRef.current))
+            dispatch(setTicket(initialTicketRef.current))
         } else {
             dispatch(setTicket(null))
         }
