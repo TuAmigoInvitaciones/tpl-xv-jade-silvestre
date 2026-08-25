@@ -11,6 +11,7 @@
 html {
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
+    overflow-x: hidden;
 }
 
 body {
@@ -86,13 +87,8 @@ table {
 
 /* Invitation Layout Modifiers */
 .invitation {
-    max-width: 96rem;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 2rem 1.6rem 6rem;
-
     &--has-menu-bar {
-        margin-top: calc(vars.$menu-bar-height + 1rem);
+        margin-top: vars.$menu-bar-height;
     }
 }
 

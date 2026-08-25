@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useLocation } from 'react-router-dom'
 import { openMenu, closeMenu } from '@/store/ui/menu.slice'
@@ -28,8 +28,21 @@ const formatTitleFromKey = (key: string) => {
 export const useMenu = (props?: MenuProps) => {
     const dispatch = useDispatch()
     const isMenuOpen = useSelector((state: RootState) => state.menu.isOpen)
-    const { theme, config, sections } = useInvitationConfig()
+    const { theme, ui, config, sections } = useInvitationConfig()
     const location = useLocation()
+    const menuConfig = ui?.menu || theme?.menu
+
+    const [hasScrolledPast100vh, setHasScrolledPast100vh] = useState(false)
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setHasScrolledPast100vh(window.scrollY >= window.innerHeight)
+        }
+
+        handleScroll()
+        window.addEventListener('scroll', handleScroll, { passive: true })
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
 
     const onOpenMenu = () => dispatch(openMenu())
     const onCloseMenu = () => dispatch(closeMenu())
@@ -42,10 +55,10 @@ export const useMenu = (props?: MenuProps) => {
     }
 
     const isHiddenRoute = location.pathname === '/envelop' || location.pathname === '/search'
-    const isMenuVisible = (props?.show ?? theme.menu?.show ?? config?.hasMenu ?? true) && !isHiddenRoute
-    const activeVariant: MenuVariant = props?.variant || theme.menu?.variant || 'floating'
-    const activeTitle = props?.title || theme.menu?.title || 'Menú'
-    const activeBtnVariant: ButtonVariant = props?.buttonVariant || theme.menu?.buttonVariant || theme.buttonVariant || 'icon'
+    const isMenuVisible = (props?.show ?? menuConfig?.show ?? config?.hasMenu ?? true) && !isHiddenRoute && hasScrolledPast100vh
+    const activeVariant: MenuVariant = props?.variant || menuConfig?.variant || 'floating'
+    const activeTitle = props?.title || menuConfig?.title || 'Menú'
+    const activeBtnVariant: ButtonVariant = props?.buttonVariant || menuConfig?.buttonVariant || theme.buttonVariant || 'icon'
 
     const defaultItems: MenuItem[] = useMemo(() => {
         if (!sections) return []
