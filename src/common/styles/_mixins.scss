@@ -159,3 +159,21 @@
         overflow: hidden;
     }
 }
+
+/// Polaroid Card Layout & Effect
+@mixin polaroidCard($rotate: -1.5deg, $maxWidth: 22rem, $paddingBottom: 3.5rem) {
+    background-color: #ffffff;
+    padding: 1.2rem 1.2rem $paddingBottom 1.2rem;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 4px;
+    width: 100%;
+    max-width: $maxWidth;
+    transform: rotate($rotate);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: rotate(0deg) scale(1.02);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
+    }
+}

@@ -10,7 +10,7 @@ import photo from '@/assets/images/photos/8.jpg'
 import cabania from '@/assets/images/icons/cabania.svg'
 import temploIcon from '@/assets/images/icons/templo.svg'
 import copasIcon from '@/assets/images/icons/copas.svg'
-import bgImage from '@/assets/images/backgrounds/bg-2.svg'
+import flor from '@/assets/images/icons/flor-2.svg'
 
 const FLUID_EASE = [0.22, 1, 0.36, 1] as [number, number, number, number]
 
@@ -48,10 +48,6 @@ export const PlacesSection: React.FC = () => {
                 <img src={photo} alt="photo" />
             </motion.div>
             <section id="places" className="places-section">
-                <div
-                    className="places-section__bg"
-                    style={{ backgroundImage: `url(${bgImage})` }}
-                />
                 <div className="places-section__container">
 
                     <div className="places-section__logo">
@@ -97,6 +93,10 @@ export const PlacesSection: React.FC = () => {
                                     viewport={{ once: true, margin: '-10% 0px' }}
                                     transition={{ duration: 1.1, delay: 0.35 + idx * 0.22, ease: FLUID_EASE }}
                                 >
+                                    <div className={`places-item__flor ${idx === 0 ? 'places-item__flor--first' : 'places-item__flor--second'}`}>
+                                        <img src={flor} alt="Flor" />
+                                    </div>
+
                                     {placeIcon && (
                                         <div className="places-item__icon">
                                             <img src={placeIcon} alt={loc.title || 'Icono recinto'} />
