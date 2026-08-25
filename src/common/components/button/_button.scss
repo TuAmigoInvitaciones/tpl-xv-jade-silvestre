@@ -6,8 +6,8 @@
     align-items: center;
     justify-content: center;
     gap: 0.8rem;
-    font-family: vars.$font-sans;
-    font-size: 1.4rem;
+    font-family: vars.$font-serif;
+    font-size: 1.2rem;
     font-weight: 500;
     line-height: 1;
     letter-spacing: 0.04em;
@@ -41,8 +41,8 @@
     }
 
     &--secondary {
-        background-color: vars.$color-secondary;
-        color: #ffffff;
+        background-color: vars.$color-secondary-400;
+        color: vars.$color-text-800;
 
         &:hover:not(:disabled) {
             background-color: vars.$color-secondary-600;

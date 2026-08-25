@@ -1,4 +1,152 @@
 @use '../../../common/styles/variables' as vars;
 @use '../../../common/styles/mixins' as mix;
 
-.countdown-section {}
+.countdown-section {
+    padding: 10rem 0;
+    position: relative;
+
+    &__container {
+        width: 100%;
+        max-width: 44rem;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__header {
+        margin-bottom: 2rem;
+        width: 100%;
+    }
+
+    &__content {
+        width: 100%;
+        margin-bottom: 3rem;
+    }
+
+    &__calendar {
+        width: 90%;
+        max-width: 34rem;
+        margin: 0 auto;
+        text-align: center;
+        background-color: #ffffff;
+        padding: 2.8rem 2.2rem 2.4rem;
+        border: 1px solid rgba(vars.$color-secondary-600, 0.25);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+
+        &-title {
+            font-family: vars.$font-serif;
+            font-size: 1.6rem;
+            letter-spacing: 0.25em;
+            color: vars.$color-primary-600;
+            margin-bottom: 1.8rem;
+        }
+
+        &-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 1.2rem 0.4rem;
+            align-items: center;
+            justify-items: center;
+        }
+
+        &-head {
+            font-family: vars.$font-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: vars.$color-secondary-400;
+            text-transform: lowercase;
+            margin-bottom: 0.4rem;
+        }
+
+        &-day {
+            position: relative;
+            font-family: vars.$font-serif;
+            font-size: 1rem;
+            font-weight: 400;
+            color: vars.$color-text;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &--muted {
+                color: #b0b0b0;
+                opacity: 0.6;
+            }
+
+            &--featured {
+                font-weight: 700;
+                color: vars.$color-secondary-600;
+
+                .countdown-section__calendar-num {
+                    position: relative;
+                    z-index: 2;
+                    color: vars.$color-secondary-600;
+                    font-weight: 700;
+                }
+            }
+        }
+
+        &-heart {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -48%);
+            width: 4.2rem;
+            height: 4.2rem;
+            min-width: 4.2rem;
+            min-height: 4.2rem;
+            z-index: 1;
+            color: vars.$color-secondary-400;
+            animation: calendarHeartPulse 2.4s infinite ease-in-out;
+            pointer-events: none;
+        }
+    }
+
+    &__button {
+        margin-top: 2rem;
+    }
+
+    &__flower-1 {
+        position: absolute;
+        top: -5%;
+        right: -13%;
+        z-index: -1;
+        width: 18rem;
+        opacity: .9;
+    }
+
+    &__flower-2 {
+        position: absolute;
+        bottom: -3%;
+        left: -13%;
+        z-index: -1;
+        width: 18rem;
+        opacity: .9;
+    }
+
+    &__photo {
+        position: relative;
+        width: 100%;
+        display: block;
+
+        img {
+            width: 100%;
+            height: 35rem;
+            object-fit: cover;
+            display: block;
+        }
+    }
+
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(vars.$color-primary, .1);
+        z-index: 1;
+    }
+}

@@ -27,13 +27,12 @@
 
     &__number {
         font-family: vars.$font-serif;
-        font-weight: 700;
         line-height: 1;
         color: vars.$color-primary-900;
     }
 
     &__concept {
-        font-family: vars.$font-sans;
+        font-family: vars.$font-serif;
         font-weight: 500;
         text-transform: uppercase;
         letter-spacing: 0.08em;
