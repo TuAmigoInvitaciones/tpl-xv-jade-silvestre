@@ -19,10 +19,7 @@ import type { MusicPlayerVariant } from './music-player.types'
 
 export type EventType = 'wedding' | 'graduation' | 'xv' | 'general'
 
-export interface ThemeConfig {
-    fontPack: number
-    palette: number
-    buttonVariant?: ButtonVariant
+export interface UIConfig {
     menu?: {
         show?: boolean
         variant?: MenuVariant
@@ -36,6 +33,14 @@ export interface ThemeConfig {
         songTitle?: string
         artistName?: string
     }
+}
+
+export interface ThemeConfig {
+    fontPack: number
+    palette: number
+    buttonVariant?: ButtonVariant
+    menu?: UIConfig['menu']
+    music?: UIConfig['music']
 }
 
 export interface SectionItemConfig {
@@ -165,6 +170,7 @@ export interface SectionsConfig {
 export interface InvitationConfigState {
     eventType?: EventType
     theme: ThemeConfig
+    ui?: UIConfig
     config: Record<string, boolean>
     sections: SectionsConfig
 }

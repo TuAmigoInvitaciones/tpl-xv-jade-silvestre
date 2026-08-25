@@ -10,8 +10,9 @@ export const useMusicPlayer = (props?: MusicPlayerProps) => {
     const dispatch = useDispatch()
     const isPlaying = useSelector((state: RootState) => state.music.isPlaying)
     const audioRef = useRef<HTMLAudioElement | null>(null)
-    const { theme, config } = useInvitationConfig()
+    const { theme, ui, config } = useInvitationConfig()
     const location = useLocation()
+    const musicConfig = ui?.music || theme?.music
 
     useEffect(() => {
         if (!audioRef.current) return
@@ -29,11 +30,11 @@ export const useMusicPlayer = (props?: MusicPlayerProps) => {
     const onToggleMusic = () => dispatch(toggleMusic())
 
     const isHiddenRoute = location.pathname === '/envelop' || location.pathname === '/search'
-    const isMusicVisible = (props?.show ?? theme.music?.show ?? config?.hasMusic ?? true) && !isHiddenRoute
-    const activeVariant: MusicPlayerVariant = props?.variant || theme.music?.variant || 'floating'
-    const activeBtnVariant: ButtonVariant = props?.buttonVariant || theme.music?.buttonVariant || theme.buttonVariant || 'primary'
-    const activeSongTitle = props?.songTitle || theme.music?.songTitle || 'Música de fondo'
-    const activeArtistName = props?.artistName || theme.music?.artistName || 'Música del evento'
+    const isMusicVisible = (props?.show ?? musicConfig?.show ?? config?.hasMusic ?? true) && !isHiddenRoute
+    const activeVariant: MusicPlayerVariant = props?.variant || musicConfig?.variant || 'floating'
+    const activeBtnVariant: ButtonVariant = props?.buttonVariant || musicConfig?.buttonVariant || theme.buttonVariant || 'primary'
+    const activeSongTitle = props?.songTitle || musicConfig?.songTitle || 'Música de fondo'
+    const activeArtistName = props?.artistName || musicConfig?.artistName || 'Música del evento'
 
     return {
         isPlaying,
