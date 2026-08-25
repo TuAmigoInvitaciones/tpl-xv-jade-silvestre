@@ -55,10 +55,6 @@
             background-color: rgba(vars.$color-secondary-600, 0.25);
             z-index: 1;
         }
-
-        @include mix.respondToMin('xs') {
-            gap: 3rem 0;
-        }
     }
 
     &__active-node {
@@ -76,11 +72,6 @@
         box-shadow: 0 6px 20px rgba(vars.$color-secondary-900, 0.28);
         z-index: 10;
         transition: top 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-
-        @include mix.respondToMin('xs') {
-            width: 3.8rem;
-            height: 3.8rem;
-        }
     }
 
     &__node-outline {
@@ -97,11 +88,6 @@
         justify-content: center;
         z-index: 2;
         transition: opacity 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-
-        @include mix.respondToMin('xs') {
-            width: 3.2rem;
-            height: 3.2rem;
-        }
     }
 
     &__item {
@@ -178,31 +164,5 @@
         line-height: 1.4;
         text-transform: uppercase;
         letter-spacing: 0.08em;
-    }
-
-    /* Maceteros en la parte inferior */
-    &__maceteros {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        width: 100%;
-        margin-top: 2rem;
-        padding: 0 1.5rem;
-        pointer-events: none;
-    }
-
-    &__macetero {
-        width: 9rem;
-        max-width: 32vw;
-        height: auto;
-        display: block;
-
-        &--left {
-            transform: scaleX(1);
-        }
-
-        &--right {
-            transform: scaleX(-1);
-        }
     }
 }

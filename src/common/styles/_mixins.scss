@@ -107,42 +107,87 @@
 
 /// Responsive Media Query Helper
 @mixin respondToMin($breakpoint) {
-    @if $breakpoint =='sm' or $breakpoint ==576px {
+    @if $breakpoint == 'xs' or $breakpoint == 480px {
+        @media (min-width: 480px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint == 'sm' or $breakpoint == 576px {
         @media (min-width: 576px) {
             @content;
         }
     }
 
-    @else if $breakpoint =='md' or $breakpoint ==768px {
+    @else if $breakpoint == 'md' or $breakpoint == 768px {
         @media (min-width: 768px) {
             @content;
         }
     }
 
-    @else if $breakpoint =='lg' or $breakpoint ==992px {
+    @else if $breakpoint == 'lg' or $breakpoint == 992px {
         @media (min-width: 992px) {
             @content;
         }
     }
 
-    @else if $breakpoint =='xl' or $breakpoint ==1200px {
+    @else if $breakpoint == 'xl' or $breakpoint == 1200px {
         @media (min-width: 1200px) {
             @content;
         }
     }
 
     @else {
-        @media (max-width: $breakpoint) {
+        @media (min-width: #{$breakpoint}) {
+            @content;
+        }
+    }
+}
+
+@mixin respondToMax($breakpoint) {
+    @if $breakpoint == 'xs' or $breakpoint == 480px {
+        @media (max-width: 480px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint == 'sm' or $breakpoint == 576px {
+        @media (max-width: 576px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint == 'md' or $breakpoint == 768px {
+        @media (max-width: 768px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint == 'lg' or $breakpoint == 992px {
+        @media (max-width: 992px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint == 'xl' or $breakpoint == 1200px {
+        @media (max-width: 1200px) {
+            @content;
+        }
+    }
+
+    @else {
+        @media (max-width: #{$breakpoint}) {
             @content;
         }
     }
 }
 
 @mixin respond-to($breakpoint) {
-    @include respondTo($breakpoint) {
+    @include respondToMin($breakpoint) {
         @content;
     }
 }
+
 
 /// Text Truncation (Single or Multi-line)
 @mixin textTruncate($lines: 1) {
