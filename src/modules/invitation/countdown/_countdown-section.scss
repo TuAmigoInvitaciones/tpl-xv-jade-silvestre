@@ -2,7 +2,7 @@
 @use '../../../common/styles/mixins' as mix;
 
 .countdown-section {
-    padding: 10rem 0;
+    padding: 8rem 0;
     position: relative;
 
     &__container {
@@ -66,7 +66,7 @@
             font-weight: 400;
             color: vars.$color-text;
             width: 2rem;
-            height: 2rem;
+            height: 1.2rem;
             display: flex;
             align-items: center;
             justify-content: center;
