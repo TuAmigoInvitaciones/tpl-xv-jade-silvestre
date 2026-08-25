@@ -27,7 +27,7 @@
     }
   },
   "config": {
-    "hasTicketingSystem": false,
+    "hasTicketingSystem": true,
     "hasRSVP": true,
     "hasMusic": true,
     "hasMenu": true
@@ -51,6 +51,10 @@
       "showMessage": true,
       "message": "Hay momentos inolvidables que se atesoran en el corazón para siempre. Por esa razón quiero que compartas conmigo esta noche tan especial.",
       "quote": "“Pues mandará a sus ángeles acerca de tí, para que te guarden en todos tus caminos.” -Salmo 91:11-"
+    },
+    "countdown": {
+      "showCountdown": true,
+      "targetDate": "2026-12-18T19:00:00"
     },
     "family": {
       "showFamily": true,

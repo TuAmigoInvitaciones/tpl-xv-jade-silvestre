@@ -35,8 +35,8 @@ export const Invitation: React.FC = () => {
         <main className={containerClass}>
             <HeroSection />
             <ScratchCardSection />
-            <CountdownSection />
             <MessageSection />
+            <CountdownSection />
             <MonogramSection />
             <OurStorySection />
             {showTicketSystem && <RsvpSection />}
