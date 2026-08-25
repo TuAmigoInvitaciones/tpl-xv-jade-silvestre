@@ -119,6 +119,10 @@
     border: 1px solid rgba(vars.$color-primary-700, 0.25);
     background-color: #ffffff;
 
+    @include mix.respondToMin('xs') {
+        width: 90%;
+    }
+
     &__icon {
         display: flex;
         justify-content: center;

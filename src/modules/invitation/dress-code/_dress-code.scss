@@ -40,8 +40,11 @@
 
         &--top-right {
             top: -0.5rem;
-            right: -0.5rem;
-            transform: rotate(180deg);
+            right: -1rem;
+
+            img {
+                transform: rotate(180deg);
+            }
         }
 
         &--bottom-left {
@@ -154,6 +157,10 @@
         border: 1px solid rgba(vars.$color-primary-700, 0.4);
         box-shadow: 0 10px 30px rgba(vars.$color-primary, 0.12);
         transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+        @include mix.respondToMin('xs') {
+            width: 90%;
+        }
 
         &:hover {
             transform: translateY(-4px);

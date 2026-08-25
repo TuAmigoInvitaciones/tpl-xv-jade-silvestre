@@ -18,6 +18,10 @@
         flex-direction: column;
         align-items: center;
         overflow: hidden;
+
+        @include mix.respondToMin('xs') {
+            width: 90%;
+        }
     }
 
     &__logo {

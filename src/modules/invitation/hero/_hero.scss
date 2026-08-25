@@ -44,6 +44,26 @@
         text-align: center;
         font-family: vars.$font-serif;
         font-size: 3.2rem;
+
+        @include mix.respondToMin('xs') {
+            font-size: 3.6rem;
+        }
+
+        @include mix.respondToMin('sm') {
+            font-size: 4.2rem;
+        }
+
+        @include mix.respondToMin('md') {
+            font-size: 5.2rem;
+        }
+
+        @include mix.respondToMin('lg') {
+            font-size: 6.2rem;
+        }
+
+        @include mix.respondToMin('xl') {
+            font-size: 7rem;
+        }
     }
 
     &__date {
@@ -63,6 +83,31 @@
         text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
         z-index: 2;
 
+        @include mix.respondToMin('xs') {
+            font-size: 4.5rem;
+            bottom: 3.5rem;
+        }
+
+        @include mix.respondToMin('sm') {
+            font-size: 5rem;
+            bottom: 4rem;
+        }
+
+        @include mix.respondToMin('md') {
+            font-size: 5.8rem;
+            bottom: 4.5rem;
+        }
+
+        @include mix.respondToMin('lg') {
+            font-size: 6.5rem;
+            bottom: 5rem;
+        }
+
+        @include mix.respondToMin('xl') {
+            font-size: 7.2rem;
+            bottom: 5.5rem;
+        }
+
         &-day {
             position: relative;
             display: inline-flex;
@@ -80,6 +125,52 @@
         height: auto;
         filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.6));
         pointer-events: none;
+
+        @include mix.respondToMin('xs') {
+            width: 7rem;
+            top: -2.8rem;
+            left: -8%;
+        }
+
+        @include mix.respondToMin('sm') {
+            width: 7.8rem;
+            top: -3.2rem;
+            left: -9%;
+        }
+
+        @include mix.respondToMin('md') {
+            width: 9rem;
+            top: -3.6rem;
+            left: -10%;
+        }
+
+        @include mix.respondToMin('lg') {
+            width: 10.2rem;
+            top: -4.2rem;
+            left: -11%;
+        }
+
+        @include mix.respondToMin('xl') {
+            width: 11.5rem;
+            top: -4.8rem;
+            left: -12%;
+        }
+    }
+
+    @include mix.respondToMin('xs') {
+        height: 85vh;
+    }
+
+    @include mix.respondToMin('sm') {
+        height: 90vh;
+    }
+
+    @include mix.respondToMin('md') {
+        height: 95vh;
+    }
+
+    @include mix.respondToMin('lg') {
+        height: 100vh;
     }
 }
 
@@ -93,6 +184,14 @@
         justify-content: center;
         gap: 0.8rem;
         z-index: 1;
+
+        @include mix.respondToMin('sm') {
+            gap: 1.2rem;
+        }
+
+        @include mix.respondToMin('md') {
+            gap: 1.6rem;
+        }
     }
 
     &__swash {
@@ -103,6 +202,31 @@
         flex-shrink: 0;
         opacity: 0.95;
         filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+
+        @include mix.respondToMin('xs') {
+            width: 6.2rem;
+            height: 2.6rem;
+        }
+
+        @include mix.respondToMin('sm') {
+            width: 7.5rem;
+            height: 3rem;
+        }
+
+        @include mix.respondToMin('md') {
+            width: 9rem;
+            height: 3.4rem;
+        }
+
+        @include mix.respondToMin('lg') {
+            width: 10.5rem;
+            height: 4rem;
+        }
+
+        @include mix.respondToMin('xl') {
+            width: 12rem;
+            height: 4.5rem;
+        }
     }
 
     &__number,
@@ -114,10 +238,50 @@
         line-height: 1;
         color: vars.$color-primary-100;
         text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+
+        @include mix.respondToMin('xs') {
+            font-size: 2.2rem;
+        }
+
+        @include mix.respondToMin('sm') {
+            font-size: 2.4rem;
+        }
+
+        @include mix.respondToMin('md') {
+            font-size: 2.8rem;
+        }
+
+        @include mix.respondToMin('lg') {
+            font-size: 3.2rem;
+        }
+
+        @include mix.respondToMin('xl') {
+            font-size: 3.6rem;
+        }
     }
 
     &__number {
         font-size: 3rem;
         color: vars.$color-secondary-200;
+
+        @include mix.respondToMin('xs') {
+            font-size: 3.4rem;
+        }
+
+        @include mix.respondToMin('sm') {
+            font-size: 3.8rem;
+        }
+
+        @include mix.respondToMin('md') {
+            font-size: 4.5rem;
+        }
+
+        @include mix.respondToMin('lg') {
+            font-size: 5.2rem;
+        }
+
+        @include mix.respondToMin('xl') {
+            font-size: 6rem;
+        }
     }
 }

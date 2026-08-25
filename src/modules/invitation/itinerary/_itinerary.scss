@@ -12,10 +12,20 @@
 
         &--top {
             margin-top: -2rem;
+
+            @include mix.respondToMin('xs') {
+                margin-top: -1rem;
+                transform: rotate(-45deg);
+            }
         }
 
         &--bottom {
             margin-top: 3rem;
+
+            @include mix.respondToMin('xs') {
+                margin-top: 4rem;
+                margin-bottom: -2rem;
+            }
         }
     }
 
@@ -141,6 +151,11 @@
         height: 4rem;
         object-fit: contain;
         margin-bottom: 0.3rem;
+
+        @include mix.respondToMin('xs') {
+            width: 5rem;
+            height: 5rem;
+        }
     }
 
     &__time {
