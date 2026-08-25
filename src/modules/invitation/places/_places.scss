@@ -10,13 +10,90 @@
     position: relative;
     overflow: hidden;
 
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: .3;
+        background-size: cover;
+        background-position: bottom;
+        background-repeat: no-repeat;
+        z-index: 0;
+        pointer-events: none;
+    }
+
     &__container {
+        position: relative;
+        z-index: 1;
         width: 100%;
         max-width: 960px;
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 2rem;
+    }
+
+    &__logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 10rem;
+        }
+    }
+
+    &__date {
+        font-family: vars.$font-serif;
+        font-size: 1.3rem;
+        font-weight: 500;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: vars.$color-primary-700;
+        text-align: center;
+        margin: -0.5rem 0 1rem;
+    }
+
+    &__draw {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 1rem;
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+            opacity: 0.9;
+        }
+    }
+
+    &__image {
+        position: relative;
+        width: 100%;
+        height: 45rem;
+        display: block;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    }
+
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(vars.$color-primary, .1);
+        z-index: 2;
     }
 }
 
@@ -34,38 +111,52 @@
     text-align: center;
     width: 100%;
     max-width: 440px;
-    margin: 0 auto;
+    margin: 0 auto 3.2rem;
     gap: 1rem;
-    padding: 1.5rem 0;
-    margin-bottom: 3.2rem;
+    padding: 4rem 2rem;
+    box-shadow: 0 10px 30px rgba(vars.$color-primary, 0.15);
+    border: 1px solid rgba(vars.$color-primary-700, 0.05);
+    background-color: #ffffff;
 
-    &__date {
-        font-family: vars.$font-serif;
-        font-size: clamp(1.15rem, 3.5vw, 1.35rem);
-        font-weight: 500;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: vars.$color-primary;
-        margin: 0;
-    }
+    &__icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0.5rem;
 
-    &__time {
-        font-family: vars.$font-serif;
-        font-size: clamp(1.2rem, 3vw, 1.4rem);
-        font-weight: 400;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        color: vars.$color-primary;
-        margin: 0;
+        img {
+            width: 5.5rem;
+            height: 5.5rem;
+            object-fit: contain;
+            display: block;
+        }
     }
 
     &__title {
         font-family: vars.$font-serif;
         font-size: 1.8rem;
-        font-weight: 700;
         color: vars.$color-primary-900;
         margin: 0;
         letter-spacing: 0.02em;
+    }
+
+    &__venue {
+        font-family: vars.$font-p1-cursive;
+        font-size: 2.8rem;
+        color: vars.$color-secondary-600;
+        line-height: 1.2;
+        margin: 0;
+        font-weight: 400;
+    }
+
+    &__time {
+        font-family: vars.$font-serif;
+        font-size: clamp(2.4rem, 3vw, 1.4rem);
+        font-weight: 400;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: vars.$color-primary;
+        margin: 0;
     }
 
     &__address {
@@ -80,25 +171,6 @@
     }
 
     &__button {
-        font-family: vars.$font-sans;
-        font-size: clamp(0.75rem, 2.2vw, 0.85rem);
-        font-weight: 600;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        padding: 0.9rem 2.5rem;
-        background-color: transparent;
-        border: 1px solid vars.$color-primary-400;
-        color: vars.$color-primary;
-        border-radius: 30px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        margin-top: 1.2rem;
-
-        &:hover {
-            background-color: vars.$color-primary;
-            border-color: vars.$color-primary;
-            color: #ffffff;
-            box-shadow: 0 4px 15px rgba(vars.$color-primary, 0.2);
-        }
+        margin-top: 1rem;
     }
 }

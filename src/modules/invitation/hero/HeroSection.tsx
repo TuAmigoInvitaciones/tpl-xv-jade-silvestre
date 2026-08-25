@@ -1,8 +1,11 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import { useInvitationConfig } from '@/common/hooks'
 import { Particles } from '@/common/components/particles/Particles'
 import hero from '@/assets/images/photos/1.jpeg'
 import coronaIcon from '@/assets/images/icons/corona.svg'
+
+const FLUID_EASE = [0.22, 1, 0.36, 1] as const
 
 export const HeroSection: React.FC = () => {
     const { sections } = useInvitationConfig()
@@ -30,12 +33,31 @@ export const HeroSection: React.FC = () => {
                 direction="down"
                 zIndex={3}
             />
-            <div className="hero-section__overlay"></div>
-            <div className="hero-section__bg" style={{ backgroundImage: `url(${hero})` }}></div>
+
+            <motion.div
+                className="hero-section__overlay"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 2.8, ease: 'easeOut' }}
+            />
+
+            <motion.div
+                className="hero-section__bg"
+                style={{ backgroundImage: `url(${hero})` }}
+                initial={{ scale: 1.14, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 3.2, ease: FLUID_EASE }}
+            />
+
             <div className="hero-section__container">
                 {eventSubtitle && (
                     isFifteen ? (
-                        <div className="hero-subtitle-badge">
+                        <motion.div
+                            className="hero-subtitle-badge"
+                            initial={{ opacity: 0, y: -22, scale: 0.95 }}
+                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                            transition={{ duration: 2.8, delay: 0.25, ease: FLUID_EASE }}
+                        >
                             <div className="hero-subtitle-badge__group">
                                 <svg className="hero-subtitle-badge__swash hero-subtitle-badge__swash--left" viewBox="0 0 75 32" fill="none">
                                     <path d="M 4 6 C 16 -2, 24 30, 48 28 C 62 26, 70 17, 75 16" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
@@ -47,20 +69,50 @@ export const HeroSection: React.FC = () => {
                                     <path d="M 78 1 C 78 5, 79.5 6, 83 6.5 C 79.5 7, 78 8, 78 12 C 78 8, 76.5 7, 73 6.5 C 76.5 6, 78 5, 78 1 Z" fill="currentColor" />
                                 </svg>
                             </div>
-                        </div>
+                        </motion.div>
                     ) : (
-                        <p className="hero-section__subtitle">{eventSubtitle}</p>
+                        <motion.p
+                            className="hero-section__subtitle"
+                            initial={{ opacity: 0, y: -18 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 2.8, delay: 0.25, ease: FLUID_EASE }}
+                        >
+                            {eventSubtitle}
+                        </motion.p>
                     )
                 )}
-                {eventTitle && <h1 className="hero-section__title">{eventTitle}</h1>}
+
+                {eventTitle && (
+                    <motion.h1
+                        className="hero-section__title"
+                        initial={{ opacity: 0, scale: 0.92, y: 22 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        transition={{ duration: 2.8, delay: 0.5, ease: FLUID_EASE }}
+                    >
+                        {eventTitle}
+                    </motion.h1>
+                )}
+
                 {eventDate && (
-                    <div className="hero-section__date">
+                    <motion.div
+                        className="hero-section__date"
+                        initial={{ opacity: 0, y: 22, x: '-50%' }}
+                        animate={{ opacity: 1, y: 0, x: '-50%' }}
+                        transition={{ duration: 2.8, delay: 0.75, ease: FLUID_EASE }}
+                    >
                         <span className="hero-section__date-day">
-                            <img src={coronaIcon} alt="Corona" className="hero-section__crown" />
+                            <motion.img
+                                src={coronaIcon}
+                                alt="Corona"
+                                className="hero-section__crown"
+                                initial={{ scale: 0, opacity: 0, rotate: -35, x: '-50%' }}
+                                animate={{ scale: 1, opacity: 1, rotate: -15, x: '-50%' }}
+                                transition={{ duration: 1.2, delay: 1.05, ease: FLUID_EASE }}
+                            />
                             18
                         </span>
                         <span> . 12 . 26</span>
-                    </div>
+                    </motion.div>
                 )}
             </div>
         </section>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import { CalendarPlusIcon } from '@phosphor-icons/react'
 
 import { useInvitationConfig, useCalendar, useSaveTheDate } from '@/common/hooks'
@@ -9,6 +10,8 @@ import { Button } from '@/common/components/button/Button'
 import flor1 from '@/assets/images/icons/flor-esquina-superior-derecha.svg'
 import flor2 from '@/assets/images/icons/flor-esquina-inferior-izquierda.svg'
 import photo from '@/assets/images/photos/7.jpg'
+
+const FLUID_EASE = [0.22, 1, 0.36, 1] as const
 
 export const CountdownSection: React.FC = () => {
     const { sections } = useInvitationConfig()
@@ -22,28 +25,61 @@ export const CountdownSection: React.FC = () => {
 
     return (
         <>
-
             <section id="countdown" className="countdown-section">
-                <img src={flor1} alt="Flor decorativa" className="countdown-section__flower-1" />
-                <img src={flor2} alt="Flor decorativa" className="countdown-section__flower-2" />
-                <div className="countdown-section__container">
+                <motion.img
+                    src={flor1}
+                    alt="Flor decorativa"
+                    className="countdown-section__flower-1"
+                    initial={{ opacity: 0, scale: 0.8, x: 20, y: -20 }}
+                    whileInView={{ opacity: 0.9, scale: 1, x: 0, y: 0 }}
+                    viewport={{ once: true, margin: '-10% 0px' }}
+                    transition={{ duration: 1.2, ease: FLUID_EASE }}
+                />
+                <motion.img
+                    src={flor2}
+                    alt="Flor decorativa"
+                    className="countdown-section__flower-2"
+                    initial={{ opacity: 0, scale: 0.8, x: -20, y: 20 }}
+                    whileInView={{ opacity: 0.9, scale: 1, x: 0, y: 0 }}
+                    viewport={{ once: true, margin: '-10% 0px' }}
+                    transition={{ duration: 1.2, ease: FLUID_EASE }}
+                />
 
-                    <div className="countdown-section__header">
+                <div className="countdown-section__container">
+                    <motion.div
+                        className="countdown-section__header"
+                        initial={{ opacity: 0, y: -20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: '-10% 0px' }}
+                        transition={{ duration: 1.1, delay: 0.1, ease: FLUID_EASE }}
+                    >
                         <SectionHeader
                             pretitle="Cuenta Regresiva"
                             title="Solo Falta"
                             align="center"
                         />
-                    </div>
+                    </motion.div>
 
-                    <div className="countdown-section__content">
+                    <motion.div
+                        className="countdown-section__content"
+                        initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                        whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                        viewport={{ once: true, margin: '-10% 0px' }}
+                        transition={{ duration: 1.1, delay: 0.25, ease: FLUID_EASE }}
+                    >
                         <Countdown
                             targetDate={countdownConfig.targetDate}
                             variant="minimal"
                         />
-                    </div>
+                    </motion.div>
 
-                    <div className="countdown-section__calendar">
+                    <motion.div
+                        className="countdown-section__calendar"
+                        initial={{ opacity: 0, y: 25, scale: 0.97 }}
+                        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                        viewport={{ once: true, margin: '-10% 0px' }}
+                        transition={{ duration: 1.1, delay: 0.4, ease: FLUID_EASE }}
+                    >
                         {monthTitle && <p className="countdown-section__calendar-title">{monthTitle}</p>}
                         <div className="countdown-section__calendar-grid">
                             {weekdays.map(day => (
@@ -74,9 +110,15 @@ export const CountdownSection: React.FC = () => {
                                 </div>
                             ))}
                         </div>
-                    </div>
+                    </motion.div>
 
-                    <div className="countdown-section__button">
+                    <motion.div
+                        className="countdown-section__button"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: '-10% 0px' }}
+                        transition={{ duration: 1.1, delay: 0.55, ease: FLUID_EASE }}
+                    >
                         <Button
                             variant="secondary"
                             radius="full"
@@ -85,13 +127,20 @@ export const CountdownSection: React.FC = () => {
                         >
                             GUARDAR RECORDATORIO
                         </Button>
-                    </div>
+                    </motion.div>
                 </div>
             </section>
-            <div className="countdown-section__photo">
+
+            <motion.div
+                className="countdown-section__photo"
+                initial={{ opacity: 0, scale: 1.05 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, margin: '-10% 0px' }}
+                transition={{ duration: 1.3, ease: FLUID_EASE }}
+            >
                 <div className="countdown-section__overlay"></div>
                 <img src={photo} alt="" />
-            </div>
+            </motion.div>
         </>
     )
 }

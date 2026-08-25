@@ -50,10 +50,15 @@ export interface SectionItemConfig {
 
 export interface LocationItem {
     title?: string
+    venue?: string
     location?: string
     time?: string
     date?: string
     url?: string
+    showPhotos?: boolean
+    showVideo?: boolean
+    note?: string
+    [key: string]: unknown
 }
 
 export interface ScratchRevealConfig {
