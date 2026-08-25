@@ -4,7 +4,7 @@
 .section-header {
     display: flex;
     flex-direction: column;
-    margin-bottom: 3.2rem;
+    margin-bottom: 2rem;
 
     // Alineaciones
     &--align-center {
@@ -43,8 +43,8 @@
     }
 
     &__pretitle {
-        font-family: vars.$font-cursive;
-        font-size: 2.8rem;
+        font-family: vars.$font-serif;
+        font-size: 1.8rem;
         font-weight: 400;
         color: vars.$color-primary-600;
         line-height: 1.1;
@@ -62,11 +62,10 @@
     }
 
     &__title {
-        font-family: vars.$font-serif;
+        font-family: vars.$font-p1-cursive;
         font-size: 3.4rem;
-        font-weight: 600;
         letter-spacing: -0.01em;
-        color: vars.$color-primary-900;
+        color: vars.$color-tertiary-400;
         line-height: 1.2;
         margin: 0;
     }
