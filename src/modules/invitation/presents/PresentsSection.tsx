@@ -42,22 +42,39 @@ export const PresentsSection: React.FC = () => {
             defaultOpen: true,
             content: (
                 <div className="presents-section__accordion-content">
-                    <p className="presents-section__card-text">
-                        Tu presencia es nuestro mejor regalo. Si deseas hacernos un detalle, puedes consultar nuestra mesa de regalos en Liverpool.
-                    </p>
-                    <Button
-                        variant="outline"
-                        radius="full"
-                        icon={<ArrowSquareOutIcon size={18} weight="bold" />}
-                        iconPosition="right"
-                        onClick={() => window.open(url, '_blank', 'noopener,noreferrer')}
+                    <motion.p
+                        className="presents-section__card-text"
+                        initial={{ opacity: 0, y: 15 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.1, ease: FLUID_EASE }}
                     >
-                        Ver en Liverpool
-                    </Button>
-                    <img
+                        Tu presencia es mi mejor regalo. Si deseas hacerme un detalle, puedes consultar mi mesa de regalos en Liverpool.
+                    </motion.p>
+                    <motion.div
+                        initial={{ opacity: 0, y: 15 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.2, ease: FLUID_EASE }}
+                    >
+                        <Button
+                            variant="outline"
+                            radius="full"
+                            icon={<ArrowSquareOutIcon size={18} weight="bold" />}
+                            iconPosition="right"
+                            onClick={() => window.open(url, '_blank', 'noopener,noreferrer')}
+                        >
+                            Ver en Liverpool
+                        </Button>
+                    </motion.div>
+                    <motion.img
                         src={florPresents}
                         alt=""
                         className="presents-section__card-flor presents-section__card-flor--bottom-right"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 0.75, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.3, ease: FLUID_EASE }}
                     />
                 </div>
             ),
@@ -72,7 +89,13 @@ export const PresentsSection: React.FC = () => {
             defaultOpen: true,
             content: (
                 <div className="presents-section__accordion-content">
-                    <div className="presents-section__bank-info">
+                    <motion.div
+                        className="presents-section__bank-info"
+                        initial={{ opacity: 0, scale: 0.97, y: 15 }}
+                        whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.1, ease: FLUID_EASE }}
+                    >
                         {bankDetails.bank && (
                             <p className="presents-section__bank-line">
                                 <span>Banco:</span> <strong>{bankDetails.bank}</strong>
@@ -93,21 +116,32 @@ export const PresentsSection: React.FC = () => {
                                 <span>CLABE:</span> <strong>{bankDetails.clabe}</strong>
                             </p>
                         )}
-                    </div>
+                    </motion.div>
                     {bankDetails.clabe && (
-                        <Button
-                            variant="outline"
-                            radius="full"
-                            icon={copiedClabe ? <CheckIcon size={18} weight="bold" /> : <CopyIcon size={18} weight="bold" />}
-                            onClick={handleCopyClabe}
+                        <motion.div
+                            initial={{ opacity: 0, y: 15 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.2, ease: FLUID_EASE }}
                         >
-                            {copiedClabe ? '¡Copiado!' : 'Copiar CLABE'}
-                        </Button>
+                            <Button
+                                variant="outline"
+                                radius="full"
+                                icon={copiedClabe ? <CheckIcon size={18} weight="bold" /> : <CopyIcon size={18} weight="bold" />}
+                                onClick={handleCopyClabe}
+                            >
+                                {copiedClabe ? '¡Copiado!' : 'Copiar CLABE'}
+                            </Button>
+                        </motion.div>
                     )}
-                    <img
+                    <motion.img
                         src={florCentral}
                         alt=""
                         className="presents-section__card-flor presents-section__card-flor--bottom-left"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 0.75, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.3, ease: FLUID_EASE }}
                     />
                 </div>
             ),
@@ -122,36 +156,51 @@ export const PresentsSection: React.FC = () => {
             defaultOpen: true,
             content: (
                 <div className="presents-section__accordion-content">
-                    <p className="presents-section__card-text">
+                    <motion.p
+                        className="presents-section__card-text"
+                        initial={{ opacity: 0, y: 15 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.1, ease: FLUID_EASE }}
+                    >
                         Si prefieres apoyarnos en efectivo, contaremos con un buzón el día del evento donde podrás colocar tu sobre con tus buenos deseos.
-                    </p>
-                    <img
+                    </motion.p>
+                    <motion.img
                         src={florPresents}
                         alt=""
                         className="presents-section__card-flor presents-section__card-flor--bottom-right"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 0.75, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.2, ease: FLUID_EASE }}
                     />
                 </div>
             ),
         })
     }
 
-
-
     return (
         <section id="presents" className="presents-section">
             <div className="presents-section__container">
-                <SectionHeader
-                    pretitle="Sugerencia de Regalos"
-                    title={presentsConfig.title || 'Mesa de Regalos'}
-                    align="center"
-                />
+                <motion.div
+                    initial={{ opacity: 0, y: -20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, ease: FLUID_EASE }}
+                >
+                    <SectionHeader
+                        pretitle="Sugerencia de Regalos"
+                        title={presentsConfig.title || 'Mesa de Regalos'}
+                        align="center"
+                    />
+                </motion.div>
 
                 <motion.div
                     className="presents-section__accordion-wrapper"
                     initial={{ opacity: 0, y: 25 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8, ease: FLUID_EASE }}
+                    transition={{ duration: 0.8, delay: 0.15, ease: FLUID_EASE }}
                 >
                     <Accordion
                         items={accordionItems}
@@ -163,4 +212,5 @@ export const PresentsSection: React.FC = () => {
         </section>
     )
 }
+
 
