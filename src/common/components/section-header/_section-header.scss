@@ -6,7 +6,6 @@
     flex-direction: column;
     margin-bottom: 2rem;
 
-    // Alineaciones
     &--align-center {
         align-items: center;
         text-align: center;
@@ -50,6 +49,10 @@
         line-height: 1.4;
         margin: 0 0 0.4rem 0;
 
+        @include mix.respondToMin('sm') {
+            font-size: 2rem;
+        }
+
         &--uppercase {
             font-family: vars.$font-sans;
             font-size: 1.2rem;
@@ -68,6 +71,10 @@
         color: vars.$color-secondary-400;
         line-height: 1.2;
         margin: 0;
+
+        @include mix.respondToMin('sm') {
+            font-size: 4rem;
+        }
     }
 
     &__subtitle {

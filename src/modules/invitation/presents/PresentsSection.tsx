@@ -63,6 +63,7 @@ export const PresentsSection: React.FC = () => {
                             icon={<ArrowSquareOutIcon size={18} weight="bold" />}
                             iconPosition="right"
                             onClick={() => window.open(url, '_blank', 'noopener,noreferrer')}
+                            className='presents-section__card-button'
                         >
                             Ver en Liverpool
                         </Button>
@@ -129,6 +130,7 @@ export const PresentsSection: React.FC = () => {
                                 radius="full"
                                 icon={copiedClabe ? <CheckIcon size={18} weight="bold" /> : <CopyIcon size={18} weight="bold" />}
                                 onClick={handleCopyClabe}
+                                className='presents-section__card-button'
                             >
                                 {copiedClabe ? '¡Copiado!' : 'Copiar CLABE'}
                             </Button>
@@ -155,7 +157,8 @@ export const PresentsSection: React.FC = () => {
             icon: <EnvelopeOpenIcon size={30} weight="light" />,
             defaultOpen: true,
             content: (
-                <div className="presents-section__accordion-content">
+                <div className="presents-section__accordion-content presents-section__accordion-content--envelope">
+
                     <motion.p
                         className="presents-section__card-text"
                         initial={{ opacity: 0, y: 15 }}

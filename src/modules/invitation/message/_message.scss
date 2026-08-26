@@ -9,6 +9,10 @@
         padding: 6rem 0;
     }
 
+    @include mix.respondToMin('sm') {
+        padding: 8rem 0;
+    }
+
     &__header {
         margin-bottom: -1rem;
     }
@@ -20,11 +24,19 @@
         @include mix.respondToMin('xs') {
             width: 85%;
         }
+
+        @include mix.respondToMin('sm') {
+            width: 75%;
+        }
     }
 
     &__text {
         text-align: center;
         font-family: vars.$font-serif;
         font-size: 1.2rem;
+
+        @include mix.respondToMin('sm') {
+            font-size: 1.4rem;
+        }
     }
 }

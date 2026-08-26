@@ -26,11 +26,19 @@
         border-bottom: 1px solid vars.$color-primary-100;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 
+        @include mix.respondToMin('sm') {
+            height: 6rem;
+        }
+
         .menu__title {
             font-family: vars.$font-serif;
             font-size: 1.2rem;
             font-weight: 600;
             color: vars.$color-primary-900;
+
+            @include mix.respondToMin('sm') {
+                font-size: 1.8rem;
+            }
         }
     }
 }
@@ -91,6 +99,10 @@
         font-weight: 600;
         color: vars.$color-primary-900;
         margin: 0;
+
+        @include mix.respondToMin('sm') {
+            font-size: 1.8rem;
+        }
     }
 
     &__content {

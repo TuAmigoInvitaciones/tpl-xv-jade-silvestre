@@ -89,22 +89,22 @@
         }
 
         @include mix.respondToMin('sm') {
-            font-size: 5rem;
+            font-size: 5.8rem;
             bottom: 4rem;
         }
 
         @include mix.respondToMin('md') {
-            font-size: 5.8rem;
+            font-size: 6.2rem;
             bottom: 4.5rem;
         }
 
         @include mix.respondToMin('lg') {
-            font-size: 6.5rem;
+            font-size: 7rem;
             bottom: 5rem;
         }
 
         @include mix.respondToMin('xl') {
-            font-size: 7.2rem;
+            font-size: 7.5rem;
             bottom: 5.5rem;
         }
 

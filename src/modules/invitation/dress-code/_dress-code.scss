@@ -7,7 +7,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    gap: 2rem;
+    // gap: 2rem;
     align-items: center;
     text-align: center;
 
@@ -16,7 +16,7 @@
         position: relative;
         width: 100%;
         padding: 6rem 2rem;
-        max-width: 36rem;
+        max-width: 45rem;
         margin: 0 auto;
         display: flex;
         flex-direction: column;
@@ -24,6 +24,10 @@
         background: #fff;
         box-shadow: 0 10px 30px rgba(vars.$color-primary, 0.15), 0 4px 12px rgba(0, 0, 0, 0.05);
         border: 1px solid rgba(vars.$color-primary-700, 0.2);
+
+        @include mix.respondToMin('sm') {
+            padding: 8rem 2rem;
+        }
     }
 
     &__flor {
@@ -36,6 +40,11 @@
             height: auto;
             display: block;
             opacity: 0.9;
+
+            @include mix.respondToMin('sm') {
+                width: 10rem;
+            }
+
         }
 
         &--top-right {
@@ -62,12 +71,16 @@
         margin: -0.5rem 0 2rem 0;
         line-height: 1.5;
         font-weight: 300;
+
+        @include mix.respondToMin('sm') {
+            font-size: 1.4rem;
+        }
     }
 
     &__illustration {
         width: 100%;
-        max-width: 10rem;
-        min-height: 6rem;
+        max-width: 12rem;
+        min-height: 8rem;
         margin-bottom: 2rem;
         display: flex;
         justify-content: center;
@@ -101,6 +114,10 @@
         margin: 0;
         line-height: 1.5;
         font-weight: 300;
+
+        @include mix.respondToMin('sm') {
+            font-size: 1.4rem;
+        }
     }
 
     &__attire-label {
@@ -123,6 +140,11 @@
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
         border: 1.5px solid rgba(0, 0, 0, 0.12);
         transition: transform 0.2s ease;
+
+        @include mix.respondToMin('sm') {
+            width: 5rem;
+            height: 5rem;
+        }
 
         &:hover {
             transform: scale(1.08);
@@ -154,12 +176,16 @@
         margin: 3rem auto 0;
         background-color: #ffffff;
         padding: 0.8rem;
-        border: 1px solid rgba(vars.$color-primary-700, 0.4);
+        border: 1px solid rgba(vars.$color-primary-200, 0.4);
         box-shadow: 0 10px 30px rgba(vars.$color-primary, 0.12);
         transition: transform 0.4s ease, box-shadow 0.4s ease;
 
         @include mix.respondToMin('xs') {
             width: 90%;
+        }
+
+        @include mix.respondToMin('sm') {
+            width: 45rem;
         }
 
         &:hover {

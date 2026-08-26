@@ -46,6 +46,10 @@
         line-height: 1.6;
         color: vars.$color-primary-900;
         margin-bottom: 1.2rem;
+
+        @include mix.respondToMin('sm') {
+            font-size: 1.4rem;
+        }
     }
 
     &__quote-author {
@@ -55,6 +59,10 @@
         letter-spacing: 0.25em;
         color: vars.$color-secondary-600;
         text-transform: uppercase;
+
+        @include mix.respondToMin('sm') {
+            font-size: 1.4rem;
+        }
     }
 
     &__blessing {
@@ -66,6 +74,10 @@
         color: vars.$color-primary-900;
         text-transform: uppercase;
         margin-bottom: 4.5rem;
+
+        @include mix.respondToMin('sm') {
+            font-size: 1.4rem;
+        }
     }
 
     &__group {
@@ -83,6 +95,10 @@
         color: vars.$color-secondary-600;
         text-transform: uppercase;
         margin-bottom: 1.5rem;
+
+        @include mix.respondToMin('sm') {
+            font-size: 1.4rem;
+        }
     }
 
     &__names {
@@ -97,6 +113,10 @@
         color: #7a882e;
         line-height: 1.2;
         margin: 0;
+
+        @include mix.respondToMin('sm') {
+            font-size: 2.4rem;
+        }
     }
 
     &__divider {

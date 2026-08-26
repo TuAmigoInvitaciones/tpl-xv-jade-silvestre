@@ -33,9 +33,23 @@
         text-align: center;
         padding: 1.5rem 0 0.5rem;
 
+        &--envelope {
+            padding: 1.5rem 0 5rem;
+        }
+
         .btn {
             position: relative;
             z-index: 2;
+        }
+    }
+
+
+    &__card-button {
+        margin-top: 2rem;
+        width: 100%;
+
+        button {
+            width: 100% !important;
         }
     }
 
@@ -46,6 +60,10 @@
         pointer-events: none;
         opacity: 0.75;
         z-index: 1;
+
+        @include mix.respondToMin('sm') {
+            width: 10rem;
+        }
 
         &--bottom-right {
             bottom: -5rem;
@@ -59,9 +77,6 @@
         }
     }
 
-
-
-
     &__card-text {
         font-family: vars.$font-serif;
         font-size: 1.05rem;
@@ -70,6 +85,11 @@
         margin-bottom: 1.5rem;
         position: relative;
         z-index: 2;
+
+        @include mix.respondToMin('sm') {
+            width: 90%;
+            font-size: 1.4rem;
+        }
     }
 
     &__bank-info {
@@ -91,6 +111,10 @@
         margin-bottom: 0.4rem;
         line-height: 1.4;
 
+        @include mix.respondToMin('sm') {
+            font-size: 1.4rem;
+        }
+
         &:last-child {
             margin-bottom: 0;
         }
@@ -102,7 +126,6 @@
 
         strong {
             color: vars.$color-primary-900;
-            font-weight: 600;
         }
 
         &--clabe {

@@ -26,7 +26,7 @@
 
     &__calendar {
         width: 90%;
-        max-width: 34rem;
+        max-width: 45rem;
         margin: 0 auto;
         text-align: center;
         background-color: #ffffff;
@@ -40,6 +40,10 @@
             letter-spacing: 0.25em;
             color: vars.$color-primary-600;
             margin-bottom: 1.8rem;
+
+            @include mix.respondToMin('sm') {
+                font-size: 1.8rem;
+            }
         }
 
         &-grid {
@@ -57,6 +61,10 @@
             color: vars.$color-secondary-400;
             text-transform: lowercase;
             margin-bottom: 0.4rem;
+
+            @include mix.respondToMin('sm') {
+                font-size: 1.4rem;
+            }
         }
 
         &-day {
@@ -70,6 +78,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
+
+            @include mix.respondToMin('sm') {
+                font-size: 1.4rem;
+            }
 
             &--muted {
                 color: #b0b0b0;
@@ -107,6 +119,19 @@
 
     &__button {
         margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        button {
+            width: 90%;
+        }
+
+        @include mix.respondToMin('sm') {
+            button {
+                width: 30rem;
+            }
+        }
     }
 
     &__flower-1 {
@@ -116,6 +141,12 @@
         z-index: -1;
         width: 18rem;
         opacity: .9;
+
+        @include mix.respondToMin('sm') {
+            top: -2%;
+            right: -5%;
+            width: 20rem;
+        }
     }
 
     &__flower-2 {
@@ -125,6 +156,12 @@
         z-index: -1;
         width: 18rem;
         opacity: .9;
+
+        @include mix.respondToMin('sm') {
+            bottom: -1%;
+            left: -5%;
+            width: 20rem;
+        }
     }
 
     &__photo {
@@ -137,6 +174,10 @@
             height: 35rem;
             object-fit: cover;
             display: block;
+
+            @include mix.respondToMin('sm') {
+                height: 50rem;
+            }
         }
     }
 
@@ -148,5 +189,9 @@
         height: 100%;
         background-color: rgba(vars.$color-primary, .1);
         z-index: 1;
+
+        @include mix.respondToMin('sm') {
+            height: 50rem;
+        }
     }
 }

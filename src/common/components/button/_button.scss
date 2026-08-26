@@ -62,7 +62,7 @@
 
     &--outline {
         background-color: transparent;
-        border-color: vars.$color-primary;
+        border-color: vars.$color-secondary-500;
         color: vars.$color-primary;
 
         &:hover:not(:disabled) {
