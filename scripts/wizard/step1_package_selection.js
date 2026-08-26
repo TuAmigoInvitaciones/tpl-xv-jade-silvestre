@@ -113,13 +113,14 @@ export async function promptPackageSelection(preselectedEventType) {
     // 4. Módulos Extra Add-ons ($150.00 c/u)
     const includedAddons = {
         monogram: packageTier === 'oro' || packageTier === 'rubi',
+        playlistAndPhotos: packageTier === 'oro' || packageTier === 'rubi',
     }
 
     const selectedAddons = {
         lodgingAndWeather: false,
         ourStory: false,
         faqAndMenu: false,
-        playlistAndPhotos: false,
+        playlistAndPhotos: Boolean(includedAddons.playlistAndPhotos),
         monogram: Boolean(includedAddons.monogram),
     }
 
@@ -140,15 +141,16 @@ export async function promptPackageSelection(preselectedEventType) {
                 { label: `1. Hospedaje & Clima ($150.00) ${selectedAddons.lodgingAndWeather ? '[ACTIVADO]' : ''}`, value: 'lodgingAndWeather' },
                 { label: `2. Nuestra Historia / Cita ($150.00) ${selectedAddons.ourStory ? '[ACTIVADO]' : ''}`, value: 'ourStory' },
                 { label: `3. Preguntas Frecuentes & Menú ($150.00) ${selectedAddons.faqAndMenu ? '[ACTIVADO]' : ''}`, value: 'faqAndMenu' },
-                { label: `4. Playlist & Carga de Fotos de Invitados ($150.00) ${selectedAddons.playlistAndPhotos ? '[ACTIVADO]' : ''}`, value: 'playlistAndPhotos' },
+                { label: `4. Playlist & Carga de Fotos de Invitados ($150.00) ${selectedAddons.playlistAndPhotos ? (includedAddons.playlistAndPhotos ? '[INCLUIDO EN PAQUETE]' : '[ACTIVADO]') : ''}`, value: 'playlistAndPhotos' },
                 { label: `5. Monograma Exclusivo ($150.00) ${selectedAddons.monogram ? (includedAddons.monogram ? '[INCLUIDO EN PAQUETE]' : '[ACTIVADO]') : ''}`, value: 'monogram' },
                 { label: '6. Terminar selección de Add-ons', value: 'done' },
             ])
 
             if (addonChoice === 'done') {
                 keepSelecting = false
-            } else if (addonChoice === 'monogram' && includedAddons.monogram) {
-                console.log(pc.yellow('   -> El Monograma Exclusivo ya está INCLUIDO sin costo adicional en tu paquete ' + packageTier.toUpperCase()))
+            } else if ((addonChoice === 'monogram' && includedAddons.monogram) || (addonChoice === 'playlistAndPhotos' && includedAddons.playlistAndPhotos)) {
+                const name = addonChoice === 'monogram' ? 'El Monograma Exclusivo' : 'Playlist & Carga de Fotos de Invitados'
+                console.log(pc.yellow(`   -> ${name} ya está INCLUIDO sin costo adicional en tu paquete ` + packageTier.toUpperCase()))
             } else {
                 extraPaidAddons[addonChoice] = !extraPaidAddons[addonChoice]
                 selectedAddons[addonChoice] = extraPaidAddons[addonChoice] || Boolean(includedAddons[addonChoice])
@@ -178,11 +180,13 @@ export async function promptPackageSelection(preselectedEventType) {
         showItinerary: true, // Incluido en Bronce, Platino, Oro, Rubí y Cuarzo
         showDetails: true,
         showGallery,
+        showGuestPhotos: packageTier === 'oro' || packageTier === 'rubi' || Boolean(selectedAddons.playlistAndPhotos),
         showPresents: !isBronce && !isEsmeralda,
         showConfirmation: true,
         showFarewell: !isBronce,
         showTicket: hasTicketingSystem,
     }
+
 
     return {
         eventType,

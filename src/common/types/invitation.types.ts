@@ -163,6 +163,8 @@ export interface SectionsConfig {
     }
     details?: SectionItemConfig & { showDetails?: boolean }
     gallery?: SectionItemConfig & { showGallery?: boolean }
+    guestPhotos?: SectionItemConfig & { showGuestPhotos?: boolean; title?: string; subtitle?: string }
+
     presents?: SectionItemConfig & {
         showPresents?: boolean
         title?: string

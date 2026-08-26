@@ -9,6 +9,8 @@ import { GiftIcon, BankIcon, EnvelopeOpenIcon, CopyIcon, CheckIcon, ArrowSquareO
 import florPresents from '@/assets/images/icons/flor-presents.svg'
 import florCentral from '@/assets/images/icons/flor-central.svg'
 
+import illustrationBottom from '@/assets/images/icons/flores-presents-inferior.svg'
+
 const FLUID_EASE = [0.22, 1, 0.36, 1] as [number, number, number, number]
 
 export const PresentsSection: React.FC = () => {
@@ -158,7 +160,6 @@ export const PresentsSection: React.FC = () => {
             defaultOpen: true,
             content: (
                 <div className="presents-section__accordion-content presents-section__accordion-content--envelope">
-
                     <motion.p
                         className="presents-section__card-text"
                         initial={{ opacity: 0, y: 15 }}
@@ -212,6 +213,16 @@ export const PresentsSection: React.FC = () => {
                     />
                 </motion.div>
             </div>
+
+            <motion.img
+                className="presents-section__img presents-section__img--bottom"
+                src={illustrationBottom}
+                alt="Decoración inferior regalos"
+                initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 3.0, ease: FLUID_EASE }}
+            />
         </section>
     )
 }

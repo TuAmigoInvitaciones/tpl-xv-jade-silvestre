@@ -82,9 +82,13 @@
     &__image {
         position: relative;
         width: 100%;
-        height: 55rem;
+        height: 45rem;
         display: block;
         overflow: hidden;
+
+        @include mix.respondToMin('sm') {
+            height: 55rem;
+        }
 
         img {
             width: 100%;

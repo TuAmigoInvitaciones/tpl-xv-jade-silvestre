@@ -2,7 +2,10 @@
 @use '../../../common/styles/mixins' as mix;
 
 .presents-section {
-    padding: 8rem 0;
+    padding: 8rem 0 0;
+    position: relative;
+    overflow: hidden;
+
 
     &__container {
         max-width: 780px;
@@ -130,6 +133,21 @@
 
         &--clabe {
             word-break: break-all;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        height: auto;
+        display: block;
+
+        &--bottom {
+            margin-top: 3rem;
+
+            @include mix.respondToMin('xs') {
+                margin-top: 4rem;
+                margin-bottom: -2rem;
+            }
         }
     }
 }

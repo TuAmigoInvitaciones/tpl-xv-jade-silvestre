@@ -173,6 +173,12 @@
       "variant": "mosaic",
       "maxPhotos": 6
     },
+    "guestPhotos": {
+      "showGuestPhotos": true,
+      "title": "Fotos de los Invitados",
+      "subtitle": "Comparte tus recuerdos y momentos de la fiesta con nosotros",
+      "albumUrl": "https://photos.app.goo.gl/xqUqNJ5Cvm9mjo7m8"
+    },
     "ticket": {
       "showTicket": true
     },
@@ -196,14 +202,17 @@
         "menuCourses": []
       },
       "playlistAndPhotos": {
-        "showPlaylistAndPhotos": false,
-        "title": "Música & Fotos de Invitados"
+        "showPlaylistAndPhotos": true,
+        "title": "Música & Fotos de Invitados",
+        "qrAlbumUrl": "https://photos.app.goo.gl/xqUqNJ5Cvm9mjo7m8"
       },
+
       "monogram": {
         "showMonogram": true,
         "title": "Monograma del Evento"
       }
     },
+
     "farewell": {
       "showFarewell": true,
       "hashtag": "#GrethelStefaniaXV",

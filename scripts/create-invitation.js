@@ -113,9 +113,15 @@ async function main() {
                 },
                 graduates: confirmationGraduatesData.graduates,
                 gallery: galleryData.gallery,
+                guestPhotos: {
+                    showGuestPhotos: Boolean(packageData.sectionToggles.showGuestPhotos),
+                    title: 'Fotos de los Invitados',
+                    subtitle: 'Comparte tus recuerdos y momentos de la fiesta con nosotros',
+                },
                 ticket: {
                     showTicket: Boolean(packageData.hasTicketingSystem),
                 },
+
                 addons: addonsData,
                 farewell: farewellData,
             },
