@@ -161,14 +161,14 @@
     }
 
     &__item-icon {
-        width: 4rem;
-        height: 4rem;
+        width: 5rem;
+        height: 5rem;
         object-fit: contain;
         margin-bottom: 0.3rem;
 
         @include mix.respondToMin('xs') {
-            width: 5rem;
-            height: 5rem;
+            width: 6rem;
+            height: 6rem;
         }
 
         @include mix.respondToMin('sm') {

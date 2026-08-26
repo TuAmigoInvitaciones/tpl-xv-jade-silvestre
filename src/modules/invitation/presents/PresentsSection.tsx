@@ -60,7 +60,7 @@ export const PresentsSection: React.FC = () => {
                         transition={{ duration: 0.6, delay: 0.2, ease: FLUID_EASE }}
                     >
                         <Button
-                            variant="outline"
+                            variant="secondary"
                             radius="full"
                             icon={<ArrowSquareOutIcon size={18} weight="bold" />}
                             iconPosition="right"
@@ -128,7 +128,7 @@ export const PresentsSection: React.FC = () => {
                             transition={{ duration: 0.6, delay: 0.2, ease: FLUID_EASE }}
                         >
                             <Button
-                                variant="outline"
+                                variant="secondary"
                                 radius="full"
                                 icon={copiedClabe ? <CheckIcon size={18} weight="bold" /> : <CopyIcon size={18} weight="bold" />}
                                 onClick={handleCopyClabe}

@@ -49,8 +49,8 @@ export const Invitation: React.FC = () => {
             <GallerySection />
             <PresentsSection />
             <FaqAndMenuSection />
-            <DetailsSection />
             <GuestPhotosSection />
+            <DetailsSection />
             <ConfirmationSection />
             <FarewellSection />
         </main>
