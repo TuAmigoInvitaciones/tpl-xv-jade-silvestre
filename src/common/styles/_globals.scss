@@ -9,16 +9,25 @@
     padding: 0;
 }
 
+:root,
+html {
+    color-scheme: light !important;
+}
+
 html {
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
     overflow-x: hidden;
+    background-color: #ffffff;
+    color: vars.$color-text;
 }
 
 body {
     min-height: 100vh;
     min-height: 100dvh;
     overflow-x: hidden;
+    background-color: #ffffff;
+    color: vars.$color-text;
 }
 
 img,
