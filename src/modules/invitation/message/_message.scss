@@ -13,6 +13,10 @@
         padding: 8rem 0;
     }
 
+    @include mix.respondToMin('md') {
+        padding: 12rem 0;
+    }
+
     &__header {
         margin-bottom: -1rem;
     }
@@ -37,6 +41,10 @@
 
         @include mix.respondToMin('sm') {
             font-size: 1.4rem;
+        }
+
+        @include mix.respondToMin('md') {
+            font-size: 1.8rem;
         }
     }
 }

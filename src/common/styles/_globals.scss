@@ -87,6 +87,9 @@ table {
 
 /* Invitation Layout Modifiers */
 .invitation {
+    max-width: 120rem;
+    margin: 0 auto;
+
     &--has-menu-bar {
         margin-top: vars.$menu-bar-height;
     }

@@ -5,14 +5,35 @@
 
     &--floating {
         position: fixed;
-        bottom: 2.4rem;
-        right: 2.4rem;
+        bottom: 1.8rem;
+        right: 1.8rem;
         z-index: 950;
+
+        @include mix.respondToMin('xs') {
+            bottom: 2.2rem;
+            right: 2.2rem;
+        }
+
+        @include mix.respondToMin('sm') {
+            bottom: 2.6rem;
+            right: 2.6rem;
+        }
+
+        @include mix.respondToMin('md') {
+            bottom: 3rem;
+            right: 3rem;
+        }
+
+        @include mix.respondToMin('lg') {
+            bottom: 3.4rem;
+            right: 3.4rem;
+        }
 
         &.music-player--playing .btn {
             animation: pulseGlow 2.5s ease-in-out infinite;
         }
     }
+
 
     &--card {
         width: 100%;

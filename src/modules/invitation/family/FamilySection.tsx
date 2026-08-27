@@ -34,7 +34,7 @@ export const FamilySection: React.FC = () => {
                 transition={{ duration: 1.1, ease: FLUID_EASE }}
             >
                 <motion.div
-                    className="family-section__decoration family-section__decoration--rotate"
+                    className="family-section__decoration family-section__decoration--rotate  family-section__decoration--1"
                     initial={{ opacity: 0, scale: 0.92, rotate: 180 }}
                     whileInView={{ opacity: 1, scale: 1, rotate: 180 }}
                     viewport={{ once: true, margin: '-10% 0px' }}
@@ -99,7 +99,7 @@ export const FamilySection: React.FC = () => {
                 </div>
 
                 <motion.div
-                    className="family-section__decoration"
+                    className="family-section__decoration  family-section__decoration--2"
                     initial={{ opacity: 0, scale: 0.92 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true, margin: '-10% 0px' }}

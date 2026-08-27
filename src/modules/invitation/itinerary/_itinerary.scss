@@ -14,8 +14,8 @@
             margin-top: -2rem;
 
             @include mix.respondToMin('xs') {
-                margin-top: -1rem;
-                transform: rotate(-45deg);
+                margin-top: -4rem;
+                transform: rotate(-5deg);
             }
 
             @include mix.respondToMin('sm') {
@@ -38,6 +38,11 @@
         width: 95%;
         margin: 0 auto;
         padding: 0 3rem;
+
+        @include mix.respondToMin('md') {
+            max-width: 68rem;
+            padding: 0 4rem;
+        }
     }
 
     &__header {
@@ -57,6 +62,11 @@
         gap: 3.5rem 0;
         position: relative;
         margin-top: 4rem;
+
+        @include mix.respondToMin('md') {
+            gap: 5.5rem 0;
+            margin-top: 5.5rem;
+        }
 
         &::before {
             content: '';
@@ -91,6 +101,16 @@
             width: 5.2rem;
             height: 5.2rem;
         }
+
+        @include mix.respondToMin('md') {
+            width: 6.6rem;
+            height: 6.6rem;
+
+            svg {
+                width: 3.2rem;
+                height: 3.2rem;
+            }
+        }
     }
 
     &__node-outline {
@@ -111,6 +131,16 @@
         @include mix.respondToMin('sm') {
             width: 5.2rem;
             height: 5.2rem;
+        }
+
+        @include mix.respondToMin('md') {
+            width: 6.6rem;
+            height: 6.6rem;
+
+            svg {
+                width: 2.8rem;
+                height: 2.8rem;
+            }
         }
     }
 
@@ -141,6 +171,10 @@
             align-items: center;
             padding-right: 3.8rem;
 
+            @include mix.respondToMin('md') {
+                padding-right: 5.5rem;
+            }
+
             .itinerary__node-outline {
                 right: 0;
                 transform: translate(50%, -50%);
@@ -152,6 +186,10 @@
             text-align: center;
             align-items: center;
             padding-left: 3.8rem;
+
+            @include mix.respondToMin('md') {
+                padding-left: 5.5rem;
+            }
 
             .itinerary__node-outline {
                 left: 0;
@@ -175,6 +213,12 @@
             width: 7rem;
             height: 7rem;
         }
+
+        @include mix.respondToMin('md') {
+            width: 9.5rem;
+            height: 9.5rem;
+            margin-bottom: 0.8rem;
+        }
     }
 
     &__time {
@@ -189,6 +233,12 @@
 
         @include mix.respondToMin('sm') {
             font-size: 1.6rem;
+        }
+
+        @include mix.respondToMin('md') {
+            font-size: 2.2rem;
+            letter-spacing: 0.22em;
+            margin-bottom: 0.5rem;
         }
     }
 
@@ -205,6 +255,12 @@
 
         @include mix.respondToMin('sm') {
             font-size: 1.2rem;
+        }
+
+        @include mix.respondToMin('md') {
+            font-size: 1.65rem;
+            letter-spacing: 0.12em;
+            line-height: 1.5;
         }
     }
 }

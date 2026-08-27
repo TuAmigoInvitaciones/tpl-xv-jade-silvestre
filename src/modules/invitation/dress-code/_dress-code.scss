@@ -7,16 +7,19 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    // gap: 2rem;
     align-items: center;
     text-align: center;
+
+    @include mix.respondToMin('md') {
+        padding: 12rem 2rem;
+    }
+
 
     &__container {
         overflow: hidden;
         position: relative;
         width: 100%;
         padding: 6rem 2rem;
-        max-width: 45rem;
         margin: 0 auto;
         display: flex;
         flex-direction: column;
@@ -25,8 +28,17 @@
         box-shadow: 0 10px 30px rgba(vars.$color-primary, 0.15), 0 4px 12px rgba(0, 0, 0, 0.05);
         border: 1px solid rgba(vars.$color-primary-700, 0.2);
 
+        @include mix.respondToMin('xs') {
+            width: 90%;
+        }
+
         @include mix.respondToMin('sm') {
             padding: 8rem 2rem;
+        }
+
+        @include mix.respondToMin('md') {
+            max-width: 58rem;
+            padding: 12rem 3.5rem;
         }
     }
 
@@ -45,6 +57,9 @@
                 width: 10rem;
             }
 
+            @include mix.respondToMin('md') {
+                width: 13rem;
+            }
         }
 
         &--top-right {
@@ -75,6 +90,11 @@
         @include mix.respondToMin('sm') {
             font-size: 1.4rem;
         }
+
+        @include mix.respondToMin('md') {
+            font-size: 1.8rem;
+            margin-bottom: 2.5rem;
+        }
     }
 
     &__illustration {
@@ -85,6 +105,11 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
+        @include mix.respondToMin('md') {
+            max-width: 17rem;
+            margin-bottom: 2.5rem;
+        }
 
         img {
             width: 90%;
@@ -105,6 +130,10 @@
         display: flex;
         flex-direction: column;
         gap: 0.6rem;
+
+        @include mix.respondToMin('md') {
+            gap: 1rem;
+        }
     }
 
     &__attire-line {
@@ -118,6 +147,11 @@
         @include mix.respondToMin('sm') {
             font-size: 1.4rem;
         }
+
+        @include mix.respondToMin('md') {
+            font-size: 1.8rem;
+            line-height: 1.7;
+        }
     }
 
     &__attire-label {
@@ -130,6 +164,11 @@
         align-items: center;
         gap: 1.2rem;
         margin-top: 1rem;
+
+        @include mix.respondToMin('md') {
+            gap: 1.6rem;
+            margin-top: 1.8rem;
+        }
     }
 
     &__color-circle {
@@ -144,6 +183,11 @@
         @include mix.respondToMin('sm') {
             width: 5rem;
             height: 5rem;
+        }
+
+        @include mix.respondToMin('md') {
+            width: 6.2rem;
+            height: 6.2rem;
         }
 
         &:hover {
@@ -188,6 +232,11 @@
             width: 45rem;
         }
 
+        @include mix.respondToMin('md') {
+            width: 58rem;
+            padding: 1.2rem;
+        }
+
         &:hover {
             transform: translateY(-4px);
             box-shadow: 0 16px 35px rgba(vars.$color-primary, 0.2);
@@ -208,6 +257,7 @@
         }
     }
 }
+
 
 
 

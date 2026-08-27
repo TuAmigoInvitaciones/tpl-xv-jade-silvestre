@@ -53,6 +53,10 @@
             font-size: 2rem;
         }
 
+        @include mix.respondToMin('md') {
+            font-size: 3rem;
+        }
+
         &--uppercase {
             font-family: vars.$font-sans;
             font-size: 1.2rem;

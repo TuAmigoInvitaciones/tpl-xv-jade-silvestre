@@ -10,6 +10,10 @@
     position: relative;
     overflow: hidden;
 
+    @include mix.respondToMin('md') {
+        padding: 12rem 2rem;
+    }
+
     &__bg {
         position: absolute;
         top: 0;
@@ -46,6 +50,10 @@
             @include mix.respondToMin('sm') {
                 width: 13rem;
             }
+
+            @include mix.respondToMin('md') {
+                width: 18rem;
+            }
         }
     }
 
@@ -58,6 +66,11 @@
         color: vars.$color-primary-700;
         text-align: center;
         margin: -0.5rem 0 1rem;
+
+        @include mix.respondToMin('md') {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+        }
     }
 
     &__draw {
@@ -76,6 +89,10 @@
             @include mix.respondToMin('xs') {
                 width: 90%;
             }
+
+            @include mix.respondToMin('md') {
+                width: 80%;
+            }
         }
     }
 
@@ -88,6 +105,10 @@
 
         @include mix.respondToMin('sm') {
             height: 55rem;
+        }
+
+        @include mix.respondToMin('md') {
+            height: 70rem;
         }
 
         img {
@@ -123,7 +144,7 @@
     align-items: center;
     text-align: center;
     width: 100%;
-    max-width: 440px;
+    max-width: 44rem;
     margin: 0 auto 3.2rem;
     gap: 1rem;
     padding: 4rem 2rem;
@@ -133,6 +154,13 @@
 
     @include mix.respondToMin('xs') {
         width: 90%;
+    }
+
+    @include mix.respondToMin('md') {
+        max-width: 58rem;
+        padding: 5.5rem 3.5rem;
+        gap: 1.4rem;
+        margin-bottom: 4.5rem;
     }
 
     &__icon {
@@ -146,6 +174,11 @@
             height: 5.5rem;
             object-fit: contain;
             display: block;
+
+            @include mix.respondToMin('md') {
+                width: 7.5rem;
+                height: 7.5rem;
+            }
         }
     }
 
@@ -157,6 +190,10 @@
             width: 7rem;
             height: auto;
             display: block;
+
+            @include mix.respondToMin('md') {
+                width: 9.5rem;
+            }
         }
 
         &--first {
@@ -177,6 +214,11 @@
         color: vars.$color-primary-900;
         margin: 0;
         letter-spacing: 0.02em;
+
+        @include mix.respondToMin('md') {
+            font-size: 2.3rem;
+            letter-spacing: 0.05em;
+        }
     }
 
     &__venue {
@@ -186,30 +228,58 @@
         line-height: 1.2;
         margin: 0;
         font-weight: 400;
+
+        @include mix.respondToMin('md') {
+            font-size: 3.8rem;
+        }
     }
 
     &__time {
         font-family: vars.$font-serif;
-        font-size: clamp(2.4rem, 3vw, 1.4rem);
+        font-size: 2.4rem;
         font-weight: 400;
         letter-spacing: 1px;
         text-transform: uppercase;
         color: vars.$color-primary;
         margin: 0;
+
+        @include mix.respondToMin('md') {
+            font-size: 3.2rem;
+            letter-spacing: 2px;
+        }
     }
 
     &__address {
         font-family: vars.$font-serif;
-        font-size: clamp(1.15rem, 3.8vw, 1.25rem);
+        font-size: 1.25rem;
         font-weight: 300;
         line-height: 1.7;
         color: vars.$color-text-700;
         letter-spacing: 0.5px;
         margin: 0;
         width: 90%;
+
+        @include mix.respondToMin('md') {
+            font-size: 1.6rem;
+            line-height: 1.85;
+            width: 85%;
+        }
     }
 
     &__button {
         margin-top: 1rem;
+
+        @include mix.respondToMin('md') {
+            margin-top: 1.8rem;
+            width: 36rem !important;
+            padding: 1.6rem 3.4rem !important;
+            font-size: 1.7rem !important;
+
+            .btn__icon svg,
+            svg {
+                width: 2.6rem !important;
+                height: 2.6rem !important;
+            }
+        }
     }
 }

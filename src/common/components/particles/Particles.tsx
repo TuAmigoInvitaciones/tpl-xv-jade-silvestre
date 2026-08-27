@@ -5,6 +5,7 @@ export interface ParticlesProps {
     colors?: string[]
     minSize?: number
     maxSize?: number
+    mdScaleFactor?: number
     speed?: number
     variant?: 'glitter' | 'circles'
     direction?: 'down' | 'up' | 'float'
@@ -15,6 +16,7 @@ export interface ParticlesProps {
 interface Particle {
     x: number
     y: number
+    baseSize: number
     size: number
     opacity: number
     opacitySpeed: number
@@ -33,6 +35,7 @@ export const Particles: React.FC<ParticlesProps> = ({
     colors = ['#FFFFFF', '#FFF8DC', '#FFD700', '#D4AF37', '#F3E5AB', '#E6CA65', '#FFF3CD', '#E5E4E2', '#C0C0C0'],
     minSize = 1.5,
     maxSize = 4.5,
+    mdScaleFactor = 3.2,
     speed = 0.9,
     variant = 'glitter',
     direction = 'down',
@@ -49,46 +52,80 @@ export const Particles: React.FC<ParticlesProps> = ({
         if (!ctx) return
 
         let animationFrameId: number
-        let width = 0
-        let height = 0
 
-        const handleResize = () => {
-            const rect = canvas.getBoundingClientRect()
-            const dpr = window.devicePixelRatio || 1
-            width = rect.width
-            height = rect.height
+        const rect = canvas.getBoundingClientRect()
+        let width = rect.width || window.innerWidth
+        let height = rect.height || window.innerHeight
+        const dpr = window.devicePixelRatio || 1
 
-            canvas.width = width * dpr
-            canvas.height = height * dpr
-            ctx.scale(dpr, dpr)
+        canvas.width = width * dpr
+        canvas.height = height * dpr
+        ctx.scale(dpr, dpr)
+
+        const getScaleFactor = () => (window.innerWidth >= 768 ? mdScaleFactor : 1)
+
+        const updateParticleSizes = () => {
+            const scale = getScaleFactor()
+            particles.forEach((p) => {
+                p.size = p.baseSize * scale
+            })
         }
 
-        handleResize()
+        const handleResize = () => {
+            const r = canvas.getBoundingClientRect()
+            const currentDpr = window.devicePixelRatio || 1
+            const oldWidth = width
+            width = r.width || window.innerWidth
+            height = r.height || window.innerHeight
 
-        const resizeObserver = new ResizeObserver(() => handleResize())
-        if (canvas.parentElement) {
-            resizeObserver.observe(canvas.parentElement)
+            canvas.width = width * currentDpr
+            canvas.height = height * currentDpr
+            ctx.scale(currentDpr, currentDpr)
+
+            if (particles.length > 0) {
+                updateParticleSizes()
+                if (oldWidth > 0 && oldWidth !== width) {
+                    const ratio = width / oldWidth
+                    particles.forEach((p) => {
+                        p.x *= ratio
+                    })
+                }
+            }
         }
 
         const getRandomColor = () => colors[Math.floor(Math.random() * colors.length)]
 
         const shapes: ('star' | 'diamond' | 'spark')[] = ['star', 'diamond', 'spark', 'star']
 
-        const particles: Particle[] = Array.from({ length: count }, () => ({
-            x: Math.random() * (width || 300),
-            y: Math.random() * (height || 300),
-            size: minSize + Math.random() * (maxSize - minSize),
-            opacity: 0.2 + Math.random() * 0.8,
-            opacitySpeed: (Math.random() * 0.02 + 0.008) * (Math.random() > 0.5 ? 1 : -1),
-            rotation: Math.random() * Math.PI * 2,
-            rotationSpeed: (Math.random() - 0.5) * 0.08,
-            speedY: (0.4 + Math.random() * 0.8) * speed * (direction === 'up' ? -1 : 1),
-            speedX: (Math.random() - 0.5) * 0.3,
-            swayAngle: Math.random() * Math.PI * 2,
-            swaySpeed: 0.02 + Math.random() * 0.03,
-            color: getRandomColor(),
-            shape: shapes[Math.floor(Math.random() * shapes.length)],
-        }))
+        const initialScale = getScaleFactor()
+
+        const particles: Particle[] = Array.from({ length: count }, () => {
+            const baseSize = minSize + Math.random() * (maxSize - minSize)
+            return {
+                x: Math.random() * width,
+                y: Math.random() * height,
+                baseSize,
+                size: baseSize * initialScale,
+                opacity: 0.2 + Math.random() * 0.8,
+                opacitySpeed: (Math.random() * 0.02 + 0.008) * (Math.random() > 0.5 ? 1 : -1),
+                rotation: Math.random() * Math.PI * 2,
+                rotationSpeed: (Math.random() - 0.5) * 0.08,
+                speedY: (0.4 + Math.random() * 0.8) * speed * (direction === 'up' ? -1 : 1),
+                speedX: (Math.random() - 0.5) * 0.3,
+                swayAngle: Math.random() * Math.PI * 2,
+                swaySpeed: 0.02 + Math.random() * 0.03,
+                color: getRandomColor(),
+                shape: shapes[Math.floor(Math.random() * shapes.length)],
+            }
+        })
+
+        const resizeObserver = new ResizeObserver(() => handleResize())
+        if (canvas.parentElement) {
+            resizeObserver.observe(canvas.parentElement)
+        }
+
+
+
 
         let isVisible = true
 
@@ -214,7 +251,8 @@ export const Particles: React.FC<ParticlesProps> = ({
             resizeObserver.disconnect()
             intersectionObserver.disconnect()
         }
-    }, [count, colors, minSize, maxSize, speed, variant, direction])
+    }, [count, colors, minSize, maxSize, mdScaleFactor, speed, variant, direction])
+
 
     return (
         <canvas

@@ -111,9 +111,12 @@ export const HeroSection: React.FC = () => {
                             />
                             18
                         </span>
-                        <span> . 12 . 26</span>
+                        <span className="hero-section__date-month"> . 12 .</span>
+                        <span className="hero-section__date-year">26</span>
                     </motion.div>
                 )}
+
+
             </div>
         </section>
     )

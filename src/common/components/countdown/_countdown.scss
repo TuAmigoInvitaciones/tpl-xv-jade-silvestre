@@ -142,6 +142,10 @@
     &--minimal {
         .countdown__items {
             gap: 1.6rem;
+
+            @include mix.respondToMin('md') {
+                gap: 2.4rem;
+            }
         }
 
         .countdown__box {
@@ -155,6 +159,10 @@
             @include mix.respondToMin('sm') {
                 font-size: 4.8rem;
             }
+
+            @include mix.respondToMin('md') {
+                font-size: 6rem;
+            }
         }
 
         .countdown__concept {
@@ -162,6 +170,10 @@
 
             @include mix.respondToMin('sm') {
                 font-size: 1.2rem;
+            }
+
+            @include mix.respondToMin('md') {
+                font-size: 1.6rem;
             }
         }
     }

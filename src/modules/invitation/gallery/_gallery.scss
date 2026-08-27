@@ -5,9 +5,12 @@
     background: vars.$color-secondary-100;
     padding: 8rem 0;
 
+    @include mix.respondToMin('md') {
+        padding: 12rem 0;
+    }
+
     &__container {
-        max-width: 1040px;
-        width: 92%;
+        width: 95%;
         margin: 0 auto;
     }
 

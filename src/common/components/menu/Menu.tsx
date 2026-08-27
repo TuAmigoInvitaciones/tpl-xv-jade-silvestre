@@ -39,7 +39,9 @@ export const Menu: React.FC<MenuProps> = (props) => {
                         onClick={onOpenMenu}
                         icon={<ListIcon size={24} />}
                         aria-label="Abrir menú"
+                        className="menu__btn"
                     />
+
                 </header>
             )}
 

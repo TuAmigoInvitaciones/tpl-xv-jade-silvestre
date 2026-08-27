@@ -122,11 +122,13 @@ export const CountdownSection: React.FC = () => {
                         <Button
                             variant="secondary"
                             radius="full"
-                            icon={<CalendarPlusIcon size={20} />}
+                            icon={<CalendarPlusIcon size={20} className="countdown-section__btn-icon" />}
                             onClick={() => downloadSaveTheDate()}
+                            className="countdown-section__btn"
                         >
                             GUARDAR RECORDATORIO
                         </Button>
+
                     </motion.div>
                 </div>
             </section>

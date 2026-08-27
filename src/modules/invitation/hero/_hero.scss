@@ -5,6 +5,10 @@
     height: 80vh;
     position: relative;
 
+    @include mix.respondToMin('md') {
+        height: 100vh;
+    }
+
     &__overlay {
         position: absolute;
         top: 0;
@@ -54,7 +58,7 @@
         }
 
         @include mix.respondToMin('md') {
-            font-size: 5.2rem;
+            font-size: 7rem;
         }
 
         @include mix.respondToMin('lg') {
@@ -78,10 +82,17 @@
         max-width: 36rem;
         font-family: vars.$font-serif;
         font-size: 4rem;
+        line-height: 1;
         letter-spacing: 0.15em;
         color: #fff;
         text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
         z-index: 2;
+
+        &-day,
+        &-month,
+        &-year {
+            display: inline;
+        }
 
         @include mix.respondToMin('xs') {
             font-size: 4.5rem;
@@ -94,19 +105,37 @@
         }
 
         @include mix.respondToMin('md') {
-            font-size: 6.2rem;
-            bottom: 4.5rem;
+            flex-direction: column;
+            align-items: center;
+            bottom: 4rem;
+            font-size: 9rem;
+            left: 20%;
+
+            .hero-section__date-day,
+            .hero-section__date-month,
+            .hero-section__date-year {
+                display: block;
+                margin: 0;
+                text-align: center;
+                line-height: 1.5;
+            }
+
+            .hero-section__date-month {
+                letter-spacing: 0.08em;
+            }
         }
 
         @include mix.respondToMin('lg') {
-            font-size: 7rem;
-            bottom: 5rem;
+            font-size: 6.5rem;
+            bottom: 4rem;
         }
 
         @include mix.respondToMin('xl') {
-            font-size: 7.5rem;
-            bottom: 5.5rem;
+            font-size: 7rem;
+            bottom: 4.5rem;
         }
+
+
 
         &-day {
             position: relative;
@@ -166,10 +195,6 @@
     }
 
     @include mix.respondToMin('md') {
-        height: 95vh;
-    }
-
-    @include mix.respondToMin('lg') {
         height: 100vh;
     }
 }
@@ -248,7 +273,7 @@
         }
 
         @include mix.respondToMin('md') {
-            font-size: 2.8rem;
+            font-size: 3rem;
         }
 
         @include mix.respondToMin('lg') {
@@ -273,7 +298,7 @@
         }
 
         @include mix.respondToMin('md') {
-            font-size: 4.5rem;
+            font-size: 5rem;
         }
 
         @include mix.respondToMin('lg') {

@@ -6,11 +6,22 @@
     position: relative;
     overflow: hidden;
 
+    @include mix.respondToMin('md') {
+        padding: 12rem 0 0;
+    }
 
     &__container {
-        max-width: 780px;
         width: 90%;
         margin: 0 auto;
+
+        @include mix.respondToMin('xs') {
+            width: 80%;
+        }
+
+        @include mix.respondToMin('md') {
+            max-width: 68rem;
+            width: 90%;
+        }
     }
 
     &__accordion-wrapper {
@@ -24,6 +35,42 @@
 
         .accordion__icon {
             color: vars.$color-secondary-600;
+        }
+
+        @include mix.respondToMin('md') {
+            margin-top: 4.5rem;
+
+            .accordion {
+                width: 100%;
+            }
+
+            .accordion--separated {
+                gap: 3.2rem;
+            }
+
+            .accordion__header {
+                padding: 2.4rem 3.2rem;
+                font-size: 1.8rem;
+            }
+
+            .accordion__title-container {
+                font-size: 1.8rem;
+                gap: 1.6rem;
+            }
+
+            .accordion__icon svg {
+                width: 3.6rem;
+                height: 3.6rem;
+            }
+
+            .accordion__chevron svg {
+                width: 2.8rem;
+                height: 2.8rem;
+            }
+
+            .accordion__body {
+                padding: 0 3.2rem 3.5rem;
+            }
         }
     }
 
@@ -54,6 +101,23 @@
         button {
             width: 100% !important;
         }
+
+        @include mix.respondToMin('md') {
+            margin-top: 2.4rem;
+
+            button,
+            .btn {
+                width: 34rem !important;
+                padding: 1.6rem 3.2rem !important;
+                font-size: 1.65rem !important;
+
+                .btn__icon svg,
+                svg {
+                    width: 2.4rem !important;
+                    height: 2.4rem !important;
+                }
+            }
+        }
     }
 
     &__card-flor {
@@ -66,6 +130,10 @@
 
         @include mix.respondToMin('sm') {
             width: 10rem;
+        }
+
+        @include mix.respondToMin('md') {
+            width: 14rem;
         }
 
         &--bottom-right {
@@ -93,6 +161,13 @@
             width: 90%;
             font-size: 1.4rem;
         }
+
+        @include mix.respondToMin('md') {
+            width: 88%;
+            font-size: 1.75rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
     }
 
     &__bank-info {
@@ -104,6 +179,11 @@
         border: 1px dashed rgba(vars.$color-primary-700, 0.2);
         position: relative;
         z-index: 2;
+
+        @include mix.respondToMin('md') {
+            padding: 2rem 2.4rem;
+            margin-bottom: 2.2rem;
+        }
     }
 
 
@@ -116,6 +196,12 @@
 
         @include mix.respondToMin('sm') {
             font-size: 1.4rem;
+        }
+
+        @include mix.respondToMin('md') {
+            font-size: 1.7rem;
+            line-height: 1.5;
+            margin-bottom: 0.8rem;
         }
 
         &:last-child {
@@ -146,7 +232,12 @@
 
             @include mix.respondToMin('xs') {
                 margin-top: 4rem;
-                margin-bottom: -2rem;
+                margin-bottom: 0;
+            }
+
+            @include mix.respondToMin('md') {
+                margin-top: 6rem;
+                margin-bottom: 0;
             }
         }
     }

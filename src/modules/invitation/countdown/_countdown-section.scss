@@ -5,6 +5,10 @@
     padding: 8rem 0;
     position: relative;
 
+    @include mix.respondToMin('md') {
+        padding: 12rem 0;
+    }
+
     &__container {
         width: 100%;
         max-width: 44rem;
@@ -12,6 +16,10 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        @include mix.respondToMin('md') {
+            max-width: 60rem;
+        }
     }
 
     &__header {
@@ -34,6 +42,11 @@
         border: 1px solid rgba(vars.$color-secondary-600, 0.25);
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
 
+        @include mix.respondToMin('md') {
+            max-width: 56rem;
+            padding: 3.8rem 3.2rem 3.2rem;
+        }
+
         &-title {
             font-family: vars.$font-serif;
             font-size: 1.6rem;
@@ -44,6 +57,11 @@
             @include mix.respondToMin('sm') {
                 font-size: 1.8rem;
             }
+
+            @include mix.respondToMin('md') {
+                font-size: 2.2rem;
+                margin-bottom: 2.4rem;
+            }
         }
 
         &-grid {
@@ -52,6 +70,10 @@
             gap: 1.2rem 0.4rem;
             align-items: center;
             justify-items: center;
+
+            @include mix.respondToMin('md') {
+                gap: 1.8rem 0.8rem;
+            }
         }
 
         &-head {
@@ -64,6 +86,11 @@
 
             @include mix.respondToMin('sm') {
                 font-size: 1.4rem;
+            }
+
+            @include mix.respondToMin('md') {
+                font-size: 1.6rem;
+                margin-bottom: 0.8rem;
             }
         }
 
@@ -81,6 +108,12 @@
 
             @include mix.respondToMin('sm') {
                 font-size: 1.4rem;
+            }
+
+            @include mix.respondToMin('md') {
+                font-size: 1.8rem;
+                width: 2.8rem;
+                height: 2.2rem;
             }
 
             &--muted {
@@ -114,6 +147,13 @@
             color: vars.$color-secondary-400;
             animation: calendarHeartPulse 2.4s infinite ease-in-out;
             pointer-events: none;
+
+            @include mix.respondToMin('md') {
+                width: 5.6rem;
+                height: 5.6rem;
+                min-width: 5.6rem;
+                min-height: 5.6rem;
+            }
         }
     }
 
@@ -122,14 +162,47 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 100%;
 
-        button {
+        .countdown-section__btn {
             width: 90%;
+            padding: 1.2rem 2.4rem;
+            font-size: 1.3rem;
+
+            .btn__icon svg,
+            .countdown-section__btn-icon {
+                width: 2.2rem;
+                height: 2.2rem;
+            }
         }
 
         @include mix.respondToMin('sm') {
-            button {
-                width: 30rem;
+            .countdown-section__btn {
+                width: 32rem;
+                padding: 1.4rem 2.8rem;
+                font-size: 1.45rem;
+
+                .btn__icon svg,
+                .countdown-section__btn-icon {
+                    width: 2.4rem;
+                    height: 2.4rem;
+                }
+            }
+        }
+
+        @include mix.respondToMin('md') {
+            margin-top: 3rem;
+
+            .countdown-section__btn {
+                width: 42rem;
+                padding: 1.8rem 3.6rem;
+                font-size: 1.75rem;
+
+                .btn__icon svg,
+                .countdown-section__btn-icon {
+                    width: 2.8rem;
+                    height: 2.8rem;
+                }
             }
         }
     }
@@ -147,6 +220,12 @@
             right: -5%;
             width: 20rem;
         }
+
+        @include mix.respondToMin('md') {
+            top: -1%;
+            right: -3%;
+            width: 22rem;
+        }
     }
 
     &__flower-2 {
@@ -161,6 +240,12 @@
             bottom: -1%;
             left: -5%;
             width: 20rem;
+        }
+
+        @include mix.respondToMin('md') {
+            bottom: -31px;
+            left: -3%;
+            width: 22rem;
         }
     }
 
@@ -177,6 +262,10 @@
 
             @include mix.respondToMin('sm') {
                 height: 50rem;
+            }
+
+            @include mix.respondToMin('md') {
+                height: 60rem;
             }
         }
     }
