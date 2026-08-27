@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Autoplay, EffectFade, EffectCoverflow, EffectCards } from 'swiper/modules'
+import type { SwiperOptions } from 'swiper/types'
 import { CaretLeftIcon, CaretRightIcon } from '@phosphor-icons/react'
+
 
 import { Button, type ButtonVariant } from '../button/Button'
 import { CarouselCard, type CarouselCardProps } from './CarouselCard'
@@ -24,6 +26,8 @@ export interface CarouselProps {
     delay?: number
     slidesPerView?: number
     spaceBetween?: number
+    centeredSlides?: boolean
+    breakpoints?: Record<number, unknown>
     showNavigation?: boolean
     showPagination?: boolean
     buttonVariant?: ButtonVariant
@@ -40,6 +44,8 @@ export const Carousel: React.FC<CarouselProps> = ({
     delay = 3500,
     slidesPerView = 1,
     spaceBetween = 20,
+    centeredSlides = false,
+    breakpoints,
     showNavigation = true,
     showPagination = true,
     buttonVariant = 'floating',
@@ -58,6 +64,9 @@ export const Carousel: React.FC<CarouselProps> = ({
                 effect={effect}
                 slidesPerView={effect === 'cards' || effect === 'fade' ? 1 : slidesPerView}
                 spaceBetween={spaceBetween}
+                centeredSlides={centeredSlides}
+                breakpoints={breakpoints as SwiperOptions['breakpoints']}
+
                 autoplay={autoplayConfig}
                 loop={loop}
                 pagination={showPagination ? { clickable: true } : false}
@@ -67,6 +76,7 @@ export const Carousel: React.FC<CarouselProps> = ({
                         : false
                 }
             >
+
                 {/* 1. Diapositivas Personalizadas */}
                 {children}
 

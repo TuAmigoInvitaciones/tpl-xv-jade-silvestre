@@ -1,4 +1,121 @@
 @use '../../../common/styles/variables' as vars;
 @use '../../../common/styles/mixins' as mix;
 
-.details-section {}
+.details-section {
+    position: relative;
+    overflow: hidden;
+
+    &__img {
+        width: 100%;
+        height: auto;
+        display: block;
+
+        &--top {
+            margin-top: -2rem;
+
+            @include mix.respondToMin('xs') {
+                margin-top: -1rem;
+            }
+
+            @include mix.respondToMin('sm') {
+                margin-top: -4rem;
+            }
+        }
+    }
+
+
+    &__container {
+        max-width: 1100px;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    &__swiper-wrapper {
+        margin-top: 3.5rem;
+        position: relative;
+        width: 100%;
+    }
+
+
+    &__card {
+        background: #f5f5f3;
+        border: 1px solid rgba(vars.$color-primary-800, 0.1);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.02);
+        padding: 3rem 1.8rem 3.2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: left;
+        align-items: flex-start;
+        height: 100%;
+        min-height: 28rem;
+        transition: transform 0.35s ease, box-shadow 0.35s ease;
+        border-radius: 0;
+
+        @include mix.respondToMin('sm') {
+            padding: 3.5rem 2.5rem 3.8rem;
+        }
+
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
+        }
+    }
+
+    &__card-header {
+        margin-bottom: 2rem;
+        width: 100%;
+    }
+
+    &__card-category {
+        display: block;
+        font-family: vars.$font-serif;
+        font-size: 1.4rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: vars.$color-primary-700;
+        margin-bottom: 0.4rem;
+        opacity: 0.9;
+    }
+
+    &__card-title {
+        font-family: vars.$font-cursive;
+        font-size: 2.3rem;
+        color: vars.$color-primary-300;
+        line-height: 1.2;
+        margin: 0;
+
+        @include mix.respondToMin('sm') {
+            font-size: 2.6rem;
+        }
+    }
+
+    &__card-body {
+        width: 100%;
+        margin-top: auto;
+    }
+
+    &__card-description {
+        font-family: vars.$font-serif;
+        font-size: 1rem;
+        line-height: 1.75;
+        color: #4a4a4a;
+        margin: 0;
+
+        @include mix.respondToMin('sm') {
+            font-size: 1.05rem;
+        }
+    }
+
+    &__card-highlight {
+        display: inline-block;
+        margin-top: 1.2rem;
+        font-family: vars.$font-serif;
+        font-size: 1.15rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        color: vars.$color-primary-800;
+        border-bottom: 1px solid vars.$color-primary-300;
+        padding-bottom: 0.2rem;
+    }
+}
