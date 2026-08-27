@@ -9,6 +9,22 @@
         padding: 12rem 0;
     }
 
+    &__left-col,
+    &__right-col {
+        display: contents;
+
+        @include mix.respondToMin('lg') {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1.6rem;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+        }
+    }
+
     &__container {
         width: 90%;
         margin: 0 auto;
@@ -30,6 +46,30 @@
         @include mix.respondToMin('md') {
             max-width: 58rem;
             padding: 7rem 3.5rem;
+        }
+
+        @include mix.respondToMin('lg') {
+            max-width: 105rem;
+            width: 90%;
+            padding: 4.5rem 5rem 10rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @include mix.respondToMin('xl') {
+            max-width: 112rem;
+            padding: 5rem 6rem 11rem;
+            gap: 5rem;
+        }
+    }
+
+    &__header {
+        width: 100%;
+
+        @include mix.respondToMin('lg') {
+            margin-bottom: 0;
         }
     }
 
@@ -56,6 +96,12 @@
             margin-bottom: 2.5rem;
         }
 
+        @include mix.respondToMin('lg') {
+            margin-bottom: 0;
+            width: 8.5rem;
+            height: 8.5rem;
+        }
+
         img {
             width: 100%;
             height: 100%;
@@ -72,6 +118,13 @@
             width: 85%;
             margin-bottom: 2.5rem;
         }
+
+        @include mix.respondToMin('lg') {
+            width: 100%;
+            margin-bottom: 0;
+            font-size: 1.65rem;
+            line-height: 1.6;
+        }
     }
 
     &__message {
@@ -83,6 +136,12 @@
             letter-spacing: 0.1em;
             margin-bottom: 2.5rem;
         }
+
+        @include mix.respondToMin('lg') {
+            margin-bottom: 0;
+            width: 100%;
+            font-size: 1.6rem;
+        }
     }
 
     &__qr-wrapper {
@@ -90,6 +149,12 @@
         display: flex;
         justify-content: center;
         width: 90%;
+
+        @include mix.respondToMin('lg') {
+            margin-bottom: 0;
+            width: 100%;
+            justify-content: center;
+        }
     }
 
     &__qr-card {
@@ -107,6 +172,15 @@
             svg {
                 width: 180px !important;
                 height: 180px !important;
+            }
+        }
+
+        @include mix.respondToMin('lg') {
+            padding: 1.6rem;
+
+            svg {
+                width: 185px !important;
+                height: 185px !important;
             }
         }
     }
@@ -136,6 +210,15 @@
                 }
             }
         }
+
+        @include mix.respondToMin('lg') {
+            width: 100%;
+
+            .btn {
+                max-width: 28rem !important;
+                margin: 0 auto;
+            }
+        }
     }
 
     &__bottom-img {
@@ -150,6 +233,20 @@
             width: calc(100% + 7rem);
             margin-bottom: -7rem;
         }
+
+        @include mix.respondToMin('lg') {
+            position: absolute;
+            bottom: -15.5rem;
+            left: 0;
+            width: 100%;
+            height: auto;
+            margin-bottom: 0;
+            z-index: 0;
+        }
+
+        @include mix.respondToMin('xl') {
+            bottom: -17.5rem;
+        }
     }
 
     &__photo {
@@ -162,11 +259,27 @@
             height: 60rem;
         }
 
+        @include mix.respondToMin('lg') {
+            height: 65rem;
+        }
+
+        @include mix.respondToMin('xl') {
+            height: 70rem;
+        }
+
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
+
+            @include mix.respondToMin('lg') {
+                object-position: center 20%;
+            }
+
+            @include mix.respondToMin('xl') {
+                object-position: center 18%;
+            }
         }
     }
 

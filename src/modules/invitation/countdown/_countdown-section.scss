@@ -20,6 +20,62 @@
         @include mix.respondToMin('md') {
             max-width: 60rem;
         }
+
+        @include mix.respondToMin('lg') {
+            max-width: 108rem;
+            width: 90%;
+        }
+    }
+
+    &__grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        @include mix.respondToMin('lg') {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+    }
+
+    &__col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        &--left {
+            @include mix.respondToMin('lg') {
+                justify-content: center;
+                padding-right: 2rem;
+            }
+        }
+
+        &--right {
+            @include mix.respondToMin('lg') {
+                justify-content: center;
+            }
+        }
+    }
+
+    &__desktop-text {
+        display: none;
+
+        @include mix.respondToMin('lg') {
+            display: block;
+            font-family: vars.$font-serif;
+            font-size: 1.6rem;
+            line-height: 1.75;
+            color: vars.$color-primary-800;
+            max-width: 42rem;
+            margin-top: 2.5rem;
+            text-align: center;
+            font-style: italic;
+            opacity: 0.9;
+        }
     }
 
     &__header {
@@ -226,6 +282,16 @@
             right: -3%;
             width: 22rem;
         }
+
+        @include mix.respondToMin('lg') {
+            top: 0;
+            right: 0;
+            width: 28rem;
+        }
+
+        @include mix.respondToMin('xl') {
+            width: 34rem;
+        }
     }
 
     &__flower-2 {
@@ -243,9 +309,19 @@
         }
 
         @include mix.respondToMin('md') {
-            bottom: -31px;
+            bottom: -3.1rem;
             left: -3%;
             width: 22rem;
+        }
+
+        @include mix.respondToMin('lg') {
+            bottom: 0;
+            left: 0;
+            width: 28rem;
+        }
+
+        @include mix.respondToMin('xl') {
+            width: 34rem;
         }
     }
 

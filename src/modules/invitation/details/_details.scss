@@ -9,14 +9,16 @@
         padding: 6rem 0;
     }
 
+    @include mix.respondToMin('lg') {
+        padding: 0;
+    }
+
     &__img {
         width: 100%;
         height: auto;
         display: block;
 
         &--top {
-            margin-top: -2rem;
-
             @include mix.respondToMin('xs') {
                 margin-top: -1rem;
             }
@@ -24,18 +26,42 @@
             @include mix.respondToMin('sm') {
                 margin-top: -4rem;
             }
+
+            @include mix.respondToMin('lg') {
+                margin-top: -14rem;
+                max-width: 125rem;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            @include mix.respondToMin('xl') {
+                margin-top: -18rem;
+                max-width: 135rem;
+            }
         }
     }
 
 
     &__container {
-        max-width: 1100px;
+        max-width: 110rem;
         width: 90%;
         margin: 0 auto;
+        padding: 3rem 0 4rem;
 
         @include mix.respondToMin('md') {
             max-width: 90rem;
             width: 92%;
+        }
+
+        @include mix.respondToMin('lg') {
+            max-width: 125rem;
+            width: 95%;
+            padding: 1rem 0 3rem;
+            margin-top: -10rem;
+        }
+
+        @include mix.respondToMin('xl') {
+            max-width: 135rem;
         }
     }
 
@@ -43,7 +69,7 @@
         margin-top: 3.5rem;
         position: relative;
         width: 100%;
-        padding-bottom: 4rem;
+        padding-bottom: 4.5rem;
 
         .carousel {
             padding-bottom: 0 !important;
@@ -53,19 +79,24 @@
             }
 
             .swiper-pagination {
-                bottom: -3rem !important;
+                bottom: -2.5rem !important;
             }
         }
 
         @include mix.respondToMin('md') {
             margin-top: 4.5rem;
-            padding-bottom: 6rem;
+            padding-bottom: 5.5rem;
 
             .carousel {
                 .swiper-pagination {
-                    bottom: -4.5rem !important;
+                    bottom: -3rem !important;
                 }
             }
+        }
+
+        @include mix.respondToMin('lg') {
+            margin-top: 3rem;
+            padding-bottom: 5rem;
         }
     }
 
@@ -97,6 +128,10 @@
         @include mix.respondToMin('md') {
             padding: 5rem 3.6rem 5.5rem;
             min-height: 44rem;
+        }
+
+        @include mix.respondToMin('lg') {
+            padding: 4.5rem 3.2rem 5rem;
         }
 
         &:hover {
@@ -143,6 +178,11 @@
         @include mix.respondToMin('md') {
             font-size: 3.2rem;
             line-height: 1.25;
+        }
+
+        @include mix.respondToMin('lg') {
+            font-size: 2.8rem;
+            line-height: 1.2;
         }
     }
 

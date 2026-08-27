@@ -160,40 +160,41 @@
         }
 
         @include mix.respondToMin('md') {
-            width: 6.6rem;
-            height: 6.6rem;
-            min-width: 6.6rem;
-            min-height: 6.6rem;
+            width: 5.2rem;
+            height: 5.2rem;
+            min-width: 5.2rem;
+            min-height: 5.2rem;
 
             .btn__icon svg {
-                width: 3.5rem;
-                height: 3.5rem;
+                width: 2.7rem;
+                height: 2.7rem;
             }
         }
 
         @include mix.respondToMin('lg') {
-            width: 7.2rem;
-            height: 7.2rem;
-            min-width: 7.2rem;
-            min-height: 7.2rem;
+            width: 5.4rem;
+            height: 5.4rem;
+            min-width: 5.4rem;
+            min-height: 5.4rem;
 
             .btn__icon svg {
-                width: 3.9rem;
-                height: 3.9rem;
+                width: 2.8rem;
+                height: 2.8rem;
             }
         }
 
         @include mix.respondToMin('xl') {
-            width: 7.8rem;
-            height: 7.8rem;
-            min-width: 7.8rem;
-            min-height: 7.8rem;
+            width: 5.6rem;
+            height: 5.6rem;
+            min-width: 5.6rem;
+            min-height: 5.6rem;
 
             .btn__icon svg {
-                width: 4.3rem;
-                height: 4.3rem;
+                width: 3rem;
+                height: 3rem;
             }
         }
+
 
 
         &:not(.btn--secondary):not(.btn--tertiary):not(.btn--outline):not(.btn--ghost):not(.btn--glass) {

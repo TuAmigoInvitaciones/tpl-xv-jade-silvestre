@@ -12,6 +12,19 @@
     width: 100%;
     height: auto;
     margin-bottom: -0.1rem;
+    margin-top: -1.5rem;
+
+    @include mix.respondToMin('md') {
+        margin-top: -2rem;
+    }
+
+    @include mix.respondToMin('lg') {
+        margin-top: -2.5rem;
+    }
+
+    @include mix.respondToMin('xl') {
+        margin-top: -3rem;
+    }
 }
 
 .confirmation-section {
@@ -32,6 +45,15 @@
 
         @include mix.respondToMin('md') {
             max-width: 72rem;
+        }
+
+        @include mix.respondToMin('lg') {
+            max-width: 105rem;
+            width: 90%;
+        }
+
+        @include mix.respondToMin('xl') {
+            max-width: 112rem;
         }
     }
 
@@ -60,6 +82,14 @@
         @include mix.respondToMin('md') {
             padding: 12rem 5rem;
         }
+
+        @include mix.respondToMin('lg') {
+            padding: 6rem 6rem 7rem;
+        }
+
+        @include mix.respondToMin('xl') {
+            padding: 7rem 8rem 8rem;
+        }
     }
 
     &__flor {
@@ -74,6 +104,10 @@
 
             @include mix.respondToMin('md') {
                 width: 11rem;
+            }
+
+            @include mix.respondToMin('lg') {
+                width: 14rem;
             }
         }
 
@@ -94,6 +128,13 @@
     &__content {
         width: 100%;
         margin-top: 1.5rem;
+
+        @include mix.respondToMin('lg') {
+            margin-top: 3rem;
+            max-width: 90rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
 }
 
@@ -110,6 +151,26 @@
 
     @include mix.respondToMin('md') {
         gap: 2.8rem;
+    }
+
+    @include mix.respondToMin('lg') {
+        gap: 3.2rem;
+    }
+
+    &__fields-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 2.2rem;
+
+        @include mix.respondToMin('md') {
+            gap: 2.8rem;
+        }
+
+        @include mix.respondToMin('lg') {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.8rem 3.5rem;
+        }
     }
 
     &__group {
@@ -401,6 +462,15 @@
                     width: 2.4rem !important;
                     height: 2.4rem !important;
                 }
+            }
+        }
+
+        @include mix.respondToMin('lg') {
+            margin-top: 2rem;
+
+            .btn {
+                max-width: 42rem !important;
+                margin: 0 auto;
             }
         }
     }

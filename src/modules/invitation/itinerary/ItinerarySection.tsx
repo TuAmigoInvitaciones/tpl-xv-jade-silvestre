@@ -6,6 +6,8 @@ import { useItinerary } from './hooks/useItinerary'
 
 import illustration from '@/assets/images/icons/flores-itinerario.svg'
 import illustrationBottom from '@/assets/images/icons/flores-itinerario-2.svg'
+import florEsquinaDer from '@/assets/images/icons/flor-esquina-superior-derecha.svg'
+import florEsquinaIzq from '@/assets/images/icons/flor-esquina-inferior-izquierda.svg'
 
 const FLUID_EASE = [0.22, 1, 0.36, 1] as const
 
@@ -33,6 +35,25 @@ export const ItinerarySection: React.FC = () => {
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 3.0, ease: FLUID_EASE }}
+            />
+
+            <motion.img
+                src={florEsquinaDer}
+                alt="Flor decorativa"
+                className="itinerary__flower-desktop itinerary__flower-desktop--top-right"
+                initial={{ opacity: 0, scale: 0.8, x: 20, y: -20 }}
+                whileInView={{ opacity: 0.9, scale: 1, x: 0, y: 0 }}
+                viewport={{ once: true, margin: '-10% 0px' }}
+                transition={{ duration: 1.2, ease: FLUID_EASE }}
+            />
+            <motion.img
+                src={florEsquinaIzq}
+                alt="Flor decorativa"
+                className="itinerary__flower-desktop itinerary__flower-desktop--bottom-left"
+                initial={{ opacity: 0, scale: 0.8, x: -20, y: 20 }}
+                whileInView={{ opacity: 0.9, scale: 1, x: 0, y: 0 }}
+                viewport={{ once: true, margin: '-10% 0px' }}
+                transition={{ duration: 1.2, ease: FLUID_EASE }}
             />
 
             <div className="itinerary__container">

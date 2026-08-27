@@ -27,6 +27,24 @@
         height: 100%;
         background-size: cover;
         background-position: center;
+
+        &--mobile {
+            display: block;
+
+            @include mix.respondToMin('lg') {
+                display: none;
+            }
+        }
+
+        &--desktop {
+            display: none;
+
+            @include mix.respondToMin('lg') {
+                display: block;
+                background-size: cover;
+                background-position-y: 55%;
+            }
+        }
     }
 
     &__container {
@@ -38,10 +56,29 @@
         height: 100%;
         width: 100%;
         color: vars.$color-primary-100;
+
+        @include mix.respondToMin('lg') {
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            transform: none;
+            padding: 6rem;
+            max-width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-end;
+        }
     }
 
     &__subtitle {
         text-align: center;
+
+        @include mix.respondToMin('lg') {
+            text-align: left;
+        }
     }
 
     &__title {
@@ -63,27 +100,29 @@
 
         @include mix.respondToMin('lg') {
             font-size: 6.2rem;
+            text-align: left;
+            max-width: 55%;
         }
 
         @include mix.respondToMin('xl') {
-            font-size: 7rem;
+            font-size: 9rem;
         }
     }
 
     &__date {
         position: absolute;
         bottom: 3rem;
-        left: 50%;
-        transform: translateX(-50%);
-        display: inline-flex;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        display: flex;
         align-items: baseline;
         justify-content: center;
         width: 100%;
-        max-width: 36rem;
         font-family: vars.$font-serif;
-        font-size: 4rem;
+        font-size: 4.8rem;
         line-height: 1;
-        letter-spacing: 0.15em;
+        letter-spacing: 0.12em;
         color: #fff;
         text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
         z-index: 2;
@@ -92,6 +131,7 @@
         &-month,
         &-year {
             display: inline;
+            font-weight: 300;
         }
 
         @include mix.respondToMin('xs') {
@@ -110,6 +150,9 @@
             bottom: 4rem;
             font-size: 9rem;
             left: 20%;
+            right: auto;
+            width: auto;
+            margin: 0;
 
             .hero-section__date-day,
             .hero-section__date-month,
@@ -126,16 +169,33 @@
         }
 
         @include mix.respondToMin('lg') {
-            font-size: 6.5rem;
-            bottom: 4rem;
+            position: absolute;
+            top: 8rem;
+            right: 6rem;
+            left: auto;
+            bottom: auto;
+            transform: none;
+            margin: 0;
+            width: auto;
+            font-size: 8rem;
+            flex-direction: row;
+            align-items: baseline;
+
+            .hero-section__date-day,
+            .hero-section__date-month,
+            .hero-section__date-year {
+                display: inline;
+                margin: 0;
+                text-align: right;
+                line-height: 1;
+            }
         }
 
         @include mix.respondToMin('xl') {
-            font-size: 7rem;
-            bottom: 4.5rem;
+            top: 10rem;
+            right: 4rem;
+            font-size: 9.5rem;
         }
-
-
 
         &-day {
             position: relative;
@@ -147,8 +207,8 @@
 
     &__crown {
         position: absolute;
-        top: -2.4rem;
-        left: -7%;
+        top: -3.4rem;
+        left: -10%;
         transform: translateX(-50%) rotate(-15deg);
         width: 6.2rem;
         height: auto;
@@ -174,15 +234,15 @@
         }
 
         @include mix.respondToMin('lg') {
-            width: 10.2rem;
-            top: -4.2rem;
-            left: -11%;
+            width: 12.5rem;
+            top: -5.2rem;
+            left: -12%;
         }
 
         @include mix.respondToMin('xl') {
-            width: 11.5rem;
-            top: -4.8rem;
-            left: -12%;
+            width: 14.5rem;
+            top: -6rem;
+            left: -13%;
         }
     }
 
@@ -203,6 +263,11 @@
     text-align: center;
     margin-bottom: 0.5rem;
 
+    @include mix.respondToMin('lg') {
+        text-align: left;
+        width: 100%;
+    }
+
     &__group {
         display: flex;
         align-items: center;
@@ -216,6 +281,10 @@
 
         @include mix.respondToMin('md') {
             gap: 1.6rem;
+        }
+
+        @include mix.respondToMin('lg') {
+            justify-content: flex-start;
         }
     }
 
@@ -258,7 +327,6 @@
     &__text {
         font-family: vars.$font-serif;
         font-size: 2rem;
-        font-weight: 600;
         letter-spacing: 0.12em;
         line-height: 1;
         color: vars.$color-primary-100;
@@ -281,7 +349,7 @@
         }
 
         @include mix.respondToMin('xl') {
-            font-size: 3.6rem;
+            font-size: 5.2rem;
         }
     }
 

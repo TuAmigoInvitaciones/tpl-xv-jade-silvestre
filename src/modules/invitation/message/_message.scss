@@ -17,6 +17,10 @@
         padding: 12rem 0;
     }
 
+    @include mix.respondToMin('lg') {
+        padding: 15rem 0;
+    }
+
     &__header {
         margin-bottom: -1rem;
     }
@@ -32,6 +36,10 @@
         @include mix.respondToMin('sm') {
             width: 75%;
         }
+
+        @include mix.respondToMin('lg') {
+            width: 50%;
+        }
     }
 
     &__text {
@@ -45,6 +53,10 @@
 
         @include mix.respondToMin('md') {
             font-size: 1.8rem;
+        }
+
+        @include mix.respondToMin('lg') {
+            font-size: 2.2rem;
         }
     }
 }

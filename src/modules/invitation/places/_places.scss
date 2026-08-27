@@ -11,7 +11,11 @@
     overflow: hidden;
 
     @include mix.respondToMin('md') {
-        padding: 12rem 2rem;
+        padding: 12rem 0;
+    }
+
+    @include mix.respondToMin('lg') {
+        padding: 15rem 0;
     }
 
     &__bg {
@@ -32,11 +36,19 @@
         position: relative;
         z-index: 1;
         width: 100%;
-        max-width: 960px;
+        max-width: 96rem;
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 2rem;
+
+        @include mix.respondToMin('lg') {
+            max-width: 108rem;
+        }
+
+        @include mix.respondToMin('xl') {
+            max-width: 116rem;
+        }
     }
 
     &__logo {
@@ -80,6 +92,10 @@
         width: 100%;
         margin-top: 1rem;
 
+        @include mix.respondToMin('lg') {
+            display: none;
+        }
+
         img {
             width: 100%;
             height: auto;
@@ -111,11 +127,28 @@
             height: 70rem;
         }
 
+        @include mix.respondToMin('lg') {
+            height: 75rem;
+        }
+
+        @include mix.respondToMin('xl') {
+            height: 80rem;
+        }
+
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center 22%;
             display: block;
+
+            @include mix.respondToMin('lg') {
+                object-position: center 18%;
+            }
+
+            @include mix.respondToMin('xl') {
+                object-position: center 15%;
+            }
         }
     }
 
@@ -135,6 +168,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @include mix.respondToMin('lg') {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: stretch;
+    }
 }
 
 .places-item {
@@ -161,6 +201,13 @@
         padding: 5.5rem 3.5rem;
         gap: 1.4rem;
         margin-bottom: 4.5rem;
+    }
+
+    @include mix.respondToMin('lg') {
+        max-width: 100%;
+        margin-bottom: 0;
+        height: 100%;
+        justify-content: space-between;
     }
 
     &__icon {
