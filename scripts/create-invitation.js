@@ -103,7 +103,9 @@ async function main() {
                 places: placesItineraryData.places,
                 itinerary: placesItineraryData.itinerary,
                 dressCode: protocolPresentsData.dressCode,
+                details: protocolPresentsData.details,
                 presents: protocolPresentsData.presents,
+
                 confirmation: {
                     showConfirmation: confirmationGraduatesData.confirmation.showConfirmation,
                     type: confirmationGraduatesData.confirmation.type || 'abrasa',

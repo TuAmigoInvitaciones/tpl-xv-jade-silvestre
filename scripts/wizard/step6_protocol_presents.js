@@ -17,7 +17,6 @@ export async function promptProtocolAndPresents(showDressCodeDefault = true, sho
 
         const suggestedStr = await ask('      -> Colores sugeridos (separados por coma)', 'negro, azul marino')
         const avoidStr = await ask('      -> Colores a evitar (separados por coma)', 'blanco, beige')
-        const noKids = await askConfirm('      -> ¿Activar etiqueta "No Niños" / Evento de Adultos?', true)
 
         dressCodeData = {
             showDressCode: true,
@@ -31,11 +30,43 @@ export async function promptProtocolAndPresents(showDressCodeDefault = true, sho
                 suggested: suggestedStr.split(',').map(s => s.trim()).filter(Boolean),
                 avoid: avoidStr.split(',').map(s => s.trim()).filter(Boolean),
             },
-            noKids,
         }
     }
 
-    // 2. Mesa de Regalos / Datos Bancarios
+    // 2. Detalles Importantes / Notas del Evento
+    const showDetails = await askConfirm('   -> ¿Incluir sección de Detalles Importantes (No Niños, Puntualidad, Hashtag)?', true)
+    let detailsData = {
+        showDetails,
+    }
+
+    if (showDetails) {
+        const title = await ask('      -> Título de la sección', 'Detalles Importantes')
+        const noKids = await askConfirm('      -> ¿Activar aviso "No Niños" / Evento de Adultos?', true)
+        let noKidsMessage = ''
+        if (noKids) {
+            noKidsMessage = await ask('         -> Mensaje No Niños', 'Aunque amamos a los pequeños, esta recepción es solo para adultos.')
+        }
+
+        const punctuality = await askConfirm('      -> ¿Activar aviso de Puntualidad?', true)
+        let punctualityMessage = ''
+        if (punctuality) {
+            punctualityMessage = await ask('         -> Mensaje de Puntualidad', 'Te sugerimos llegar con 15 minutos de anticipación para no perderte ningún momento.')
+        }
+
+        const hashtag = await ask('      -> Hashtag oficial del evento', '#GrethelStefaniaXV')
+
+        detailsData = {
+            showDetails: true,
+            title,
+            noKids,
+            noKidsMessage,
+            punctuality,
+            punctualityMessage,
+            hashtag,
+        }
+    }
+
+    // 3. Mesa de Regalos / Datos Bancarios
     const showPresents = await askConfirm('   -> ¿Incluir sección de Mesa de Regalos / Lluvia de Sobres?', showPresentsDefault)
     let presentsData = {
         showPresents,
@@ -74,6 +105,8 @@ export async function promptProtocolAndPresents(showDressCodeDefault = true, sho
 
     return {
         dressCode: dressCodeData,
+        details: detailsData,
         presents: presentsData,
     }
 }
+

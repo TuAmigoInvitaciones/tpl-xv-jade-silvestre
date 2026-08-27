@@ -142,9 +142,18 @@
         "avoid": [
           "blanco"
         ]
-      },
-      "noKids": true
+      }
     },
+    "details": {
+      "showDetails": true,
+      "title": "Detalles Importantes",
+      "noKids": true,
+      "noKidsMessage": "Aunque amamos a los pequeños, la recepción es solo para adultos.",
+      "punctuality": true,
+      "punctualityMessage": "Te pedimos ser puntual para no perderte ningún momento especial de la celebración.",
+      "hashtag": "#GrethelStefaniaXV"
+    },
+
     "presents": {
       "showPresents": true,
       "title": "Mesa de Regalos",

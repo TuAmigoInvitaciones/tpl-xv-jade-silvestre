@@ -161,7 +161,16 @@ export interface SectionsConfig {
         attire?: { men?: string; women?: string };
         colors?: { suggested?: string[]; avoid?: string[] }
     }
-    details?: SectionItemConfig & { showDetails?: boolean }
+    details?: SectionItemConfig & {
+        showDetails?: boolean
+        title?: string
+        noKids?: boolean
+        noKidsMessage?: string
+        punctuality?: boolean
+        punctualityMessage?: string
+        hashtag?: string
+    }
+
     gallery?: SectionItemConfig & { showGallery?: boolean }
     guestPhotos?: SectionItemConfig & { showGuestPhotos?: boolean; title?: string; subtitle?: string }
 
