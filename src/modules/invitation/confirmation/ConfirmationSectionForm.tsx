@@ -29,7 +29,8 @@ interface Props {
 
 export const ConfirmationSectionForm: React.FC<Props> = ({ isQuantityFree = false }) => {
     const { sections } = useInvitationConfig()
-    const noKids = Boolean(sections.dressCode?.colors?.suggested && (sections.dressCode as Record<string, unknown>).noKids)
+    const noKids = Boolean(sections.details?.noKids ?? (sections.dressCode as Record<string, unknown>)?.noKids)
+
 
     const {
         register,
@@ -83,7 +84,7 @@ export const ConfirmationSectionForm: React.FC<Props> = ({ isQuantityFree = fals
                             <CheckCircleIcon size={56} className="confirmation-form__success-icon confirmation-form__success-icon--yes" />
                             <h3 className="confirmation-form__success-title">¡Asistencia Confirmada!</h3>
                             <p className="confirmation-form__success-desc">
-                                Gracias <strong>{submittedData.fullName}</strong> por confirmar tu asistencia. ¡Nos dará mucho gusto verte en nuestro evento!
+                                Gracias <strong>{submittedData.fullName}</strong> por confirmar tu asistencia. ¡Nos dará mucho gusto verte en nuestro evento!. Hemos recibido tu respuesta.
                             </p>
                         </>
                     ) : (
