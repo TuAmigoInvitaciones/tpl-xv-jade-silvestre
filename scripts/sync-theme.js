@@ -43,9 +43,8 @@ try {
     const musicVariant = theme.music?.variant || theme.musicVariant || 'floating'
     const buttonVariant = theme.buttonVariant || 'primary'
 
-    // Título dinámico desde los nombres del Hero o del Menú
-    const coupleNames = parsed.sections?.hero?.names || theme.menu?.title || 'Invitación Especial'
-    const titleText = `${coupleNames} | Invitación Especial`
+    // Título dinámico desde metaTitle, o hero.title, o fallback
+    const titleText = parsed.metaTitle || parsed.title || 'Jade Silvestre | XV Años'
 
     const scssContent = `// ==========================================================================
 // AUTO-GENERATED ARCHIVE - DO NOT EDIT DIRECTLY
