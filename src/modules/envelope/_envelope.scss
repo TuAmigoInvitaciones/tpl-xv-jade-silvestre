@@ -99,17 +99,43 @@
             bottom: -2.8rem;
             right: -2.8rem;
         }
+
+        @include mix.respondToMin('md') {
+            bottom: -3.5rem;
+            right: -3.5rem;
+        }
+
+        @include mix.respondToMin('lg') {
+            bottom: -4.2rem;
+            right: -4.2rem;
+        }
+
+        @include mix.respondToMin('xl') {
+            bottom: -4.8rem;
+            right: -4.8rem;
+        }
     }
 
     &__flowers-corner-img {
         width: 10rem;
-        max-width: 14rem;
         height: auto;
         display: block;
         filter: drop-shadow(0 6px 16px rgba(vars.$color-primary-900, 0.15));
 
         @include mix.respondToMin('sm') {
             width: 13rem;
+        }
+
+        @include mix.respondToMin('md') {
+            width: 16rem;
+        }
+
+        @include mix.respondToMin('lg') {
+            width: 19rem;
+        }
+
+        @include mix.respondToMin('xl') {
+            width: 22rem;
         }
     }
 
@@ -123,11 +149,31 @@
 
     &__closed-img,
     &__open-img {
-        width: 100%;
-        max-width: 32rem;
+        width: 88vw;
+        max-width: 34rem;
         height: auto;
         display: block;
         filter: drop-shadow(0 14px 32px rgba(vars.$color-primary-900, 0.18));
+
+        @include mix.respondToMin('sm') {
+            width: 80vw;
+            max-width: 44rem;
+        }
+
+        @include mix.respondToMin('md') {
+            width: 75vw;
+            max-width: 56rem;
+        }
+
+        @include mix.respondToMin('lg') {
+            width: 70vw;
+            max-width: 68rem;
+        }
+
+        @include mix.respondToMin('xl') {
+            width: 65vw;
+            max-width: 60rem;
+        }
     }
 
     &__polaroid {
@@ -146,10 +192,31 @@
         pointer-events: none;
 
         @include mix.respondToMin('sm') {
-            width: 16.5rem;
-            margin-left: -8.25rem;
-            top: 3.8rem;
+            width: 20rem;
+            margin-left: -10rem;
+            top: 4rem;
             padding: 1rem 1rem 1.3rem;
+        }
+
+        @include mix.respondToMin('md') {
+            width: 26rem;
+            margin-left: -13rem;
+            top: 5rem;
+            padding: 1.3rem 1.3rem 1.7rem;
+        }
+
+        @include mix.respondToMin('lg') {
+            width: 32rem;
+            margin-left: -16rem;
+            top: 6rem;
+            padding: 1.6rem 1.6rem 2.1rem;
+        }
+
+        @include mix.respondToMin('xl') {
+            width: 38rem;
+            margin-left: -19rem;
+            top: 7rem;
+            padding: 1.9rem 1.9rem 2.5rem;
         }
     }
 
@@ -160,7 +227,19 @@
         background-color: #f5f5f3;
 
         @include mix.respondToMin('sm') {
-            height: 16rem;
+            height: 18rem;
+        }
+
+        @include mix.respondToMin('md') {
+            height: 23rem;
+        }
+
+        @include mix.respondToMin('lg') {
+            height: 29rem;
+        }
+
+        @include mix.respondToMin('xl') {
+            height: 35rem;
         }
 
         img {
@@ -180,7 +259,19 @@
         line-height: 1;
 
         @include mix.respondToMin('sm') {
-            font-size: 2.1rem;
+            font-size: 2.3rem;
+        }
+
+        @include mix.respondToMin('md') {
+            font-size: 2.9rem;
+        }
+
+        @include mix.respondToMin('lg') {
+            font-size: 3.5rem;
+        }
+
+        @include mix.respondToMin('xl') {
+            font-size: 4.2rem;
         }
     }
 
