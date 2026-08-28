@@ -6,6 +6,7 @@ import { useInvitationConfig } from '@/common/hooks'
 import { SectionHeader } from '@/common/components/section-header/SectionHeader'
 
 import illustrationTop from '@/assets/images/icons/flores-superiores-notas.svg'
+import florCentral from '@/assets/images/icons/flor-central.svg'
 
 const FLUID_EASE = [0.22, 1, 0.36, 1] as const
 
@@ -21,7 +22,7 @@ export const DetailsSection: React.FC = () => {
         ...(detailsConfig?.noKids !== false ? [{
             id: 'no-kids',
             category: 'SOBRE EL EVENTO',
-            title: 'Evento de Adultos',
+            title: 'No Niños',
             description: detailsConfig?.noKidsMessage || 'Aunque amamos a los pequeños, esta recepción ha sido planeada exclusivamente para adultos. Agradecemos tu comprensión.',
         }] : []),
         ...(detailsConfig?.punctuality !== false ? [{
@@ -81,6 +82,7 @@ export const DetailsSection: React.FC = () => {
                         {cards.map((card) => (
                             <SwiperSlide key={card.id}>
                                 <div className="details-section__card">
+                                    <img src={florCentral} alt="Flor decorativa" className="details-section__card-flower" />
                                     <div className="details-section__card-header">
                                         <span className="details-section__card-category">{card.category}</span>
                                         <h3 className="details-section__card-title">{card.title}</h3>
