@@ -44,7 +44,7 @@ export const MenuSidebar: React.FC<MenuSidebarProps> = ({
         if (items && items.length > 0 && items.length <= 5) {
             return items.map((item) => ({
                 ...item,
-                icon: item.icon || DEFAULT_SECTIONS.find(d => item.href.includes(d.href.replace('#', '')))?.icon || <HouseIcon size={20} />
+                icon: item.icon || DEFAULT_SECTIONS.find(d => (item.href || '').includes(d.href.replace('#', '')))?.icon || <HouseIcon size={20} />
             }))
         }
         return DEFAULT_SECTIONS
