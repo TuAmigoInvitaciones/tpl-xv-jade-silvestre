@@ -61,7 +61,7 @@ async function optimize() {
     for (const filePath of allFilePaths) {
         const file = path.basename(filePath);
         const ext = path.extname(file).toLowerCase();
-        if (!['.jpg', '.jpeg', '.png'].includes(ext)) {
+        if (!['.jpg', '.jpeg', '.png', '.svg'].includes(ext)) {
             console.log(`Skipping non-image file: ${file}`);
             continue;
         }
@@ -89,38 +89,77 @@ async function optimize() {
         const tempOutPath = path.join(path.dirname(filePath), `temp-${file}`);
 
         try {
-            let pipeline = sharp(backupPath);
+            if (ext === '.svg') {
+                let svgText = fs.readFileSync(backupPath, 'utf8');
 
-            const metadata = await pipeline.metadata();
+                // Regex for base64 images inside SVG
+                const base64Regex = /data:image\/(png|jpeg|jpg);base64,([A-Za-z0-9+/=]+)/g;
+                let match;
+                let matches = [];
 
-            const MAX_DIMENSION = 1920;
-            if ((metadata.width && metadata.width > MAX_DIMENSION) || (metadata.height && metadata.height > MAX_DIMENSION)) {
-                console.log(`  Resizing image down to max dimension ${MAX_DIMENSION}px (original: ${metadata.width}x${metadata.height})`);
-                pipeline = pipeline.resize({
-                    width: metadata.width > metadata.height ? MAX_DIMENSION : undefined,
-                    height: metadata.height >= metadata.width ? MAX_DIMENSION : undefined,
-                    fit: 'inside',
-                    withoutEnlargement: true
-                });
+                while ((match = base64Regex.exec(svgText)) !== null) {
+                    matches.push({ full: match[0], format: match[1], b64: match[2], index: match.index });
+                }
+
+                if (matches.length > 0) {
+                    console.log(`  Found ${matches.length} embedded base64 image(s) in ${file}. Optimizing...`);
+                    for (const m of matches) {
+                        const imgBuf = Buffer.from(m.b64, 'base64');
+                        let sharpPipeline = sharp(imgBuf);
+
+                        if (m.format === 'png') {
+                            sharpPipeline = sharpPipeline.png({ quality: 75, palette: true, compressionLevel: 9 });
+                        } else {
+                            sharpPipeline = sharpPipeline.jpeg({ quality: 75, mozjpeg: true });
+                        }
+
+                        const optBuf = await sharpPipeline.toBuffer();
+                        const optB64 = `data:image/${m.format};base64,${optBuf.toString('base64')}`;
+                        svgText = svgText.replace(m.full, optB64);
+                    }
+                }
+
+                // Minify SVG XML whitespace
+                svgText = svgText
+                    .replace(/<!--[\s\S]*?-->/g, '')
+                    .replace(/>\s+</g, '><')
+                    .trim();
+
+                fs.writeFileSync(filePath, svgText, 'utf8');
+            } else {
+                let pipeline = sharp(backupPath);
+
+                const metadata = await pipeline.metadata();
+
+                const MAX_DIMENSION = 1920;
+                if ((metadata.width && metadata.width > MAX_DIMENSION) || (metadata.height && metadata.height > MAX_DIMENSION)) {
+                    console.log(`  Resizing image down to max dimension ${MAX_DIMENSION}px (original: ${metadata.width}x${metadata.height})`);
+                    pipeline = pipeline.resize({
+                        width: metadata.width > metadata.height ? MAX_DIMENSION : undefined,
+                        height: metadata.height >= metadata.width ? MAX_DIMENSION : undefined,
+                        fit: 'inside',
+                        withoutEnlargement: true
+                    });
+                }
+
+                if (ext === '.png') {
+                    pipeline = pipeline.png({
+                        quality: 80,
+                        palette: true,
+                        compressionLevel: 9
+                    });
+                } else if (['.jpg', '.jpeg'].includes(ext)) {
+                    pipeline = pipeline.jpeg({
+                        quality: 80,
+                        mozjpeg: true
+                    });
+                }
+
+                await pipeline.toFile(tempOutPath);
+
+                fs.unlinkSync(filePath);
+                fs.renameSync(tempOutPath, filePath);
             }
-
-            if (ext === '.png') {
-                pipeline = pipeline.png({
-                    quality: 80,
-                    palette: true,
-                    compressionLevel: 9
-                });
-            } else if (['.jpg', '.jpeg'].includes(ext)) {
-                pipeline = pipeline.jpeg({
-                    quality: 80,
-                    mozjpeg: true
-                });
-            }
-
-            await pipeline.toFile(tempOutPath);
-
-            fs.unlinkSync(filePath);
-            fs.renameSync(tempOutPath, filePath);
 
             const newStat = fs.statSync(filePath);
             const savings = ((1 - (newStat.size / backupStat.size)) * 100).toFixed(1);

@@ -1,5 +1,5 @@
-export interface EnvelopConfig {
-    showEnvelop?: boolean
+export interface EnvelopeConfig {
+    showEnvelope?: boolean
     type?: 'cerrado-abierto' | 'video-apertura' | 'animacion-apertura'
     [key: string]: unknown
 }

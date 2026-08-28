@@ -54,7 +54,7 @@ export const useMenu = (props?: MenuProps) => {
         }
     }
 
-    const isHiddenRoute = location.pathname === '/envelop' || location.pathname === '/search'
+    const isHiddenRoute = location.pathname === '/envelope' || location.pathname === '/search'
     const isMenuVisible = (props?.show ?? menuConfig?.show ?? config?.hasMenu ?? true) && !isHiddenRoute && hasScrolledPast100vh
     const activeVariant: MenuVariant = props?.variant || menuConfig?.variant || 'floating'
     const activeTitle = props?.title || menuConfig?.title || 'Menú'

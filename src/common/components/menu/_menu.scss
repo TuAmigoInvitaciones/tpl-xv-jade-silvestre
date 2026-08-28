@@ -230,7 +230,7 @@
             box-shadow: 0 6px 20px rgba(vars.$color-primary-900, 0.07);
 
             .accordion__header {
-                background-color: rgba(vars.$color-secondary-100, 0.6);
+                background-color: rgba(vars.$color-secondary-100, 0.5);
             }
         }
 
@@ -245,11 +245,11 @@
         }
 
         .accordion__icon {
-            color: vars.$color-primary-700;
+            color: vars.$color-secondary-600;
         }
 
         .accordion__chevron {
-            color: vars.$color-primary-700;
+            color: vars.$color-secondary-600;
         }
 
         .accordion__body {
@@ -262,7 +262,7 @@
         align-items: center;
         justify-content: space-between;
         padding: 1.2rem 2rem;
-        background-color: vars.$color-secondary-100;
+        background-color: #ffffff;
         border-bottom: 1px solid rgba(vars.$color-primary-700, 0.15);
         min-height: 6rem;
 
@@ -281,7 +281,7 @@
             align-items: center;
             justify-content: center;
             border-radius: 0 !important;
-            color: vars.$color-primary-700;
+            color: vars.$color-secondary-600;
 
             .btn__icon svg,
             svg {
@@ -292,7 +292,7 @@
             &:hover:not(:disabled) {
                 transform: scale(1.05);
                 background-color: vars.$color-secondary-100;
-                color: vars.$color-primary-900;
+                color: vars.$color-secondary-800;
             }
 
             @include mix.respondToMin('md') {
@@ -316,7 +316,7 @@
         font-weight: 600;
         letter-spacing: 0.1em;
         text-transform: uppercase;
-        color: vars.$color-primary-800;
+        color: vars.$color-primary-900;
         margin: 0;
 
         @include mix.respondToMin('sm') {
@@ -352,7 +352,7 @@
     &__footer {
         padding: 1.6rem 2rem;
         border-top: 1px solid rgba(vars.$color-primary-700, 0.15);
-        background-color: vars.$color-secondary-100;
+        background-color: #fafaf8;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -371,7 +371,7 @@
     }
 
     &__footer-icon {
-        color: vars.$color-primary-700;
+        color: vars.$color-secondary-600;
     }
 
     &__accordions {
@@ -471,13 +471,30 @@
         }
     }
 
+    &__envelope-accordion-wrapper {
+        margin-bottom: 2rem;
+    }
+
+    &__sections-direct {
+        margin-top: 0.5rem;
+    }
+
+    &__link-icon {
+        color: vars.$color-secondary-600;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        transition: color 0.2s ease, transform 0.2s ease;
+    }
+
     &__list {
         list-style: none;
         padding: 0;
         margin: 0;
         display: flex;
         flex-direction: column;
-        gap: 0.4rem;
+        gap: 0.6rem;
     }
 
     &__item {
@@ -487,25 +504,29 @@
     &__link {
         display: flex;
         align-items: center;
-        gap: 1rem;
+        gap: 1.2rem;
         width: 100%;
-        padding: 0.9rem 1.2rem;
+        padding: 1.1rem 1.4rem;
         font-family: vars.$font-serif;
-        font-size: 1.3rem;
+        font-size: 1.35rem;
         font-weight: 500;
         color: vars.$color-primary-900;
         text-decoration: none;
         border-radius: 0;
-        border-left: 2px solid transparent;
+        border-left: 3px solid transparent;
         transition: all 0.2s ease;
         letter-spacing: 0.04em;
 
         &:hover {
-            background-color: vars.$color-secondary-100;
+            background-color: vars.$color-secondary-200;
             color: vars.$color-primary-800;
             border-left-color: vars.$color-primary-700;
             font-weight: 600;
-            padding-left: 1.5rem;
+            padding-left: 1.8rem;
+
+            .menu-sidebar__link-icon {
+                transform: scale(1.1);
+            }
         }
     }
 }

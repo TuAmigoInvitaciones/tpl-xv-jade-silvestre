@@ -18,7 +18,7 @@ export const SearchForm: React.FC = () => {
     const onSubmit = async (data: TicketSearch) => {
         const isSuccess = await onGetTicket(data.keyPass)
         if (isSuccess) {
-            goTo('/envelop')
+            goTo('/envelope')
         }
     }
 
