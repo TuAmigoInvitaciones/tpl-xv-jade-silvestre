@@ -69,15 +69,8 @@ export const HeroSection: React.FC = () => {
                             transition={{ duration: 2.8, delay: 0.25, ease: FLUID_EASE }}
                         >
                             <div className="hero-subtitle-badge__group">
-                                <svg className="hero-subtitle-badge__swash hero-subtitle-badge__swash--left" viewBox="0 0 75 32" fill="none">
-                                    <path d="M 4 6 C 16 -2, 24 30, 48 28 C 62 26, 70 17, 75 16" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-                                </svg>
-                                <span className="hero-subtitle-badge__number">XV</span>
-                                <span className="hero-subtitle-badge__text">AÑOS</span>
-                                <svg className="hero-subtitle-badge__swash hero-subtitle-badge__swash--right" viewBox="0 0 88 32" fill="none">
-                                    <path d="M 0 16 C 5 17, 13 26, 27 28 C 51 30, 59 -2, 71 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-                                    <path d="M 78 1 C 78 5, 79.5 6, 83 6.5 C 79.5 7, 78 8, 78 12 C 78 8, 76.5 7, 73 6.5 C 76.5 6, 78 5, 78 1 Z" fill="currentColor" />
-                                </svg>
+                                <span className="hero-subtitle-badge__number">&mdash; XV</span>
+                                <span className="hero-subtitle-badge__text">AÑOS &mdash;</span>
                             </div>
                         </motion.div>
                     ) : (
