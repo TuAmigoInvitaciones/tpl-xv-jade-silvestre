@@ -2,27 +2,311 @@
 @use '../../common/styles/mixins' as mix;
 
 .envelope {
-    height: 100dvh;
     position: relative;
+    background-color: vars.$color-secondary-100;
     width: 100%;
+    height: 100dvh;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.2rem;
+    padding: 2rem;
+    box-sizing: border-box;
+    text-align: center;
 
-    &__video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+    &__card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.6rem;
+        z-index: 2;
+    }
+
+    &__flower-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0.2rem;
+    }
+
+    &__flower-img {
+        width: 7.5rem;
+        max-width: 10rem;
+        height: auto;
         display: block;
 
-        &::-webkit-media-controls {
-            display: none !important;
+        @include mix.respondToMin('sm') {
+            width: 9rem;
         }
-        &::-webkit-media-controls-start-playback-button {
-            display: none !important;
-            -webkit-appearance: none;
+    }
+
+    &__title {
+        font-family: vars.$font-serif;
+        font-size: clamp(2.2rem, 5vw, 3.2rem);
+        font-weight: 600;
+        color: vars.$color-primary-900;
+        margin: 0;
+        letter-spacing: 0.04em;
+    }
+
+    &__name {
+        font-family: vars.$font-p1-cursive;
+        font-size: clamp(2.6rem, 5vw, 3.4rem);
+        color: vars.$color-primary-900;
+        margin: 0;
+        line-height: 1.1;
+    }
+
+    &__subtitle {
+        font-family: vars.$font-serif;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        font-size: 1.05rem;
+        font-weight: 500;
+        color: vars.$color-primary-800;
+        opacity: 0.85;
+        margin: 0;
+
+        @include mix.respondToMin('sm') {
+            font-size: 1.2rem;
         }
-        &::-webkit-media-controls-overlay-play-button {
-            display: none !important;
-            -webkit-appearance: none;
+    }
+
+    &__closed-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 2;
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+
+        &:hover {
+            transform: scale(1.02);
         }
+    }
+
+    &__flowers-corner {
+        position: absolute;
+        bottom: -2rem;
+        right: -1rem;
+        z-index: 7;
+        pointer-events: none;
+
+        @include mix.respondToMin('sm') {
+            bottom: -2.8rem;
+            right: -2.8rem;
+        }
+
+        @include mix.respondToMin('md') {
+            bottom: -3.5rem;
+            right: -3.5rem;
+        }
+
+        @include mix.respondToMin('lg') {
+            bottom: -4.2rem;
+            right: -4.2rem;
+        }
+
+        @include mix.respondToMin('xl') {
+            bottom: -4.8rem;
+            right: -4.8rem;
+        }
+    }
+
+    &__flowers-corner-img {
+        width: 10rem;
+        height: auto;
+        display: block;
+        filter: drop-shadow(0 6px 16px rgba(vars.$color-primary-900, 0.15));
+
+        @include mix.respondToMin('sm') {
+            width: 13rem;
+        }
+
+        @include mix.respondToMin('md') {
+            width: 16rem;
+        }
+
+        @include mix.respondToMin('lg') {
+            width: 19rem;
+        }
+
+        @include mix.respondToMin('xl') {
+            width: 22rem;
+        }
+    }
+
+    &__open-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    &__closed-img,
+    &__open-img {
+        width: 88vw;
+        max-width: 34rem;
+        height: auto;
+        display: block;
+        filter: drop-shadow(0 14px 32px rgba(vars.$color-primary-900, 0.18));
+
+        @include mix.respondToMin('sm') {
+            width: 80vw;
+            max-width: 44rem;
+        }
+
+        @include mix.respondToMin('md') {
+            width: 75vw;
+            max-width: 56rem;
+        }
+
+        @include mix.respondToMin('lg') {
+            width: 70vw;
+            max-width: 68rem;
+        }
+
+        @include mix.respondToMin('xl') {
+            width: 65vw;
+            max-width: 60rem;
+        }
+    }
+
+    &__polaroid {
+        position: absolute;
+        top: 3.2rem;
+        left: 50%;
+        margin-left: -7.5rem;
+        width: 15rem;
+        background-color: #ffffff;
+        padding: 0.8rem 0.8rem 1.1rem;
+        box-shadow: 0 18px 44px rgba(0, 0, 0, 0.28);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        z-index: 6;
+        border-radius: 0 !important;
+        text-align: center;
+        pointer-events: none;
+
+        @include mix.respondToMin('sm') {
+            width: 20rem;
+            margin-left: -10rem;
+            top: 4rem;
+            padding: 1rem 1rem 1.3rem;
+        }
+
+        @include mix.respondToMin('md') {
+            width: 26rem;
+            margin-left: -13rem;
+            top: 5rem;
+            padding: 1.3rem 1.3rem 1.7rem;
+        }
+
+        @include mix.respondToMin('lg') {
+            width: 32rem;
+            margin-left: -16rem;
+            top: 6rem;
+            padding: 1.6rem 1.6rem 2.1rem;
+        }
+
+        @include mix.respondToMin('xl') {
+            width: 38rem;
+            margin-left: -19rem;
+            top: 7rem;
+            padding: 1.9rem 1.9rem 2.5rem;
+        }
+    }
+
+    &__polaroid-img-wrapper {
+        width: 100%;
+        height: 14rem;
+        overflow: hidden;
+        background-color: #f5f5f3;
+
+        @include mix.respondToMin('sm') {
+            height: 18rem;
+        }
+
+        @include mix.respondToMin('md') {
+            height: 23rem;
+        }
+
+        @include mix.respondToMin('lg') {
+            height: 29rem;
+        }
+
+        @include mix.respondToMin('xl') {
+            height: 35rem;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    }
+
+    &__polaroid-caption {
+        font-family: vars.$font-p1-cursive;
+        font-size: 1.8rem;
+        color: vars.$color-primary-900;
+        margin-top: 0.6rem;
+        margin-bottom: 0;
+        line-height: 1;
+
+        @include mix.respondToMin('sm') {
+            font-size: 2.3rem;
+        }
+
+        @include mix.respondToMin('md') {
+            font-size: 2.9rem;
+        }
+
+        @include mix.respondToMin('lg') {
+            font-size: 3.5rem;
+        }
+
+        @include mix.respondToMin('xl') {
+            font-size: 4.2rem;
+        }
+    }
+
+    &__indicator-ring {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 12rem;
+        height: 12rem;
+        border-radius: 50%;
+        border: 2px solid rgba(vars.$color-primary-700, 0.4);
+        background-color: rgba(vars.$color-primary-700, 0.08);
+        z-index: 5;
+        pointer-events: none;
+        animation: pulseSealRing 2s infinite ease-in-out;
+    }
+
+    &__footer-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.4rem;
+        z-index: 2;
+    }
+
+    &__flash-transition {
+        position: fixed;
+        inset: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #ffffff;
+        z-index: 9999;
+        pointer-events: all;
+        animation: flashAnimation 0.5s ease-out forwards;
     }
 }
