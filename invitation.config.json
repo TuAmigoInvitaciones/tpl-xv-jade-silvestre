@@ -34,7 +34,7 @@
     "hasMenu": true
   },
   "sections": {
-    "envelop": {
+    "envelope": {
       "showEnvelop": true,
       "type": "video-apertura"
     },
@@ -154,7 +154,6 @@
       "punctualityMessage": "Te pedimos ser puntual para no perderte ningún momento especial de la celebración.",
       "hashtag": "#GrethelStefaniaXV"
     },
-
     "presents": {
       "showPresents": true,
       "title": "Mesa de Regalos",
@@ -216,13 +215,11 @@
         "title": "Música & Fotos de Invitados",
         "qrAlbumUrl": "https://photos.app.goo.gl/xqUqNJ5Cvm9mjo7m8"
       },
-
       "monogram": {
         "showMonogram": true,
         "title": "Monograma del Evento"
       }
     },
-
     "farewell": {
       "showFarewell": true,
       "hashtag": "#GrethelStefaniaXV",

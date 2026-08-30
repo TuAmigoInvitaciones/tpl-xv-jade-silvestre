@@ -143,6 +143,8 @@ export interface AddonsConfig {
 }
 
 export interface SectionsConfig {
+    envelop?: EnvelopeConfig
+    envelope?: EnvelopeConfig
     hero?: SectionItemConfig & { showHero?: boolean; names?: string; subtitle?: string; date?: string }
     scratchReveal?: ScratchRevealConfig
     message?: SectionItemConfig & { showMessage?: boolean; message?: string }
