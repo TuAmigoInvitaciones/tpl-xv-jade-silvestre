@@ -15,7 +15,7 @@
   },
   "ui": {
     "menu": {
-      "show": true,
+      "show": false,
       "variant": "bar",
       "title": "Grethel Stefania",
       "buttonVariant": "icon"
