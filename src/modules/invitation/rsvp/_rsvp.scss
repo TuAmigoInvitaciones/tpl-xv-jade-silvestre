@@ -3,78 +3,181 @@
 
 .rsvp {
     position: relative;
-    padding: 4rem 2rem;
+    padding: 3rem 1.5rem 23rem;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: .2;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
     &__container {
         width: 100%;
-        max-width: 500px;
+        max-width: 520px;
         position: relative;
-        padding: 3rem 2rem;
+        padding: 1rem;
         display: flex;
         flex-direction: column;
         align-items: center;
         box-sizing: border-box;
     }
 
-    &__content {
+    &__envelope-wrapper {
+        position: relative;
+        width: 100%;
+        max-width: 440px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        perspective: 1000px;
+    }
+
+    &__envelope-img {
+        width: 100%;
+        height: auto;
+        display: block;
+        filter: drop-shadow(0 14px 28px rgba(vars.$color-primary-900, 0.16));
+        will-change: transform;
+    }
+
+    &__card {
+        position: absolute;
+        top: 65%;
+        width: 92%;
+        max-width: 440px;
+        background-color: #ffffff;
+        padding: 0.8rem;
+        box-shadow: 0 14px 36px rgba(0, 0, 0, 0.16);
+        z-index: 2;
+        box-sizing: border-box;
+        transition: box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+        &:hover {
+            box-shadow: 0 20px 48px rgba(0, 0, 0, 0.22);
+        }
+
+        @include mix.respondToMin('sm') {
+            top: 7%;
+            width: 82%;
+            max-width: 460px;
+            padding: 1rem;
+        }
+    }
+
+    &__stamp-img {
+        position: absolute;
+        bottom: -1.2rem;
+        left: -1rem;
+        width: 5.2rem;
+        height: auto;
+        display: block;
+        z-index: 5;
+        cursor: pointer;
+        filter: drop-shadow(0 6px 12px rgba(vars.$color-primary-900, 0.22));
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+
+        &:hover {
+            transform: scale(1.12) rotate(-6deg);
+            filter: drop-shadow(0 10px 20px rgba(vars.$color-primary-900, 0.35));
+        }
+
+        @include mix.respondToMin('sm') {
+            bottom: -1.4rem;
+            left: -1.2rem;
+            width: 5.8rem;
+        }
+    }
+
+
+    &__card-inner {
+        border: 1px solid vars.$color-secondary-400;
+        padding: 2.2rem 1.6rem;
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 1.2rem;
-        width: 100%;
         text-align: center;
-    }
+        box-shadow: inset 0 0 16px rgba(vars.$color-secondary-400, 0.08);
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
 
-    &__title {
-        font-family: vars.$font-serif;
-        font-size: 2.2rem;
-        color: vars.$color-primary-900;
-        margin: 0;
-    }
+        &:hover {
+            border-color: vars.$color-secondary-600;
+            box-shadow: inset 0 0 24px rgba(vars.$color-secondary-400, 0.16);
+        }
 
-    &__date {
-        font-family: vars.$font-sans;
-        font-size: 1rem;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: vars.$color-4;
-        margin: 0;
+        gap: 1.1rem;
+
+        @include mix.respondToMin('sm') {
+            padding: 2.8rem 2.2rem;
+            gap: 1.4rem;
+        }
+
+        .section-header {
+            margin-bottom: 0.4rem;
+
+            &__pretitle {
+                font-family: vars.$font-serif;
+                font-size: 1.2rem;
+                font-weight: 400;
+                color: vars.$color-primary-600;
+                margin-bottom: 0.3rem;
+            }
+
+            &__title {
+                font-family: vars.$font-p1-cursive;
+                font-size: 2.8rem;
+                color: vars.$color-secondary-400;
+                line-height: 1.2;
+                margin: 0;
+
+                @include mix.respondToMin('sm') {
+                    font-size: 3.4rem;
+                }
+            }
+        }
     }
 
     &__guest-name {
         font-family: vars.$font-serif;
-        font-size: 1.8rem;
-        color: vars.$color-primary-900;
-        margin: 0;
+        font-size: 1.3rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: vars.$color-secondary-700;
+        margin: 0.4rem 0;
+        line-height: 1.35;
+
+        @include mix.respondToMin('sm') {
+            font-size: 1.6rem;
+        }
+    }
+
+    &__description {
+        font-family: vars.$font-serif;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: vars.$color-primary-800;
+        opacity: 0.9;
+        margin: 0.3rem 0 0.6rem;
+    }
+
+    &__action {
+        margin-top: 1rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
 
     &__ticket-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.6rem;
-        padding: 0.9rem 2rem;
-        background-color: vars.$color-1;
-        color: #ffffff;
-        border: none;
-        border-radius: 100rem;
-        cursor: pointer;
-        font-family: vars.$font-sans;
-        font-size: 0.9rem;
-        font-weight: 700;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        transition: transform 0.2s ease;
-
-        &:hover {
-            transform: scale(1.03);
-        }
-
-        &-icon {
-            color: #ffffff;
-        }
+        margin: 0;
     }
 }

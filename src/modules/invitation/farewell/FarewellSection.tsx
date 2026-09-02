@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { useInvitationConfig } from '@/common/hooks'
 import photo1 from '@/assets/images/photos/14.jpg'
-import photo2 from '@/assets/images/photos/13.jpg'
+import photo2 from '@/assets/images/photos/12.jpg'
 
 const FLUID_EASE = [0.22, 1, 0.36, 1] as const
 

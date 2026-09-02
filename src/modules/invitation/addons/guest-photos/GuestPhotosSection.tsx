@@ -7,7 +7,7 @@ import { ArrowSquareOutIcon } from '@phosphor-icons/react'
 
 import icon from '@/assets/images/icons/icon-camara.svg'
 import illustrationBottom from '@/assets/images/icons/flores-album.svg'
-import photo from '@/assets/images/photos/12.jpg'
+import photo from '@/assets/images/photos/13.jpg'
 
 export const GuestPhotosSection: React.FC = () => {
     const { sections } = useInvitationConfig()

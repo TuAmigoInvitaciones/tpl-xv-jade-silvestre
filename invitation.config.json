@@ -15,7 +15,7 @@
   },
   "ui": {
     "menu": {
-      "show": false,
+      "show": true,
       "variant": "bar",
       "title": "Grethel Stefania",
       "buttonVariant": "icon"
@@ -28,7 +28,7 @@
     }
   },
   "config": {
-    "hasTicketingSystem": false,
+    "hasTicketingSystem": true,
     "hasRSVP": true,
     "hasMusic": true,
     "hasMenu": true
