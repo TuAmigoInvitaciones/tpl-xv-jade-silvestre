@@ -22,7 +22,7 @@ export const TicketTableSection: React.FC<Props> = ({ ticket }) => {
 
             <div className="ticket__button no-print">
                 <Button
-                    variant="primary"
+                    variant="secondary"
                     radius="full"
                     icon={<ArmchairIcon size={20} weight="thin" />}
                     onClick={() => onOpenModal(MODAL_NAMES.tables, 'Distribución de Mesas')}

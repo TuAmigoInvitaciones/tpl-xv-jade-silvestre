@@ -11,7 +11,7 @@ export const TicketHeader: React.FC = () => {
     const subtitle = heroConfig?.subtitle || ''
     const date = heroConfig?.date ? `${heroConfig.date}` : ''
 
-    const mainLocation = placesConfig?.locations?.[0]
+    const mainLocation = placesConfig?.locations?.[1]
     const placeTitle = mainLocation?.title || ''
     const placeAddress = mainLocation?.location || ''
 

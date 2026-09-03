@@ -11,11 +11,20 @@
     align-items: center;
     position: relative;
 
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
     &__container {
         background-color: #faf7f2;
-        box-shadow:
-            0 20px 60px rgba(0, 0, 0, 0.35),
-            0 8px 24px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 5px 15px rgba(vars.$color-primary-900, 0.35);
         padding: 0.8rem;
         height: auto;
         width: 100%;
@@ -29,7 +38,7 @@
     }
 
     &__content {
-        border: 1px solid rgba(vars.$color-4, 0.4);
+        border: 1px solid vars.$color-secondary-200;
         height: auto;
         padding: 2.2rem 1.5rem 1.8rem;
         box-sizing: border-box;
@@ -62,7 +71,7 @@
         font-weight: 600;
         letter-spacing: 0.28em;
         text-transform: uppercase;
-        color: vars.$color-4;
+        color: vars.$color-primary-400;
     }
 
     &__couple-names {
@@ -84,7 +93,7 @@
         text-align: left;
         background: rgba(vars.$color-primary-900, 0.03);
         padding: 1.2rem 1.4rem;
-        border: 1px dashed rgba(vars.$color-4, 0.3);
+        border: 1px dashed rgba(vars.$color-primary-400, 0.3);
         box-sizing: border-box;
     }
 
@@ -95,7 +104,7 @@
     }
 
     &__detail-icon {
-        color: vars.$color-4;
+        color: vars.$color-primary-400;
         margin-top: 0.2rem;
         flex-shrink: 0;
     }
@@ -111,7 +120,7 @@
         font-size: 0.75rem;
         font-weight: 700;
         letter-spacing: 0.14em;
-        color: vars.$color-4;
+        color: vars.$color-secondary-500;
         text-transform: uppercase;
     }
 
@@ -145,7 +154,7 @@
     &__dashed-line {
         width: 100%;
         height: 0;
-        border-top: 1.5px dashed rgba(vars.$color-4, 0.45);
+        border-top: 1.5px dashed vars.$color-secondary-200;
         z-index: 1;
     }
 
@@ -155,7 +164,7 @@
         align-items: center;
         width: 100%;
         padding: 0.4rem 0 0;
-        gap: 1.2rem;
+        gap: 1.8rem;
     }
 
     &__qr-container {
@@ -182,8 +191,8 @@
     }
 
     &__qr-image {
-        width: 15rem;
-        height: 15rem;
+        width: 100%;
+        height: 100%;
         display: block;
         object-fit: contain;
     }
@@ -209,7 +218,7 @@
     &__guest-label {
         font-family: vars.$font-sans;
         font-size: 0.78rem;
-        color: vars.$color-4;
+        color: vars.$color-secondary-500;
         letter-spacing: 0.16em;
         text-transform: uppercase;
         font-weight: 700;
@@ -260,10 +269,10 @@
 
     &__pass-label {
         font-family: vars.$font-sans;
-        font-size: 0.78rem;
+        font-size: 1.2rem;
         font-weight: 700;
         letter-spacing: 0.1em;
-        color: vars.$color-4;
+        color: vars.$color-secondary-500;
         text-transform: uppercase;
     }
 
@@ -291,10 +300,10 @@
 
     &__table-label {
         font-family: vars.$font-sans;
-        font-size: 0.76rem;
+        font-size: 1.2rem;
         font-weight: 700;
         letter-spacing: 0.18em;
-        color: vars.$color-4;
+        color: vars.$color-secondary-500;
         text-transform: uppercase;
     }
 
@@ -313,6 +322,10 @@
         width: 100%;
         display: flex;
         justify-content: center;
+
+        button {
+            width: 90%;
+        }
     }
 
     &__notice-container {
@@ -334,7 +347,7 @@
         box-sizing: border-box;
 
         &-icon {
-            color: vars.$color-4;
+            color: vars.$color-primary-400;
             flex-shrink: 0;
         }
 
@@ -399,7 +412,7 @@
         font-size: 0.85rem;
         font-weight: 700;
         letter-spacing: 0.18em;
-        color: rgba(vars.$color-primary-900, 0.6);
+        color: vars.$color-secondary-500;
     }
 
     &__footer-number {
@@ -409,6 +422,14 @@
         color: #d32f2f;
         letter-spacing: 0.12em;
     }
+}
+
+.ticket__modal {
+
+    &-image {
+        width: 100%;
+    }
+
 }
 
 .ticket__tables-modal {
@@ -457,4 +478,3 @@
         text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
     }
 }
-

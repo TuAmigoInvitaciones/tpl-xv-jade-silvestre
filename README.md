@@ -1,69 +1,108 @@
-# TuAmigoInvitaciones — Sistema de Plantillas & Wizard CLI
+# Invitación Digital XV Años — Jade Silvestre
 
-![NodeJS](https://img.shields.io/badge/Node.js-v18%2B-339933?style=flat-square&logo=nodedotjs&logoColor=white)
-![React](https://img.shields.io/badge/React-v18-61DAFB?style=flat-square&logo=react&logoColor=black)
-![Vite](https://img.shields.io/badge/Vite-v5-646CFF?style=flat-square&logo=vite&logoColor=white)
-![Sass](https://img.shields.io/badge/Sass-SCSS-CC6699?style=flat-square&logo=sass&logoColor=white)
-![Plataforma](https://img.shields.io/badge/Abrasa-RSVP%20Sync-ff4500?style=flat-square)
+![Evento](https://img.shields.io/badge/Evento-XV%20A%C3%B1os-05445E?style=for-the-badge)
+![React](https://img.shields.io/badge/React-v19-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-v8-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Sass](https://img.shields.io/badge/Sass-SCSS-CC6699?style=for-the-badge&logo=sass&logoColor=white)
+![Abrasa RSVP](https://img.shields.io/badge/RSVP-Plataforma%20Abrasa-FF4500?style=for-the-badge)
+![Mobile First](https://img.shields.io/badge/Dise%C3%B1o-Mobile%20First-2E7D32?style=for-the-badge)
 
-Plataforma profesional de maquetación, configuración y generación de **Invitaciones Digitales Interactivas** para Bodas, XV Años, Graduaciones y Fiestas Infantiles.
-
----
-
-## Características Principales
-
-* **Wizard CLI Interactivo (`npm run create`)**: Generador modular paso a paso para orquestar carpetas de invitaciones listas para producción en `C:\TuAmigoInvitaciones\Paquetes\`.
-* **Estructura Comercial Espejo por Piedras Preciosas**: 2 Líneas de Producto (**Sin Fotos** vs **Con Fotos**) con los paquetes **Bronce**, **Platino**, **Oro**, **Rubí**, **Esmeralda** y **Cuarzo**.
-* **Manifiesto Dinámico (`invitation.config.json`)**: Control centralizado de flags de secciones, colores, fuentes tipográficas y configuración del evento.
-* **Experiencias Interactivas VIP**:
-  * **Scratch Reveal (Rascable)** en portada.
-  * **Álbum QR de Invitados** para recolección de fotografías durante la fiesta.
-  * **Monograma Exclusivo** personalizado.
-  * **Botonera Save The Date** integrada con Google/Apple Calendar.
-  * **Gestión RSVP en tiempo real con Plataforma Abrasa**.
+Plantilla de **Invitación Digital Interactiva** diseñada especialmente para la celebración de **XV Años**. Destaca por su elegante estética botánica en tonos **Jade Silvestre**, detalles dorados, animaciones interactivas, sobre rascable, reproductor de música y sincronización de pases con confirmación RSVP.
 
 ---
 
-## Ficha Comercial de Paquetes
+## Galería y Vista Previa (Espacio para Imágenes)
 
-La oferta comercial se organiza en 2 variantes (Línea Sin Fotos y Línea Con Fotos), manteniendo idéntica estructura y contenido logístico por nivel de servicio:
+| Sección | Captura de Pantalla |
+| :--- | :---: |
+| **Portada & Hero** | <img src="https://res.cloudinary.com/dlamufioy/image/upload/v1788470454/TuAmigoInvitaciones/xv/jade-silvestre/1-mockup_hsiqu1.png" width="260" alt="Portada & Hero" /> |
+| **Sobre Digital & Scratch Reveal** | <img src="https://res.cloudinary.com/dlamufioy/image/upload/v1788470451/TuAmigoInvitaciones/xv/jade-silvestre/15-mockup_gxneyu.png" width="260" alt="Sobre & Rascable" /> |
+| **Ubicaciones GPS & Mapas** | <img src="https://res.cloudinary.com/dlamufioy/image/upload/v1788470429/TuAmigoInvitaciones/xv/jade-silvestre/3-mockup_ibsytl.png" width="260" alt="Ubicaciones GPS" /> |
+| **Itinerario de Celebración** | <img src="https://res.cloudinary.com/dlamufioy/image/upload/v1788470436/TuAmigoInvitaciones/xv/jade-silvestre/4-mockup_v4oukw.png" width="260" alt="Itinerario" /> |
+| **Código de Vestimenta (Dress Code)** | <img src="https://res.cloudinary.com/dlamufioy/image/upload/v1788470444/TuAmigoInvitaciones/xv/jade-silvestre/11-mockup_q5bcma.png" width="260" alt="Dress Code" /> |
+| **Mesa de Regalos & Datos Bancarios** | <img src="https://res.cloudinary.com/dlamufioy/image/upload/v1788470435/TuAmigoInvitaciones/xv/jade-silvestre/6-mockup_ffnc9z.png" width="260" alt="Mesa de Regalos" /> |
+| **Pase Digital & RSVP Abrasa** | <img src="https://res.cloudinary.com/dlamufioy/image/upload/v1788471332/TuAmigoInvitaciones/xv/jade-silvestre/142shots_so_wclir9.png" width="330" alt="Pase Digital & RSVP" /> |
+| **Galería & Álbum QR de Invitados** | <img src="https://res.cloudinary.com/dlamufioy/image/upload/v1788470455/TuAmigoInvitaciones/xv/jade-silvestre/5-mockup_zjhvzy.png" width="260" alt="Álbum QR Invitados" /> |
 
-| Paquete | Concepto Comercial | Línea SIN Fotos | Línea CON Fotos | Secciones Clave Incluidas |
-| :--- | :--- | :---: | :---: | :--- |
-| **Bronce** | **Esencial** | **$499.99 MXN** | **$699.99 MXN** | Portada, Sobre Digital, Conteo, Save The Date, Mapas GPS, Itinerario, Dress Code y RSVP WhatsApp. |
-| **Platino** | **Intermedio** *(Más Vendido)* | **$699.99 MXN** | **$899.99 MXN** | Todo lo de Bronce + Familia & Cortejo + Mesa de Regalos + Hashtag & Despedida + Plataforma Abrasa + Galería (Con Fotos). |
-| **Oro** | **VIP Premium** | **$899.99 MXN** | **$1,099.99 MXN** | Todo lo de Platino + Sobre de Lujo + Scratch Reveal + Álbum QR de Fotos + Monograma Exclusivo + Abrasa Pro. |
-| **Rubí** | **A la Medida** | **$1,599.00 MXN** | **$1,899.00 MXN** | Maquetación gráfica 100% creada desde cero fuera de catálogo. |
-| **Esmeralda** | **Infantil Básica** | **$199.99 MXN** | — | Diseño temático, mapas GPS y confirmación rápida WhatsApp. |
-| **Cuarzo** | **Infantil Premium** | **$399.99 MXN** | — | Animaciones, música, Scratch Reveal, galería de fotos y RSVP Abrasa. |
+---
+
+## Características y Módulos Incluidos
+
+- **Sobre Digital Interactivo**: Animación de apertura al ingresar a la invitación.
+- **Música de Fondo Flotante**: Reproductor de audio ambiental con controles de play/pausa.
+- **Conteo Regresivo en Tiempo Real**: Temporizador reactivo hacia la fecha del evento.
+- **Sección de Padres y Padrinos**: Espacio dedicado para el cortejo y bendición familiar.
+- **Navegación GPS Directa**: Botones interactivos hacia Google Maps (Ceremonia Religiosa y Recepción).
+- **Itinerario por Horarios**: Cronograma estructurado con iconos para cada momento del evento.
+- **Código de Vestimenta (Dress Code)**: Especificación de etiqueta formal con sugerencia y restricción de colores.
+- **Mesa de Regalos Flexible**: Soporte para enlaces departamentales (Liverpool), transferencia bancaria (CLABE) y Lluvia de Sobres.
+- **Confirmación RSVP & Pase Digital (Abrasa Sync)**: Gestión de boletos por invitado con código QR.
+- **Galería Mosaico & Álbum QR Colaborativo**: Exposición de fotos de la festejada y enlace con código QR para que los invitados suban sus fotografías durante la fiesta.
+
+---
+
+## Personalización (`invitation.config.json`)
+
+Los datos completos de la celebración se configuran desde `invitation.config.json`. Puedes modificar textos, fechas, enlaces y activar/desactivar módulos:
+
+```json
+{
+  "metaTitle": "Jade Silvestre | Mis XV Años",
+  "eventType": "xv",
+  "sections": {
+    "hero": {
+      "names": "Grethel Stefania",
+      "subtitle": "Mis XV Años",
+      "date": "18 DE DICIEMBRE DE 2026",
+      "city": "Aguascalientes, México"
+    },
+    "places": {
+      "showPlaces": true,
+      "locations": [
+        {
+          "title": "Ceremonia Religiosa",
+          "venue": "Parroquia del Sagrado Corazón de Jesús",
+          "time": "19:00 HRS",
+          "url": "https://maps.app.goo.gl/..."
+        }
+      ]
+    },
+    "confirmation": {
+      "type": "abrasa"
+    }
+  }
+}
+```
+
+---
+
+## Recursos Visuales y Multimedia
+
+Para cambiar los contenidos multimedia de la invitación, reemplaza los archivos en las siguientes rutas:
+
+- **Fotografías de la Festejada**: `src/assets/images/photos/`
+- **Música de Fondo**: `src/assets/music/`
+- **Video de Sobre Digital**: `src/assets/videos/`
 
 ---
 
 ## Guía Rápida de Comandos
 
-### 1. Generar una Nueva Invitación
-Ejecuta el asistente interactivo en la terminal:
 ```bash
-npm run create
-```
-El wizard solicitará el tipo de evento, paquete comercial, fuentes, paleta de colores, datos del festejo, ubicaciones, itinerario y mesa de regalos, compilando automáticamente el proyecto listo en `C:\TuAmigoInvitaciones\Paquetes\<nombre-invitacion>`.
+# 1. Instalar dependencias del proyecto
+npm install
 
-### 2. Iniciar Servidor de Desarrollo Local
-Para visualizar la invitación en tiempo real con recarga caliente (Vite + React):
-```bash
+# 2. Iniciar servidor de desarrollo local
 npm run dev
-```
 
-### 3. Sincronizar Tokens SCSS de Tema
-Para compilar los tokens de colores y fuentes definidos en `invitation.config.json`:
-```bash
+# 3. Sincronizar tokens SCSS del tema
 npm run theme:sync
-```
 
-### 4. Optimización Recursiva de Imágenes
-Para comprimir todas las imágenes manteniendo la calidad en `src/assets/images/`:
-```bash
-npm run images:optimize
+# 4. Optimizar imágenes de forma recursiva
+npm run optimize-images
+
+# 5. Compilar la aplicación para producción
+npm run build
 ```
 
 ---
@@ -71,24 +110,14 @@ npm run images:optimize
 ## Arquitectura del Proyecto
 
 ```text
-invitation-template/
-├── doc/
-│   └── paquetes_invitaciones.md     # Ficha técnica comercial oficial y mapa conceptual
-├── scripts/
-│   ├── create-invitation.js         # Script orquestador principal
-│   ├── sync-theme.js                # Compilador de tokens SCSS
-│   ├── optimize-images.js           # Optimizador recursivo de imágenes
-│   └── wizard/                      # Módulos del asistente CLI (Pasos 0 a 10)
+tpl-xv-jade-silvestre/
+├── public/                      # Favicon, imágenes OG y recursos estáticos
 ├── src/
-│   ├── modules/                     # Módulos React (Hero, Places, Itinerary, RSVP, Gallery)
-│   ├── styles/                      # Sistema de diseño SCSS y tokens croma
-│   └── InvitationApp.tsx            # Componente raíz reactivo
-├── invitation.config.json           # Manifiesto activo de configuración
-└── package.json
+│   ├── assets/                  # Imágenes, música, videos y fuentes
+│   ├── modules/                 # Componentes React de cada sección
+│   ├── styles/                  # Sistema SCSS y tokens de color
+│   └── InvitationApp.tsx        # Componente principal de la invitación
+├── invitation.config.json       # Configuración central del evento
+├── package.json
+└── README.md
 ```
-
----
-
-## Documentación Adicional
-
-Para consultar la ficha técnica comercial completa y mapas de jerarquía, revisa [`doc/paquetes_invitaciones.md`](file:///c:/TuAmigoInvitaciones/invitation-template/doc/paquetes_invitaciones.md).

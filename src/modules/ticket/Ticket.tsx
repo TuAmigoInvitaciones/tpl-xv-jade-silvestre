@@ -7,6 +7,8 @@ import { TicketNotice } from './components/TicketNotice'
 import { useTicket } from '@/common/hooks'
 import './_ticket.scss'
 
+import bg from '@/assets/images/backgrounds/bg-tickets.jpg'
+
 export const Ticket: React.FC = () => {
     const { ticket, onGetTicket, onCheckInitialData } = useTicket()
 
@@ -24,6 +26,7 @@ export const Ticket: React.FC = () => {
 
     return (
         <div className="ticket">
+            <div className="ticket__bg" style={{ backgroundImage: `url(${bg})` }}></div>
             <div className="ticket__container">
                 <div className="ticket__content">
                     <TicketHeader />
