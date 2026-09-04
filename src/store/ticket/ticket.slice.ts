@@ -9,21 +9,23 @@ interface InitialState {
 }
 
 const initialState: InitialState = {
-    ticket: {
-        id: '6a7108b07b14249531a2bc6b',
-        name: 'Saulo Román Santillán Nava',
-        adultsQuantity: 1,
-        adultsCounter: 0,
-        kidsQuantity: 0,
-        kidsCounter: 0,
-        qrCode: 'https://res.cloudinary.com/dlamufioy/image/upload/v1785792688/abrasa/tickets/6a57d9921a9663d0259e4264/nauvwgqrnhw3xwj06rsj.png',
-        phone: '4496548073',
-        keyPass: 'prueba123',
-        isActive: true,
-        event: '6a57d9921a9663d0259e4264',
-        user: '692b988ca479fb02d656b521',
-        table: '1'
-    },
+    ticket: import.meta.env.VITE_TICKET_ID
+        ? {
+            id: import.meta.env.VITE_TICKET_ID,
+            name: import.meta.env.VITE_TICKET_NAME || '',
+            adultsQuantity: Number(import.meta.env.VITE_TICKET_ADULTS_QUANTITY ?? 0),
+            adultsCounter: Number(import.meta.env.VITE_TICKET_ADULTS_COUNTER ?? 0),
+            kidsQuantity: Number(import.meta.env.VITE_TICKET_KIDS_QUANTITY ?? 0),
+            kidsCounter: Number(import.meta.env.VITE_TICKET_KIDS_COUNTER ?? 0),
+            qrCode: import.meta.env.VITE_TICKET_QR_CODE || '',
+            phone: import.meta.env.VITE_TICKET_PHONE || '',
+            keyPass: import.meta.env.VITE_TICKET_KEY_PASS || '',
+            isActive: import.meta.env.VITE_TICKET_IS_ACTIVE === 'true',
+            event: import.meta.env.VITE_TICKET_EVENT || '',
+            user: import.meta.env.VITE_TICKET_USER || '',
+            table: import.meta.env.VITE_TICKET_TABLE || '',
+        }
+        : null,
     isLoading: false,
     isChecking: true,
     error: null,

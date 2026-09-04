@@ -264,7 +264,7 @@
         }
 
         @include mix.respondToMin('xl') {
-            height: 70rem;
+            height: 80rem;
         }
 
         img {
@@ -278,7 +278,7 @@
             }
 
             @include mix.respondToMin('xl') {
-                object-position: center 18%;
+                object-position: center;
             }
         }
     }

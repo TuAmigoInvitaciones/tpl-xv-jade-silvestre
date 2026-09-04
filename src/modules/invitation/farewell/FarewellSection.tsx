@@ -1,7 +1,8 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { useInvitationConfig } from '@/common/hooks'
-import photo1 from '@/assets/images/photos/14.jpg'
+import photoMobile1 from '@/assets/images/photos/14.jpg'
+import photoTablet1 from '@/assets/images/photos/1.jpeg'
 import photo2 from '@/assets/images/photos/12.jpg'
 
 const FLUID_EASE = [0.22, 1, 0.36, 1] as const
@@ -30,7 +31,10 @@ export const FarewellSection: React.FC = () => {
                         transition={{ duration: 1.4, delay: 0.2, ease: FLUID_EASE }}
                     >
                         <div className="farewell__polaroid-img">
-                            <img src={photo1} alt="Grethel Stefania" />
+                            <picture>
+                                <source media="(min-width: 768px)" srcSet={photoTablet1} />
+                                <img src={photoMobile1} alt="Grethel Stefania" />
+                            </picture>
                         </div>
                     </motion.div>
 

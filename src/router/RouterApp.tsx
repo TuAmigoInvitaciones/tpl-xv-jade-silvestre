@@ -25,22 +25,22 @@ export const RouterApp: React.FC = () => {
                     <Route path="/envelope" element={<Envelope />} />
                     <Route path="*" element={<Navigate to="/" replace />} />
                 </>
+            ) : ticket ? (
+                <>
+                    <Route path="/" element={<Invitation />} />
+                    <Route path="/invitation" element={<Invitation />} />
+                    <Route path="/ticket" element={<Ticket />} />
+                    <Route path="/envelope" element={<Envelope />} />
+                    <Route path="/search" element={<Navigate to="/" replace />} />
+                    <Route path="*" element={<Navigate to="/" replace />} />
+                </>
             ) : (
                 <>
                     <Route path="/search" element={<Search />} />
-
-                    {ticket ? (
-                        <>
-                            <Route path="/" element={<Invitation />} />
-                            <Route path="/ticket" element={<Ticket />} />
-                            <Route path="/envelope" element={<Envelope />} />
-                            <Route path="*" element={<Navigate to="/" replace />} />
-                        </>
-                    ) : (
-                        <Route path="*" element={<Navigate to="/search" replace />} />
-                    )}
+                    <Route path="*" element={<Navigate to="/search" replace />} />
                 </>
             )}
         </Routes>
     )
 }
+

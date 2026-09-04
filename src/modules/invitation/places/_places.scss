@@ -143,11 +143,11 @@
             display: block;
 
             @include mix.respondToMin('lg') {
-                object-position: center 18%;
+                object-position: 57% 20%;
             }
 
             @include mix.respondToMin('xl') {
-                object-position: center 15%;
+                object-position: 60% 42%;
             }
         }
     }
