@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import {
     XIcon,
     EnvelopeSimpleIcon,
@@ -10,12 +10,12 @@ import {
     ClockIcon,
     GiftIcon,
     CheckCircleIcon,
+    TicketIcon,
 } from '@phosphor-icons/react'
 
 import { useMenu } from '@/common/hooks'
 import { Button } from '@/common/components/button/Button'
-import { Accordion } from '@/common/components/accordion/Accordion'
-import type { MenuSidebarProps, AccordionItem } from '@/common/types'
+import type { MenuSidebarProps } from '@/common/types'
 import logo from '@/assets/images/icons/logo.svg'
 
 interface SectionItem {
@@ -38,6 +38,7 @@ export const MenuSidebar: React.FC<MenuSidebarProps> = ({
     items = [],
     children,
 }) => {
+    const navigate = useNavigate()
     const { isMenuOpen, onCloseMenu, activeTitle } = useMenu()
 
     const importantSections = React.useMemo(() => {
@@ -49,25 +50,6 @@ export const MenuSidebar: React.FC<MenuSidebarProps> = ({
         }
         return DEFAULT_SECTIONS
     }, [items])
-
-    const envelopeAccordionItem: AccordionItem[] = [
-        {
-            id: 'envelope',
-            title: 'SOBRE VIRTUAL',
-            icon: <EnvelopeSimpleIcon size={20} />,
-            defaultOpen: false,
-            content: (
-                <Link
-                    to="/envelope"
-                    className="menu-sidebar__envelope-link"
-                    onClick={onCloseMenu}
-                >
-                    <span>Abrir Sobre Digital</span>
-                    <ArrowRightIcon size={18} />
-                </Link>
-            ),
-        },
-    ]
 
     const overlayClass = `menu-overlay ${isMenuOpen ? 'menu-overlay--open' : ''}`
     const sidebarClass = `menu-sidebar ${isMenuOpen ? 'menu-sidebar--open' : ''}`
@@ -90,17 +72,44 @@ export const MenuSidebar: React.FC<MenuSidebarProps> = ({
                 </header>
 
                 <div className="menu-sidebar__content">
-                    {/* Logo centrado */}
                     <div className="menu-sidebar__centered-logo">
                         <img src={logo} alt="Logo" className="menu-sidebar__logo-img" />
                     </div>
 
-                    {/* Acordeón únicamente para el Sobre Virtual */}
-                    <div className="menu-sidebar__envelope-accordion-wrapper">
-                        <Accordion items={envelopeAccordionItem} variant="separated" allowMultiple />
+                    <div className="menu-sidebar__actions">
+                        <Button
+                            variant="primary"
+                            fullWidth
+                            radius="sm"
+                            icon={<EnvelopeSimpleIcon size={20} weight="regular" />}
+                            iconPosition="left"
+                            onClick={() => {
+                                navigate('/envelope')
+                                onCloseMenu()
+                            }}
+                            className="menu-sidebar__action-btn menu-sidebar__action-btn--envelope"
+                        >
+                            <span>Sobre Virtual</span>
+                            <ArrowRightIcon size={16} className="menu-sidebar__action-btn-arrow" />
+                        </Button>
+
+                        <Button
+                            variant="secondary"
+                            fullWidth
+                            radius="sm"
+                            icon={<TicketIcon size={20} weight="regular" />}
+                            iconPosition="left"
+                            onClick={() => {
+                                navigate('/ticket')
+                                onCloseMenu()
+                            }}
+                            className="menu-sidebar__action-btn menu-sidebar__action-btn--ticket"
+                        >
+                            <span>Boleto Digital</span>
+                            <ArrowRightIcon size={16} className="menu-sidebar__action-btn-arrow" />
+                        </Button>
                     </div>
 
-                    {/* Secciones directas con íconos */}
                     {children ? (
                         children
                     ) : (
