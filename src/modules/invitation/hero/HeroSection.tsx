@@ -28,8 +28,8 @@ export const HeroSection: React.FC = () => {
                 variant="glitter"
                 count={30}
                 colors={['#FFFFFF', '#FFF8DC', '#FFD700', '#D4AF37', '#F3E5AB', '#E6CA65', '#FFF3CD', '#E5E4E2', '#C0C0C0']}
-                minSize={1.5}
-                maxSize={4.5}
+                minSize={4.5}
+                maxSize={6.5}
                 speed={0.85}
                 direction="down"
                 zIndex={3}
@@ -49,7 +49,6 @@ export const HeroSection: React.FC = () => {
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 3.2, ease: FLUID_EASE }}
             />
-
             <motion.div
                 className="hero-section__bg hero-section__bg--desktop"
                 style={{ backgroundImage: `url(${heroDesktop})` }}
@@ -62,17 +61,12 @@ export const HeroSection: React.FC = () => {
             <div className="hero-section__container">
                 {eventSubtitle && (
                     isFifteen ? (
-                        <motion.div
-                            className="hero-subtitle-badge"
-                            initial={{ opacity: 0, y: -22, scale: 0.95 }}
-                            animate={{ opacity: 1, y: 0, scale: 1 }}
-                            transition={{ duration: 2.8, delay: 0.25, ease: FLUID_EASE }}
-                        >
-                            <div className="hero-subtitle-badge__group">
-                                <span className="hero-subtitle-badge__number">&mdash; XV</span>
-                                <span className="hero-subtitle-badge__text">AÑOS &mdash;</span>
-                            </div>
-                        </motion.div>
+                        <div className="hero-section__banner">
+                            <p><span>M</span>is</p>
+                            <p>15</p>
+                            <p><span>A</span>ños</p>
+                        </div>
+
                     ) : (
                         <motion.p
                             className="hero-section__subtitle"
@@ -122,6 +116,6 @@ export const HeroSection: React.FC = () => {
 
 
             </div>
-        </section>
+        </section >
     )
 }

@@ -47,12 +47,34 @@
         }
     }
 
+    &__banner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.4rem;
+        font-family: vars.$font-p1-cursive;
+        font-size: 4rem;
+
+        p:nth-child(2) {
+            font-family: vars.$font-sans;
+            font-size: 5rem;
+
+            @include mix.respondToMin('lg') {
+                font-size: 8rem;
+            }
+        }
+
+        @include mix.respondToMin('lg') {
+            font-size: 9.6rem;
+        }
+    }
+
     &__container {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
         z-index: 2;
-        padding: 5rem 2rem;
+        padding: 2rem;
         height: 100%;
         width: 100%;
         color: vars.$color-primary-100;
@@ -85,6 +107,8 @@
         text-align: center;
         font-family: vars.$font-serif;
         font-size: 3.2rem;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+        animation: heroTitleGleam 6s ease-in-out 2.5s infinite;
 
         @include mix.respondToMin('xs') {
             font-size: 3.6rem;
@@ -266,6 +290,35 @@
     @include mix.respondToMin('lg') {
         text-align: left;
         width: 100%;
+    }
+
+    &__banner {
+        display: inline-block;
+        width: 17rem;
+        height: auto;
+        filter: brightness(0) invert(0.96) sepia(0.15) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.75));
+        pointer-events: none;
+
+        @include mix.respondToMin('xs') {
+            width: 19rem;
+        }
+
+        @include mix.respondToMin('sm') {
+            width: 22rem;
+        }
+
+        @include mix.respondToMin('md') {
+            width: 26rem;
+        }
+
+        @include mix.respondToMin('lg') {
+            width: 28rem;
+            margin-left: -0.8rem;
+        }
+
+        @include mix.respondToMin('xl') {
+            width: 45rem;
+        }
     }
 
     &__group {
