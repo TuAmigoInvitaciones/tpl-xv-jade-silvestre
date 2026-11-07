@@ -1,20 +1,20 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { useTicket, useInvitationConfig } from '@/common/hooks'
+import { LinkIcon } from '@phosphor-icons/react'
+
+import { useTicket, useInvitationConfig, useNavigation } from '@/common/hooks'
 import { SectionHeader } from '@/common/components/section-header/SectionHeader'
 import { Button } from '@/common/components/button/Button'
-import { LinkIcon } from '@phosphor-icons/react'
+
 import envelopeOpen from '@/assets/images/icons/envelope-open.svg'
 import selloIcon from '@/assets/images/icons/sello.svg'
-
 import bg from '@/assets/images/backgrounds/bg-1.svg'
 
 const CUBIC_EASE: [number, number, number, number] = [0.16, 1, 0.3, 1]
 const STAMP_EASE: [number, number, number, number] = [0.34, 1.56, 0.64, 1]
 
 export const RsvpSection: React.FC = () => {
-    const navigate = useNavigate()
+    const { goTo } = useNavigation()
     const { ticket } = useTicket()
     const { config, sections } = useInvitationConfig()
 
@@ -118,7 +118,7 @@ export const RsvpSection: React.FC = () => {
                                     variant="secondary"
                                     radius="full"
                                     icon={<LinkIcon size={20} />}
-                                    onClick={() => navigate('/ticket')}
+                                    onClick={() => goTo('/ticket')}
                                     className="rsvp__ticket-btn"
                                 >
                                     Ver mis boletos

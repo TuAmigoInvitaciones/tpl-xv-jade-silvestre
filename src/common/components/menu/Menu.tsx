@@ -5,6 +5,7 @@ import { Button } from '@/common/components/button/Button'
 import { useMenu } from '@/common/hooks'
 import type { MenuProps } from '@/common/types'
 import { MenuSidebar } from './MenuSidebar'
+import logo from '@/assets/images/icons/logo.svg'
 
 export const Menu: React.FC<MenuProps> = (props) => {
     const {
@@ -32,7 +33,10 @@ export const Menu: React.FC<MenuProps> = (props) => {
                 </div>
             ) : (
                 <header className="menu menu--bar">
-                    <div className="menu__title">{activeTitle}</div>
+                    <div className="menu__logo">
+                        <img src={logo} alt="Logo" className="menu__logo-img" />
+                        <div className="menu__title">{activeTitle}</div>
+                    </div>
                     <Button
                         variant={activeBtnVariant}
                         radius="full"

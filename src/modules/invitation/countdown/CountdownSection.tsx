@@ -9,7 +9,7 @@ import { Button } from '@/common/components/button/Button'
 
 import flor1 from '@/assets/images/icons/flor-esquina-superior-derecha.svg'
 import flor2 from '@/assets/images/icons/flor-esquina-inferior-izquierda.svg'
-import photo from '@/assets/images/photos/7.jpg'
+import photo from '@/assets/images/photos/13.jpg'
 
 const FLUID_EASE = [0.22, 1, 0.36, 1] as const
 
@@ -19,9 +19,8 @@ export const CountdownSection: React.FC = () => {
     const { monthTitle, weekdays, days } = useCalendar()
     const { downloadSaveTheDate } = useSaveTheDate()
 
-    if (!countdownConfig?.showCountdown || !countdownConfig?.targetDate) {
-        return null
-    }
+    const showCountdownSection = Boolean(countdownConfig?.showCountdown || !countdownConfig?.targetDate)
+    if (!showCountdownSection) return null;
 
     return (
         <>
@@ -151,7 +150,7 @@ export const CountdownSection: React.FC = () => {
                 transition={{ duration: 1.3, ease: FLUID_EASE }}
             >
                 <div className="countdown-section__overlay"></div>
-                <img src={photo} alt="" />
+                <img src={photo} alt="Quinceañera Foto" />
             </motion.div>
         </>
     )

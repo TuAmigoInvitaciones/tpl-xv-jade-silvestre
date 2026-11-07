@@ -6,16 +6,11 @@ import { useInvitationConfig, useTicket } from '@/common/hooks'
 export const RouterApp: React.FC = () => {
     const { config } = useInvitationConfig()
     const { ticket, isChecking, onCheckInitialData } = useTicket()
-
-    useEffect(() => {
-        onCheckInitialData()
-    }, [onCheckInitialData])
-
-    if (isChecking) {
-        return null
-    }
-
     const hasTicketingSystem = config.hasTicketingSystem
+
+    useEffect(() => onCheckInitialData(), [onCheckInitialData])
+
+    if (isChecking) return null
 
     return (
         <Routes>

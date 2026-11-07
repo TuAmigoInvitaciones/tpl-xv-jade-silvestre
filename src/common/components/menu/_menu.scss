@@ -2,6 +2,17 @@
 @use '../../styles/mixins' as mix;
 
 .menu {
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        &-img {
+            width: 3.2rem;
+        }
+    }
+
     &--floating {
         position: fixed;
         bottom: 7.2rem;
