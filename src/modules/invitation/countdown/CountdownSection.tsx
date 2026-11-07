@@ -69,7 +69,7 @@ export const CountdownSection: React.FC = () => {
                                 transition={{ duration: 1.1, delay: 0.25, ease: FLUID_EASE }}
                             >
                                 <Countdown
-                                    targetDate={countdownConfig.targetDate}
+                                    targetDate={countdownConfig?.targetDate ?? ''}
                                     variant="minimal"
                                 />
                             </motion.div>
